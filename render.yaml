@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: az900-academy
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn "app:create_app()" --bind 0.0.0.0:$PORT --workers 2
+    healthCheckPath: /healthz
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      # Only questions marked "reviewed": true are served in production.
+      - key: REQUIRE_REVIEWED
+        value: "1"
+      # Render sits behind a proxy; trust X-Forwarded-For for rate limiting.
+      - key: TRUST_PROXY
+        value: "1"

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} | AZ-900 Academy{% endblock %}
+{% block content %}
+<p class="crumbs"><a href="{{ back }}">Back</a></p>
+<h1>{{ heading }}: results</h1>
+
+<section class="score" data-result data-kind="{{ kind }}" data-key="{{ key }}" data-percent="{{ graded.percent }}">
+  <p class="score-number">{{ graded.score }} / {{ graded.total }} correct ({{ graded.percent }}%)</p>
+  {% if pass_percent %}
+    {% if graded.percent >= pass_percent %}
+      <p class="verdict pass">Pass: you reached the {{ pass_percent }}% practice pass mark.</p>
+    {% else %}
+      <p class="verdict revisit">Not yet: the practice pass mark is {{ pass_percent }}%. Revisit the topics below and try again.</p>
+    {% endif %}
+  {% endif %}
+  <p><a class="button" href="{{ retry }}">Try again with a new order</a></p>
+</section>
+
+{% if graded.weak_modules and kind == 'exam' %}
+<section>
+  <h2>Revisit these modules</h2>
+  <ul>{% for mid in graded.weak_modules %}
+    <li><a href="{{ url_for('module_page', module_id=mid) }}">{{ store.module_title(mid) }}</a> ({{ graded.by_module[mid].percent }}%)</li>
+  {% endfor %}</ul>
+</section>
+{% endif %}
+
+<section>
+  <h2>Score by objective</h2>
+  <table class="breakdown">
+    <thead><tr><th scope="col">Objective</th><th scope="col">Correct</th><th scope="col">Result</th></tr></thead>
+    <tbody>
+    {% for oid, b in graded.by_objective.items() %}
+      <tr>
+        <td>{{ store.objective_title(oid) }}</td>
+        <td>{{ b.correct }} / {{ b.total }}</td>
+        <td>{% if b.percent >= 70 %}Strong ({{ b.percent }}%){% else %}Revisit ({{ b.percent }}%){% endif %}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Review your answers</h2>
+  {% for r in graded.results %}
+  <details class="review {{ 'ok' if r.correct else 'bad' }}" {% if not r.correct %}open{% endif %}>
+    <summary>
+      <span class="mark">{% if r.correct %}Correct{% elif r.answered %}Incorrect{% else %}Not answered{% endif %}:</span>
+      {{ r.prompt }}
+    </summary>
+    <ul class="rows">
+      {% for row in r.rows %}
+        {% if r.type == 'yesno' %}
+        <li>{{ row.text }}<br>
+          <span class="small">Correct answer: <strong>{{ row.expected }}</strong>. Your answer: {{ row.given or 'none' }}{% if row.ok %} (correct){% else %} (incorrect){% endif %}.{% if row.note %} {{ row.note }}{% endif %}</span></li>
+        {% else %}
+        <li>{{ row.text }}
+          {% if row.is_correct %}<strong>(correct answer)</strong>{% endif %}
+          {% if row.selected %}<em>(your choice)</em>{% endif %}
+          {% if row.note and not row.is_correct %}<br><span class="small">{{ row.note }}</span>{% endif %}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <p>{{ r.explanation }}</p>
+    {% if r.learn_more %}<p class="small"><a href="{{ r.learn_more }}" rel="noopener noreferrer">Read more on Microsoft Learn</a></p>{% endif %}
+  </details>
+  {% endfor %}
+</section>
+{% endblock %}

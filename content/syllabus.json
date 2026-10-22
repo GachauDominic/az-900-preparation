@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "exam": "AZ-900",
+    "title": "Microsoft Azure Fundamentals",
+    "outline_url": "https://learn.microsoft.com/credentials/certifications/resources/study-guides/az-900",
+    "outline_verified": false,
+    "note": "Module map follows the three AZ-900 skill areas but has NOT yet been reconciled line by line with the official outline (version effective 14 January 2026 or later). Check it, fix any differences here, then set outline_verified to true."
+  },
+  "exam_simulation": { "questions": 40, "minutes": 45, "pass_percent": 70 },
+  "domains": [
+    { "id": "D1", "title": "Cloud concepts", "weight": null },
+    { "id": "D2", "title": "Azure architecture and services", "weight": null },
+    { "id": "D3", "title": "Azure management and governance", "weight": null }
+  ],
+  "modules": [
+    { "id": "M01", "slug": "cloud-basics", "title": "Cloud computing basics", "domain": "D1", "status": "planned",
+      "topics": ["Shared responsibility", "Public, private and hybrid cloud", "Consumption-based model", "CapEx vs OpEx"], "objectives": [] },
+    { "id": "M02", "slug": "cloud-benefits", "title": "Benefits of cloud services", "domain": "D1", "status": "planned",
+      "topics": ["High availability", "Scalability and elasticity", "Reliability and predictability", "Security, governance and manageability"], "objectives": [] },
+    { "id": "M03", "slug": "service-types", "title": "Cloud service types", "domain": "D1", "status": "planned",
+      "topics": ["IaaS", "PaaS", "SaaS", "Serverless", "Matching services to scenarios"], "objectives": [] },
+
+    { "id": "M04", "slug": "core-architecture", "title": "Core architecture of Azure", "domain": "D2", "status": "ready",
+      "topics": ["Regions and region pairs", "Availability zones and datacenters", "Resources and resource groups", "Subscriptions and management groups", "Azure Resource Manager"],
+      "objectives": [
+        { "id": "M04-O1", "title": "Regions, region pairs and sovereign regions" },
+        { "id": "M04-O2", "title": "Availability zones and datacenters" },
+        { "id": "M04-O3", "title": "Resources and resource groups" },
+        { "id": "M04-O4", "title": "Subscriptions, management groups and the hierarchy" },
+        { "id": "M04-O5", "title": "Azure Resource Manager" }
+      ] },
+    { "id": "M05", "slug": "compute", "title": "Compute services", "domain": "D2", "status": "planned",
+      "topics": ["Virtual machines and scale sets", "Availability sets", "Azure Virtual Desktop", "Containers: ACI, AKS, Container Apps", "App Service", "Azure Functions"], "objectives": [] },
+    { "id": "M06", "slug": "networking", "title": "Networking services", "domain": "D2", "status": "planned",
+      "topics": ["Virtual networks and subnets", "Peering", "VPN Gateway and ExpressRoute", "DNS", "Public and private endpoints"], "objectives": [] },
+    { "id": "M07", "slug": "storage", "title": "Storage services", "domain": "D2", "status": "planned",
+      "topics": ["Storage accounts and redundancy", "Access tiers", "Blob, Files, Queue, Table, Disk", "AzCopy and Storage Explorer", "File Sync, Data Box, Azure Migrate"], "objectives": [] },
+    { "id": "M08", "slug": "identity-access", "title": "Identity and access", "domain": "D2", "status": "planned",
+      "topics": ["Microsoft Entra ID and Domain Services", "Authentication vs authorization", "SSO, MFA, passwordless", "External identities", "Conditional Access", "Azure RBAC"], "objectives": [] },
+    { "id": "M09", "slug": "security", "title": "Security in Azure", "domain": "D2", "status": "planned",
+      "topics": ["Zero Trust", "Defense in depth", "Microsoft Defender for Cloud"], "objectives": [] },
+
+    { "id": "M10", "slug": "cost-management", "title": "Cost management", "domain": "D3", "status": "planned",
+      "topics": ["Factors that affect cost", "Pricing Calculator and TCO Calculator", "Cost Management", "Tags"], "objectives": [] },
+    { "id": "M11", "slug": "governance-compliance", "title": "Governance and compliance", "domain": "D3", "status": "planned",
+      "topics": ["Microsoft Purview", "Azure Policy", "Resource locks", "Service Trust Portal"], "objectives": [] },
+    { "id": "M12", "slug": "management-tools", "title": "Management and deployment tools", "domain": "D3", "status": "planned",
+      "topics": ["Azure portal and Cloud Shell", "Azure CLI and PowerShell", "Azure Arc", "Infrastructure as code", "ARM templates and Bicep"], "objectives": [] },
+    { "id": "M13", "slug": "monitoring", "title": "Monitoring tools", "domain": "D3", "status": "planned",
+      "topics": ["Azure Advisor", "Service Health", "Azure Monitor", "Log Analytics", "Application Insights", "Alerts"], "objectives": [] }
+  ]
+}

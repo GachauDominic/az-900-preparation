@@ -1,0 +1,484 @@
+[
+  {
+    "id": "M04-Q01",
+    "module": "M04",
+    "objective_id": "M04-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is an Azure region?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A set of datacenters in one area, connected by a dedicated low-latency network"
+      },
+      {
+        "id": "b",
+        "text": "A single physical building that holds servers"
+      },
+      {
+        "id": "c",
+        "text": "A logical container that holds related resources"
+      },
+      {
+        "id": "d",
+        "text": "A boundary used to bill a team for its usage"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "A region groups nearby datacenters on a fast private network. You pick a region when you create most resources.",
+    "why_wrong": {
+      "b": "That describes a datacenter, which is one building inside a region.",
+      "c": "That describes a resource group.",
+      "d": "That describes a subscription."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/reliability/regions-paired",
+    "reviewed": false
+  },
+  {
+    "id": "M04-Q02",
+    "module": "M04",
+    "objective_id": "M04-O1",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A company must keep its workloads in an isolated Azure instance that meets strict government compliance rules and is separate from the public Azure cloud. What should it look at?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A sovereign region"
+      },
+      {
+        "id": "b",
+        "text": "A region pair"
+      },
+      {
+        "id": "c",
+        "text": "An availability zone"
+      },
+      {
+        "id": "d",
+        "text": "A management group"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Sovereign regions, such as Azure Government, are isolated instances built for legal and compliance needs.",
+    "why_wrong": {
+      "b": "Region pairs are about recovery across two regions in the same public cloud, not isolation.",
+      "c": "Availability zones protect against datacenter failures inside one region.",
+      "d": "Management groups organise subscriptions; they do not isolate the platform."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-government/documentation-government-welcome",
+    "reviewed": false
+  },
+  {
+    "id": "M04-Q03",
+    "module": "M04",
+    "objective_id": "M04-O1",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which statement describes a benefit of Azure region pairs?",
+    "options": [
+      {
+        "id": "a",
+        "text": "In a very large outage, Azure prioritises restoring one region in each pair"
+      },
+      {
+        "id": "b",
+        "text": "Every Azure service is guaranteed to be available in both regions of a pair"
+      },
+      {
+        "id": "c",
+        "text": "Two paired regions are billed as one region"
+      },
+      {
+        "id": "d",
+        "text": "Every resource is automatically copied to the paired region"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Pairing helps recovery: if a wide outage happens, one region from each pair is restored first.",
+    "why_wrong": {
+      "b": "Not every service is offered in every region, paired or not.",
+      "c": "Pairing has nothing to do with billing.",
+      "d": "Replication to the pair is a feature of individual services, such as geo-redundant storage; it is not automatic for everything."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/reliability/regions-paired",
+    "reviewed": false
+  },
+  {
+    "id": "M04-Q04",
+    "module": "M04",
+    "objective_id": "M04-O2",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is an availability zone?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A physically separate location inside a region, with its own power, cooling and networking"
+      },
+      {
+        "id": "b",
+        "text": "Two regions in the same geography that recover together"
+      },
+      {
+        "id": "c",
+        "text": "A group of subscriptions with shared policy"
+      },
+      {
+        "id": "d",
+        "text": "A segment of a virtual network"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Availability zones are separate locations within a region, each made of one or more datacenters with independent power, cooling and networking.",
+    "why_wrong": {
+      "b": "That describes a region pair.",
+      "c": "That describes a management group.",
+      "d": "That describes a subnet, which is a networking concept."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/reliability/availability-zones-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M04-Q05",
+    "module": "M04",
+    "objective_id": "M04-O2",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A company runs a web app on virtual machines in one region. It wants the app to keep running if a single datacenter loses power, without moving to another region. What should it do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Spread the virtual machines across availability zones in the region"
+      },
+      {
+        "id": "b",
+        "text": "Place all the virtual machines in one resource group"
+      },
+      {
+        "id": "c",
+        "text": "Move the workload to a sovereign region"
+      },
+      {
+        "id": "d",
+        "text": "Create a management group for the virtual machines"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Zones are physically separate, so a failure in one zone leaves the others running, and you stay in the same region.",
+    "why_wrong": {
+      "b": "A resource group is a logical container; it gives no protection from a power failure.",
+      "c": "Sovereign regions are for compliance isolation, not for datacenter-level resilience.",
+      "d": "Management groups hold subscriptions, not virtual machines."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/reliability/availability-zones-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M04-Q06",
+    "module": "M04",
+    "objective_id": "M04-O2",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO statements about availability zones are true? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Each zone has its own power, cooling and networking"
+      },
+      {
+        "id": "b",
+        "text": "Zones in a region are connected by a low-latency network"
+      },
+      {
+        "id": "c",
+        "text": "Every Azure region supports availability zones"
+      },
+      {
+        "id": "d",
+        "text": "The zones of a region are located in different geographies"
+      },
+      {
+        "id": "e",
+        "text": "Availability zones are the same thing as region pairs"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Zones are independent in power, cooling and networking, yet sit close enough to be joined by a fast network.",
+    "why_wrong": {
+      "c": "Not every region has availability zones.",
+      "d": "Zones are inside one region, so they share a geography.",
+      "e": "Region pairs link two regions; zones sit inside one region."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/reliability/availability-zones-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M04-Q07",
+    "module": "M04",
+    "objective_id": "M04-O3",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is a resource group?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A logical container that holds related Azure resources"
+      },
+      {
+        "id": "b",
+        "text": "A physical rack of servers in a datacenter"
+      },
+      {
+        "id": "c",
+        "text": "A copy of a resource stored in another region"
+      },
+      {
+        "id": "d",
+        "text": "A set of users who share the same role"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Resource groups organise resources that share a lifecycle, so you can deploy, manage and delete them together.",
+    "why_wrong": {
+      "b": "Racks are physical hardware inside datacenters.",
+      "c": "Copying a resource to another region is replication, not grouping.",
+      "d": "Groups of users are handled by identity and access features."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal",
+    "reviewed": false
+  },
+  {
+    "id": "M04-Q08",
+    "module": "M04",
+    "objective_id": "M04-O3",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement about resource groups is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "A resource can belong to more than one resource group at the same time."
+      },
+      {
+        "id": "s2",
+        "text": "Deleting a resource group deletes the resources inside it."
+      },
+      {
+        "id": "s3",
+        "text": "A resource group can contain resources that are in different regions."
+      }
+    ],
+    "correct": [
+      "s2",
+      "s3"
+    ],
+    "explanation": "Each resource lives in exactly one group, deleting a group removes its contents, and the group's location only stores metadata, so its resources can be in other regions.",
+    "why_wrong": {
+      "s1": "No. A resource belongs to exactly one resource group.",
+      "s2": "Yes. Deleting the group deletes everything in it, so be careful.",
+      "s3": "Yes. The group's location only says where its metadata is kept."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal",
+    "reviewed": false
+  },
+  {
+    "id": "M04-Q09",
+    "module": "M04",
+    "objective_id": "M04-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A large organisation has many subscriptions and wants to apply the same policy and access rules to all of them at once. What should it use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Management groups"
+      },
+      {
+        "id": "b",
+        "text": "Resource groups"
+      },
+      {
+        "id": "c",
+        "text": "Availability zones"
+      },
+      {
+        "id": "d",
+        "text": "Region pairs"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Management groups sit above subscriptions, and what you apply to them is inherited by every subscription beneath.",
+    "why_wrong": {
+      "b": "Resource groups sit below subscriptions and hold resources.",
+      "c": "Availability zones are about physical resilience, not governance.",
+      "d": "Region pairs are about recovery across regions."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/governance/management-groups/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M04-Q10",
+    "module": "M04",
+    "objective_id": "M04-O4",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement about the Azure hierarchy is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "A subscription can contain management groups."
+      },
+      {
+        "id": "s2",
+        "text": "Policy applied to a management group is inherited by the subscriptions beneath it."
+      },
+      {
+        "id": "s3",
+        "text": "A subscription is a boundary for both billing and access control."
+      }
+    ],
+    "correct": [
+      "s2",
+      "s3"
+    ],
+    "explanation": "Management groups contain subscriptions, not the reverse. Inheritance flows downward, and a subscription is both a billing and an access boundary.",
+    "why_wrong": {
+      "s1": "No. Management groups contain subscriptions; a subscription cannot contain a management group.",
+      "s2": "Yes. Settings applied at a management group flow down to its subscriptions.",
+      "s3": "Yes. Subscriptions are where usage is billed and where access is controlled."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/governance/management-groups/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M04-Q11",
+    "module": "M04",
+    "objective_id": "M04-O4",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO levels sit between a management group and an individual resource in the Azure hierarchy? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Subscription"
+      },
+      {
+        "id": "b",
+        "text": "Resource group"
+      },
+      {
+        "id": "c",
+        "text": "Region"
+      },
+      {
+        "id": "d",
+        "text": "Availability zone"
+      },
+      {
+        "id": "e",
+        "text": "Resource provider"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "The order is management group, then subscription, then resource group, then resource.",
+    "why_wrong": {
+      "c": "A region is a physical location, not a level of the management hierarchy.",
+      "d": "An availability zone is a physical location inside a region, not a hierarchy level.",
+      "e": "A resource provider supplies a type of resource; it is not a hierarchy level."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/governance/management-groups/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M04-Q12",
+    "module": "M04",
+    "objective_id": "M04-O5",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A team deploys the same environment from the Azure portal, from Azure CLI and from a script that calls the REST API, and gets consistent results every time. Which service receives and processes all of these requests?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure Resource Manager"
+      },
+      {
+        "id": "b",
+        "text": "Azure Monitor"
+      },
+      {
+        "id": "c",
+        "text": "Azure Advisor"
+      },
+      {
+        "id": "d",
+        "text": "Azure Policy"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Azure Resource Manager is the management layer: every tool talks to it, which is why results are consistent.",
+    "why_wrong": {
+      "b": "Azure Monitor collects and analyses telemetry; it does not process deployments.",
+      "c": "Azure Advisor gives recommendations about your existing resources.",
+      "d": "Azure Policy evaluates compliance rules; it is not the entry point for deployments."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-resource-manager/management/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M04-Q13",
+    "module": "M04",
+    "objective_id": "M04-O5",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement about Azure Resource Manager is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "Requests from the Azure portal, Azure CLI and Azure PowerShell are all processed by Azure Resource Manager."
+      },
+      {
+        "id": "s2",
+        "text": "Azure Resource Manager templates describe the end state you want, rather than the individual steps to reach it."
+      },
+      {
+        "id": "s3",
+        "text": "Azure Resource Manager is used only to deploy virtual machines."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s2"
+    ],
+    "explanation": "ARM handles management requests from every tool and for every resource type, and its templates are declarative.",
+    "why_wrong": {
+      "s1": "Yes. Every tool sends its requests to ARM.",
+      "s2": "Yes. Templates are declarative: you describe the result and ARM works out the steps.",
+      "s3": "No. ARM manages all kinds of Azure resources, not just virtual machines."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-resource-manager/management/overview",
+    "reviewed": false
+  }
+]

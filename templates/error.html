@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} | AZ-900 Academy{% endblock %}
+{% block content %}
+<article class="coming-soon">
+  <h1>{{ title }}</h1>
+  <p>{{ message }}</p>
+  <p><a class="button" href="{{ url_for('home') }}">Back to the course</a></p>
+</article>
+{% endblock %}

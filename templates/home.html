@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}AZ-900 Academy: learn Azure Fundamentals{% endblock %}
+{% block content %}
+<section class="intro">
+  <h1>Learn Azure Fundamentals, then test yourself</h1>
+  <p>Read the notes for each module, take its quiz, and finish with a timed exam simulation. Your progress stays in this browser.</p>
+  <p class="continue" data-continue hidden></p>
+</section>
+
+{% for d in domains %}
+<section class="domain" data-domain="{{ d.id }}" aria-labelledby="dom-{{ d.id }}">
+  <h2 id="dom-{{ d.id }}">{{ d.title }}</h2>
+  <ul class="modules">
+    {% for m in d.modules %}
+    <li class="module-row" data-module-card="{{ m.id }}" data-ready="{{ 'yes' if m.ready else 'no' }}">
+      <div class="row-main">
+        <h3><a href="{{ url_for('module_page', module_id=m.id) }}">{{ m.title }}</a></h3>
+        <p class="topics">{{ m.topics | join(', ') }}</p>
+      </div>
+      <div class="row-status">
+        {% if m.ready %}
+          <progress max="100" value="0" data-progress aria-label="Best quiz score for {{ m.title }}"></progress>
+          <span class="status-text" data-status>Not started</span>
+        {% else %}
+          <span class="status-text">Coming soon</span>
+        {% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}
+
+<section class="exam-cta">
+  <h2>Exam simulation</h2>
+  <p>Up to {{ exam_questions }} questions drawn from every module that has a quiz, with a {{ exam_minutes }}-minute timer. Answers are only shown at the end.</p>
+  <p><a class="button" href="{{ url_for('exam') }}">Start the exam simulation</a></p>
+</section>
+
+<p class="small"><button type="button" class="link-button" data-reset>Reset my progress</button></p>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ module.title }} | AZ-900 Academy{% endblock %}
+{% block content %}
+<p class="crumbs"><a href="{{ url_for('home') }}">Course</a> / {{ module.title }}</p>
+
+{% if module.ready %}
+<div class="module-layout">
+  <aside class="toc" aria-label="On this page">
+    <p class="toc-title">On this page</p>
+    <ol>
+      {% for t in module.toc %}<li><a href="#{{ t.id }}">{{ t.name }}</a></li>{% endfor %}
+    </ol>
+  </aside>
+  <article class="notes" data-module="{{ module.id }}">
+    {{ module.notes_html | safe }}
+    <div class="actions">
+      <button type="button" class="button secondary" data-mark-read="{{ module.id }}" aria-pressed="false">Mark notes as read</button>
+      {% if module.has_quiz %}
+        <a class="button" href="{{ url_for('module_quiz', module_id=module.id) }}">Practice quiz (instant feedback)</a>
+        <a class="button secondary" href="{{ url_for('module_quiz', module_id=module.id, mode='exam') }}">Exam-style quiz (feedback at the end)</a>
+      {% else %}
+        <p class="small">The quiz for this module is not available yet.</p>
+      {% endif %}
+    </div>
+  </article>
+</div>
+{% else %}
+<article class="coming-soon">
+  <h1>{{ module.title }}</h1>
+  <p>This module is coming soon. It will cover:</p>
+  <ul>{% for t in module.topics %}<li>{{ t }}</li>{% endfor %}</ul>
+  <p><a class="button" href="{{ url_for('home') }}">Back to the course</a></p>
+</article>
+{% endif %}
+{% endblock %}

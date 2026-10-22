@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>{% block title %}AZ-900 Academy{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="{{ url_for('home') }}">AZ-900 Academy</a>
+    <nav aria-label="Main">
+      <a href="{{ url_for('home') }}">Course</a>
+      <a href="{{ url_for('exam') }}">Exam simulation</a>
+    </nav>
+  </header>
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <p>Independent study resource. Not affiliated with or endorsed by Microsoft. Azure and Microsoft Entra are trademarks of Microsoft.</p>
+    <p>Quizzes and the exam simulation are for practice only; they are not an official Microsoft exam or practice assessment.</p>
+  </footer>
+</body>
+</html>

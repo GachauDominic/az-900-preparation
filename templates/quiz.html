@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} | AZ-900 Academy{% endblock %}
+{% block content %}
+<p class="crumbs"><a href="{{ back }}">Back</a></p>
+<h1>{{ heading }}</h1>
+<p class="small">{% if mode == 'practice' %}Practice mode: choose an answer, then press Check answer for instant feedback. You can still change your answer before finishing.{% else %}Exam style: you will see the answers and explanations after you finish.{% endif %}</p>
+
+{% if minutes %}
+<div class="timer" role="timer" aria-live="off" data-timer-minutes="{{ minutes }}">Time left: <span data-timer-display>{{ minutes }}:00</span></div>
+{% endif %}
+
+<form method="post" action="{{ action }}" class="quiz" data-mode="{{ mode }}" data-quiz-form>
+  <input type="hidden" name="seed" value="{{ seed }}">
+  <input type="hidden" name="qids" value="{{ qids }}">
+
+  {% for q in questions %}
+  <fieldset class="question" data-qid="{{ q.id }}" data-type="{{ q.type }}">
+    <legend><span class="qnum">Question {{ loop.index }} of {{ questions|length }}.</span> {{ q.prompt }}
+      {% if not q.reviewed %}<span class="badge" title="This question has not been reviewed yet">Unreviewed</span>{% endif %}
+    </legend>
+
+    {% if q.type == 'single' %}
+      {% for o in q.options %}
+      <label class="choice"><input type="radio" name="q_{{ q.id }}" value="{{ o.id }}"> <span>{{ o.text }}</span></label>
+      {% endfor %}
+    {% elif q.type == 'multi' %}
+      {% for o in q.options %}
+      <label class="choice"><input type="checkbox" name="q_{{ q.id }}" value="{{ o.id }}"> <span>{{ o.text }}</span></label>
+      {% endfor %}
+    {% else %}
+      {% for o in q.options %}
+      <div class="statement" role="group" aria-label="{{ o.text }}">
+        <p>{{ o.text }}</p>
+        <label class="choice inline"><input type="radio" name="q_{{ q.id }}.{{ o.id }}" value="yes"> <span>Yes</span></label>
+        <label class="choice inline"><input type="radio" name="q_{{ q.id }}.{{ o.id }}" value="no"> <span>No</span></label>
+      </div>
+      {% endfor %}
+    {% endif %}
+
+    {% if mode == 'practice' %}
+    <p class="check-row"><button type="button" class="button secondary" data-check hidden>Check answer</button></p>
+    <div class="feedback" data-feedback aria-live="polite"></div>
+    {% endif %}
+  </fieldset>
+  {% endfor %}
+
+  <p class="actions"><button type="submit" class="button">Finish and see results</button></p>
+</form>
+{% endblock %}
