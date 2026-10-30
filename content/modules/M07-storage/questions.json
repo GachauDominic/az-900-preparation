@@ -1,0 +1,450 @@
+[
+  {
+    "id": "M07-Q01",
+    "module": "M07",
+    "objective_id": "M07-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Which Azure Storage service is designed for unstructured data such as images, video and backups?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Blob storage"
+      },
+      {
+        "id": "b",
+        "text": "Azure Files"
+      },
+      {
+        "id": "c",
+        "text": "Table storage"
+      },
+      {
+        "id": "d",
+        "text": "Queue storage"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Blob storage holds unstructured objects.",
+    "why_wrong": {
+      "d": "Queue storage holds messages.",
+      "c": "Table storage holds NoSQL key-attribute data.",
+      "b": "Azure Files provides file shares."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/storage/common/storage-introduction",
+    "reviewed": false
+  },
+  {
+    "id": "M07-Q02",
+    "module": "M07",
+    "objective_id": "M07-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Which Azure Storage service provides managed file shares that can be accessed over SMB?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Queue storage"
+      },
+      {
+        "id": "b",
+        "text": "Table storage"
+      },
+      {
+        "id": "c",
+        "text": "Azure Files"
+      },
+      {
+        "id": "d",
+        "text": "Blob storage"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Azure Files offers managed file shares.",
+    "why_wrong": {
+      "d": "Blob storage stores objects, not shares.",
+      "a": "Queue storage holds messages.",
+      "b": "Table storage holds NoSQL data."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/storage/common/storage-introduction",
+    "reviewed": false
+  },
+  {
+    "id": "M07-Q03",
+    "module": "M07",
+    "objective_id": "M07-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Which Azure Storage service lets application components exchange messages?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure Files"
+      },
+      {
+        "id": "b",
+        "text": "Blob storage"
+      },
+      {
+        "id": "c",
+        "text": "Managed disks"
+      },
+      {
+        "id": "d",
+        "text": "Queue storage"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Queue storage is for messaging between components.",
+    "why_wrong": {
+      "b": "Blob storage holds objects.",
+      "a": "Azure Files provides file shares.",
+      "c": "Managed disks are storage for virtual machines."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/storage/common/storage-introduction",
+    "reviewed": false
+  },
+  {
+    "id": "M07-Q04",
+    "module": "M07",
+    "objective_id": "M07-O2",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which type of storage account uses solid-state storage to provide low latency and high performance?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Cool"
+      },
+      {
+        "id": "b",
+        "text": "Premium"
+      },
+      {
+        "id": "c",
+        "text": "Archive"
+      },
+      {
+        "id": "d",
+        "text": "Standard general-purpose v2"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Premium accounts are built on solid-state storage for low latency.",
+    "why_wrong": {
+      "d": "Standard accounts suit most general needs.",
+      "c": "Archive is an access tier, not an account type.",
+      "a": "Cool is an access tier, not an account type."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/storage/common/storage-account-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M07-Q05",
+    "module": "M07",
+    "objective_id": "M07-O3",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Data must be kept for years at the lowest storage cost, and waiting hours to read it is acceptable. Which tier fits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Premium"
+      },
+      {
+        "id": "b",
+        "text": "Hot"
+      },
+      {
+        "id": "c",
+        "text": "Archive"
+      },
+      {
+        "id": "d",
+        "text": "Cool"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Archive has the lowest storage cost but needs rehydration before reading.",
+    "why_wrong": {
+      "b": "Hot has the highest storage cost.",
+      "d": "Cool costs more to store than archive and suits infrequent access that still needs quick reads.",
+      "a": "Premium is a performance option, not a cold storage tier."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/storage/blobs/access-tiers-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M07-Q06",
+    "module": "M07",
+    "objective_id": "M07-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which redundancy option keeps copies across three availability zones in one region?",
+    "options": [
+      {
+        "id": "a",
+        "text": "GRS"
+      },
+      {
+        "id": "b",
+        "text": "LRS"
+      },
+      {
+        "id": "c",
+        "text": "GZRS"
+      },
+      {
+        "id": "d",
+        "text": "ZRS"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Zone-redundant storage spreads copies across zones in one region.",
+    "why_wrong": {
+      "b": "LRS keeps copies in one datacenter.",
+      "a": "GRS replicates to a second region.",
+      "c": "GZRS also replicates to a second region."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/storage/common/storage-redundancy",
+    "reviewed": false
+  },
+  {
+    "id": "M07-Q07",
+    "module": "M07",
+    "objective_id": "M07-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A company needs data to survive a zone failure in its primary region AND the loss of the whole region. Which option fits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "ZRS"
+      },
+      {
+        "id": "b",
+        "text": "LRS"
+      },
+      {
+        "id": "c",
+        "text": "GZRS"
+      },
+      {
+        "id": "d",
+        "text": "GRS"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "GZRS combines zone redundancy in the primary region with a copy in a secondary region.",
+    "why_wrong": {
+      "b": "LRS survives neither.",
+      "a": "ZRS survives a zone failure but not the loss of the region.",
+      "d": "GRS keeps three copies in one datacenter in the primary region, without zone redundancy."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/storage/common/storage-redundancy",
+    "reviewed": false
+  },
+  {
+    "id": "M07-Q08",
+    "module": "M07",
+    "objective_id": "M07-O6",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A company must move many terabytes into Azure but its internet connection is too slow. What should it use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "AzCopy"
+      },
+      {
+        "id": "b",
+        "text": "Azure Storage Explorer"
+      },
+      {
+        "id": "c",
+        "text": "Azure File Sync"
+      },
+      {
+        "id": "d",
+        "text": "Azure Data Box"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Data Box is a physical device shipped to you for large offline transfers.",
+    "why_wrong": {
+      "a": "AzCopy transfers over the network.",
+      "b": "Storage Explorer also uses the network.",
+      "c": "File Sync keeps on-premises servers in sync over the network."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/databox/data-box-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M07-Q09",
+    "module": "M07",
+    "objective_id": "M07-O5",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO are tools you can run on your own computer to transfer or manage data in a storage account? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure Advisor"
+      },
+      {
+        "id": "b",
+        "text": "Azure Policy"
+      },
+      {
+        "id": "c",
+        "text": "AzCopy"
+      },
+      {
+        "id": "d",
+        "text": "Azure Service Health"
+      },
+      {
+        "id": "e",
+        "text": "Azure Storage Explorer"
+      }
+    ],
+    "correct": [
+      "c",
+      "e"
+    ],
+    "explanation": "AzCopy is a command-line tool and Storage Explorer is a graphical app.",
+    "why_wrong": {
+      "a": "Advisor gives recommendations.",
+      "b": "Policy enforces rules.",
+      "d": "Service Health reports on Azure service issues."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/storage/common/storage-use-azcopy-v10",
+    "reviewed": false
+  },
+  {
+    "id": "M07-Q10",
+    "module": "M07",
+    "objective_id": "M07-O5",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO describe Azure File Sync? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "It is a command-line copy tool"
+      },
+      {
+        "id": "b",
+        "text": "It assesses servers for migration"
+      },
+      {
+        "id": "c",
+        "text": "It syncs on-premises Windows file servers with Azure Files"
+      },
+      {
+        "id": "d",
+        "text": "It is a physical device shipped to your site"
+      },
+      {
+        "id": "e",
+        "text": "It keeps frequently used files cached on the local server"
+      }
+    ],
+    "correct": [
+      "c",
+      "e"
+    ],
+    "explanation": "File Sync centralises files in Azure Files while caching what is used often locally.",
+    "why_wrong": {
+      "d": "That describes Azure Data Box.",
+      "a": "That describes AzCopy.",
+      "b": "That describes Azure Migrate."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/storage/file-sync/file-sync-introduction",
+    "reviewed": false
+  },
+  {
+    "id": "M07-Q11",
+    "module": "M07",
+    "objective_id": "M07-O4",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "LRS keeps copies within a single datacenter."
+      },
+      {
+        "id": "s2",
+        "text": "GRS replicates data to a secondary region."
+      },
+      {
+        "id": "s3",
+        "text": "ZRS protects against the loss of an entire region."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s2"
+    ],
+    "explanation": "LRS stays in one datacenter and GRS adds a second region, while ZRS stays in one region.",
+    "why_wrong": {
+      "s1": "Yes. That is why it is the lowest cost.",
+      "s2": "Yes. The copy is in a distant secondary region.",
+      "s3": "No. ZRS stays within one region."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/storage/common/storage-redundancy",
+    "reviewed": false
+  },
+  {
+    "id": "M07-Q12",
+    "module": "M07",
+    "objective_id": "M07-O6",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "Azure Migrate is a central hub for assessing and migrating on-premises servers and databases to Azure."
+      },
+      {
+        "id": "s2",
+        "text": "Data in the archive tier can be read immediately."
+      },
+      {
+        "id": "s3",
+        "text": "The hot tier is intended for frequently accessed data."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s3"
+    ],
+    "explanation": "Azure Migrate is the migration hub and hot suits frequent access, while archive data must be rehydrated first.",
+    "why_wrong": {
+      "s1": "Yes. It assesses and migrates workloads.",
+      "s2": "No. Archive data must be rehydrated, which takes hours.",
+      "s3": "Yes. Hot has the lowest access cost."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/migrate/migrate-services-overview",
+    "reviewed": false
+  }
+]

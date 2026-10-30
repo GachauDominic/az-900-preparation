@@ -1,0 +1,561 @@
+[
+  {
+    "id": "M11-Q01",
+    "module": "M11",
+    "objective_id": "M11-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is the purpose of Microsoft Purview?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Unified data governance and compliance across an organisation's data"
+      },
+      {
+        "id": "b",
+        "text": "Estimating the cost of Azure resources"
+      },
+      {
+        "id": "c",
+        "text": "Hosting virtual machines"
+      },
+      {
+        "id": "d",
+        "text": "Managing user sign-ins"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Purview helps discover, classify and govern data and manage compliance risk.",
+    "why_wrong": {
+      "c": "VM hosting is a compute service.",
+      "b": "Costs are estimated with the pricing calculator.",
+      "d": "Sign-ins are managed by Microsoft Entra ID."
+    },
+    "learn_more": "https://learn.microsoft.com/purview/purview",
+    "reviewed": false
+  },
+  {
+    "id": "M11-Q02",
+    "module": "M11",
+    "objective_id": "M11-O1",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "An organisation wants to discover and classify sensitive data across on-premises systems, multiple clouds and SaaS apps. Which service fits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure Policy"
+      },
+      {
+        "id": "b",
+        "text": "Microsoft Purview"
+      },
+      {
+        "id": "c",
+        "text": "Azure Monitor"
+      },
+      {
+        "id": "d",
+        "text": "Resource locks"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Purview maps and classifies data across the whole estate.",
+    "why_wrong": {
+      "a": "Azure Policy enforces rules on Azure resources.",
+      "d": "Locks protect resources from deletion or change.",
+      "c": "Azure Monitor collects telemetry."
+    },
+    "learn_more": "https://learn.microsoft.com/purview/purview",
+    "reviewed": false
+  },
+  {
+    "id": "M11-Q03",
+    "module": "M11",
+    "objective_id": "M11-O2",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is Azure Policy used for?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Estimating costs"
+      },
+      {
+        "id": "b",
+        "text": "Connecting networks"
+      },
+      {
+        "id": "c",
+        "text": "Creating and enforcing rules about the resources in your environment"
+      },
+      {
+        "id": "d",
+        "text": "Deciding which users can sign in"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Azure Policy checks resources against rules such as allowed regions or required tags.",
+    "why_wrong": {
+      "d": "Sign-ins are handled by Entra ID.",
+      "a": "Estimates come from the pricing calculator.",
+      "b": "Networks are connected with gateways and peering."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/governance/policy/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M11-Q04",
+    "module": "M11",
+    "objective_id": "M11-O2",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A company must ensure resources can only be created in approved regions. What should it use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A resource lock"
+      },
+      {
+        "id": "b",
+        "text": "A Cost Management budget"
+      },
+      {
+        "id": "c",
+        "text": "Azure Policy"
+      },
+      {
+        "id": "d",
+        "text": "Azure RBAC"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Policy can deny creation in regions that are not on the approved list.",
+    "why_wrong": {
+      "d": "RBAC controls who can act, not which regions are allowed.",
+      "a": "Locks prevent deletion or change of existing resources.",
+      "b": "Budgets alert on spending."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/governance/policy/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M11-Q05",
+    "module": "M11",
+    "objective_id": "M11-O2",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "What is a group of related policy definitions managed together called?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A tag"
+      },
+      {
+        "id": "b",
+        "text": "An initiative"
+      },
+      {
+        "id": "c",
+        "text": "A resource group"
+      },
+      {
+        "id": "d",
+        "text": "A lock"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "An initiative bundles policy definitions to achieve a larger goal.",
+    "why_wrong": {
+      "c": "A resource group contains resources.",
+      "a": "A tag is a name and value label.",
+      "d": "A lock prevents deletion or change."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/governance/policy/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M11-Q06",
+    "module": "M11",
+    "objective_id": "M11-O2",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "What happens to existing resources that break a newly assigned policy?",
+    "options": [
+      {
+        "id": "a",
+        "text": "They are deleted automatically"
+      },
+      {
+        "id": "b",
+        "text": "They are moved to another subscription"
+      },
+      {
+        "id": "c",
+        "text": "They are ignored forever"
+      },
+      {
+        "id": "d",
+        "text": "They are reported as non-compliant"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Existing resources are evaluated and shown as non-compliant; they are not removed automatically.",
+    "why_wrong": {
+      "a": "Policy does not delete resources automatically for existing non-compliance.",
+      "b": "Policy does not move resources.",
+      "c": "Compliance results are reported."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/governance/policy/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M11-Q07",
+    "module": "M11",
+    "objective_id": "M11-O3",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is the purpose of a resource lock?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To encrypt data"
+      },
+      {
+        "id": "b",
+        "text": "To estimate costs"
+      },
+      {
+        "id": "c",
+        "text": "To assign roles to users"
+      },
+      {
+        "id": "d",
+        "text": "To prevent accidental deletion or modification of resources"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Locks protect resources from accidental deletion or change.",
+    "why_wrong": {
+      "b": "Cost estimation uses the pricing calculator.",
+      "a": "Encryption is a separate feature.",
+      "c": "Roles are assigned with RBAC."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-resource-manager/management/lock-resources",
+    "reviewed": false
+  },
+  {
+    "id": "M11-Q08",
+    "module": "M11",
+    "objective_id": "M11-O3",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which lock lets authorised users read and modify a resource but not delete it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "CanNotDelete"
+      },
+      {
+        "id": "b",
+        "text": "ReadOnly"
+      },
+      {
+        "id": "c",
+        "text": "Owner"
+      },
+      {
+        "id": "d",
+        "text": "Contributor"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "A CanNotDelete lock blocks deletion only.",
+    "why_wrong": {
+      "b": "ReadOnly also blocks modification.",
+      "c": "Owner is a role, not a lock.",
+      "d": "Contributor is a role, not a lock."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-resource-manager/management/lock-resources",
+    "reviewed": false
+  },
+  {
+    "id": "M11-Q09",
+    "module": "M11",
+    "objective_id": "M11-O3",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A critical production database must not be deleted accidentally, even by an owner. What should be applied?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure Advisor"
+      },
+      {
+        "id": "b",
+        "text": "A resource lock"
+      },
+      {
+        "id": "c",
+        "text": "A tag"
+      },
+      {
+        "id": "d",
+        "text": "A budget"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Locks apply to everyone, regardless of role.",
+    "why_wrong": {
+      "c": "Tags only label resources.",
+      "d": "Budgets alert on spending.",
+      "a": "Advisor gives recommendations."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-resource-manager/management/lock-resources",
+    "reviewed": false
+  },
+  {
+    "id": "M11-Q10",
+    "module": "M11",
+    "objective_id": "M11-O3",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO statements about resource locks are true? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Locks replace the need for RBAC"
+      },
+      {
+        "id": "b",
+        "text": "Locks can only be applied to virtual machines"
+      },
+      {
+        "id": "c",
+        "text": "A ReadOnly lock allows changes to the resource"
+      },
+      {
+        "id": "d",
+        "text": "A lock applies regardless of the user's role"
+      },
+      {
+        "id": "e",
+        "text": "A lock on a resource group is inherited by the resources inside it"
+      }
+    ],
+    "correct": [
+      "d",
+      "e"
+    ],
+    "explanation": "Locks apply to all users and are inherited by child resources.",
+    "why_wrong": {
+      "b": "Locks can be applied to subscriptions, resource groups and resources.",
+      "c": "ReadOnly blocks changes.",
+      "a": "Locks and RBAC do different jobs."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-resource-manager/management/lock-resources",
+    "reviewed": false
+  },
+  {
+    "id": "M11-Q11",
+    "module": "M11",
+    "objective_id": "M11-O2",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO can Azure Policy enforce or audit? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only approved regions are used"
+      },
+      {
+        "id": "b",
+        "text": "Which users can sign in"
+      },
+      {
+        "id": "c",
+        "text": "A DNS service for domains"
+      },
+      {
+        "id": "d",
+        "text": "A forecast of next month's costs"
+      },
+      {
+        "id": "e",
+        "text": "A Department tag is required on resources"
+      }
+    ],
+    "correct": [
+      "a",
+      "e"
+    ],
+    "explanation": "Policy checks resource properties such as location and tags.",
+    "why_wrong": {
+      "b": "Sign-in is handled by Entra ID.",
+      "d": "Forecasts come from Cost Management.",
+      "c": "DNS is a separate service."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/governance/policy/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M11-Q12",
+    "module": "M11",
+    "objective_id": "M11-O2",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "Azure Policy can be assigned at management group, subscription or resource group scope."
+      },
+      {
+        "id": "s2",
+        "text": "Azure Policy and Azure RBAC do the same job."
+      },
+      {
+        "id": "s3",
+        "text": "Microsoft Purview helps govern data across on-premises, multicloud and SaaS sources."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s3"
+    ],
+    "explanation": "Policy can be assigned at several scopes and Purview spans many data sources; Policy and RBAC are different.",
+    "why_wrong": {
+      "s1": "Yes. Assignments are inherited downward.",
+      "s2": "No. Policy controls what is allowed; RBAC controls who can act.",
+      "s3": "Yes. That is Purview's purpose."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/governance/policy/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M11-Q13",
+    "module": "M11",
+    "objective_id": "M11-O4",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is the Service Trust Portal used for?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Creating virtual machines"
+      },
+      {
+        "id": "b",
+        "text": "Monitoring application performance"
+      },
+      {
+        "id": "c",
+        "text": "Managing Azure costs"
+      },
+      {
+        "id": "d",
+        "text": "Accessing content, tools and reports about Microsoft's security, privacy and compliance practices"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "The portal publishes Microsoft's compliance and trust documentation.",
+    "why_wrong": {
+      "c": "Costs are managed in Cost Management.",
+      "a": "VMs are created in the portal or with tools such as the CLI.",
+      "b": "Application performance is monitored with Application Insights."
+    },
+    "learn_more": "https://learn.microsoft.com/purview/get-started-with-service-trust-portal",
+    "reviewed": false
+  },
+  {
+    "id": "M11-Q14",
+    "module": "M11",
+    "objective_id": "M11-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "An auditor wants Microsoft's compliance reports and documents about how it protects customer data. Where should they look?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure Monitor"
+      },
+      {
+        "id": "b",
+        "text": "The Service Trust Portal"
+      },
+      {
+        "id": "c",
+        "text": "Azure Policy"
+      },
+      {
+        "id": "d",
+        "text": "A resource lock"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "The Service Trust Portal is the source for Microsoft's compliance documentation.",
+    "why_wrong": {
+      "c": "Azure Policy enforces rules on your own resources.",
+      "a": "Azure Monitor collects telemetry.",
+      "d": "Locks protect resources from deletion or change."
+    },
+    "learn_more": "https://learn.microsoft.com/purview/get-started-with-service-trust-portal",
+    "reviewed": false
+  },
+  {
+    "id": "M11-Q15",
+    "module": "M11",
+    "objective_id": "M11-O4",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "My Library lets you pin documents for quick access."
+      },
+      {
+        "id": "s2",
+        "text": "Some Service Trust Portal resources require signing in with a Microsoft Entra work or school account."
+      },
+      {
+        "id": "s3",
+        "text": "The Service Trust Portal enforces rules on your Azure resources."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s2"
+    ],
+    "explanation": "My Library pins documents and some content needs sign-in; the portal publishes information and does not enforce rules.",
+    "why_wrong": {
+      "s1": "Yes. You can pin documents and get update notifications.",
+      "s2": "Yes. Some resources require authentication.",
+      "s3": "No. Azure Policy enforces rules; the portal provides documents."
+    },
+    "learn_more": "https://learn.microsoft.com/purview/get-started-with-service-trust-portal",
+    "reviewed": false
+  }
+]

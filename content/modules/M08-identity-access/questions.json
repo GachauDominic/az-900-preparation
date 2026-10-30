@@ -1,0 +1,453 @@
+[
+  {
+    "id": "M08-Q01",
+    "module": "M08",
+    "objective_id": "M08-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is Microsoft Entra ID?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A relational database service"
+      },
+      {
+        "id": "b",
+        "text": "A tool for tracking costs"
+      },
+      {
+        "id": "c",
+        "text": "A cloud-based identity and access management service"
+      },
+      {
+        "id": "d",
+        "text": "A virtual network type"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Entra ID stores identities and signs people in to Azure, Microsoft 365 and other apps.",
+    "why_wrong": {
+      "d": "Virtual networks are a networking feature.",
+      "a": "Databases are separate services.",
+      "b": "Cost tracking is done in Cost Management."
+    },
+    "learn_more": "https://learn.microsoft.com/entra/fundamentals/whatis",
+    "reviewed": false
+  },
+  {
+    "id": "M08-Q02",
+    "module": "M08",
+    "objective_id": "M08-O1",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which service provides managed domain features such as domain join, group policy and LDAP without you managing domain controllers?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Conditional Access"
+      },
+      {
+        "id": "b",
+        "text": "Azure Policy"
+      },
+      {
+        "id": "c",
+        "text": "Microsoft Entra Domain Services"
+      },
+      {
+        "id": "d",
+        "text": "Azure RBAC"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Entra Domain Services offers managed domain services for apps that expect a traditional domain.",
+    "why_wrong": {
+      "d": "RBAC manages permissions on Azure resources.",
+      "a": "Conditional Access applies sign-in policies.",
+      "b": "Azure Policy enforces rules on resources."
+    },
+    "learn_more": "https://learn.microsoft.com/entra/identity/domain-services/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M08-Q03",
+    "module": "M08",
+    "objective_id": "M08-O2",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is single sign-on (SSO)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sharing one account among a whole team"
+      },
+      {
+        "id": "b",
+        "text": "Using two kinds of proof to sign in"
+      },
+      {
+        "id": "c",
+        "text": "Signing in once with one set of credentials to access multiple applications"
+      },
+      {
+        "id": "d",
+        "text": "Signing in without any identity check"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "SSO lets users authenticate once and reach many apps.",
+    "why_wrong": {
+      "b": "That describes multifactor authentication.",
+      "d": "SSO still verifies identity.",
+      "a": "SSO is about one identity for many apps, not shared accounts."
+    },
+    "learn_more": "https://learn.microsoft.com/entra/identity/enterprise-apps/what-is-single-sign-on",
+    "reviewed": false
+  },
+  {
+    "id": "M08-Q04",
+    "module": "M08",
+    "objective_id": "M08-O2",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which is an example of multifactor authentication?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Two different passwords"
+      },
+      {
+        "id": "b",
+        "text": "A password plus a security question"
+      },
+      {
+        "id": "c",
+        "text": "A password plus a code from an authenticator app"
+      },
+      {
+        "id": "d",
+        "text": "A very long password"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "MFA needs proof from different categories: something you know plus something you have.",
+    "why_wrong": {
+      "a": "Two passwords are both things you know.",
+      "b": "A password and a security question are both things you know.",
+      "d": "One long password is still a single factor."
+    },
+    "learn_more": "https://learn.microsoft.com/entra/identity/authentication/concept-mfa-howitworks",
+    "reviewed": false
+  },
+  {
+    "id": "M08-Q05",
+    "module": "M08",
+    "objective_id": "M08-O2",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Which is a passwordless sign-in method?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A password reset email"
+      },
+      {
+        "id": "b",
+        "text": "A FIDO2 security key"
+      },
+      {
+        "id": "c",
+        "text": "A shared team password"
+      },
+      {
+        "id": "d",
+        "text": "A security question"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "FIDO2 keys replace the password with something you have.",
+    "why_wrong": {
+      "d": "A security question is a form of knowledge-based proof, not passwordless sign-in.",
+      "a": "A reset email still relates to a password.",
+      "c": "A shared password is still a password."
+    },
+    "learn_more": "https://learn.microsoft.com/entra/identity/authentication/concept-authentication-passwordless",
+    "reviewed": false
+  },
+  {
+    "id": "M08-Q06",
+    "module": "M08",
+    "objective_id": "M08-O3",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A company wants employees of a partner organisation to use an app with their own organisation's accounts. What should it use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Resource locks"
+      },
+      {
+        "id": "b",
+        "text": "External identities (business-to-business collaboration)"
+      },
+      {
+        "id": "c",
+        "text": "Microsoft Entra Domain Services"
+      },
+      {
+        "id": "d",
+        "text": "VPN Gateway"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "External identities let guests sign in with their own accounts under your control.",
+    "why_wrong": {
+      "c": "Domain Services provides managed domain features.",
+      "a": "Locks prevent accidental deletion or change.",
+      "d": "VPN Gateway connects networks."
+    },
+    "learn_more": "https://learn.microsoft.com/entra/external-id/what-is-b2b",
+    "reviewed": false
+  },
+  {
+    "id": "M08-Q07",
+    "module": "M08",
+    "objective_id": "M08-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which feature can require MFA only when a user signs in from an unfamiliar location?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure Policy"
+      },
+      {
+        "id": "b",
+        "text": "Conditional Access"
+      },
+      {
+        "id": "c",
+        "text": "Azure RBAC"
+      },
+      {
+        "id": "d",
+        "text": "Resource locks"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Conditional Access evaluates signals such as location and then applies controls.",
+    "why_wrong": {
+      "c": "RBAC controls permissions on Azure resources.",
+      "d": "Locks protect resources from changes.",
+      "a": "Azure Policy evaluates resource configuration."
+    },
+    "learn_more": "https://learn.microsoft.com/entra/identity/conditional-access/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M08-Q08",
+    "module": "M08",
+    "objective_id": "M08-O5",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is Azure role-based access control (RBAC) used for?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Managing who has access to Azure resources and what they can do with them"
+      },
+      {
+        "id": "b",
+        "text": "Connecting on-premises networks to Azure"
+      },
+      {
+        "id": "c",
+        "text": "Estimating the cost of resources"
+      },
+      {
+        "id": "d",
+        "text": "Encrypting data at rest"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "RBAC assigns roles at a scope to control access to Azure resources.",
+    "why_wrong": {
+      "d": "Encryption is a separate feature.",
+      "c": "Costs are estimated with the pricing calculator.",
+      "b": "Networks are connected with VPN Gateway or ExpressRoute."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/role-based-access-control/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M08-Q09",
+    "module": "M08",
+    "objective_id": "M08-O5",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A user must manage virtual machines in a resource group but must NOT be able to give access to others. Which role fits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "User Access Administrator"
+      },
+      {
+        "id": "b",
+        "text": "Contributor"
+      },
+      {
+        "id": "c",
+        "text": "Owner"
+      },
+      {
+        "id": "d",
+        "text": "Reader"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Contributor can create and manage resources but cannot grant access.",
+    "why_wrong": {
+      "c": "Owner can also assign roles.",
+      "d": "Reader can only view resources.",
+      "a": "User Access Administrator manages access, not resources."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/role-based-access-control/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M08-Q10",
+    "module": "M08",
+    "objective_id": "M08-O2",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO are NOT 'something you know' factors? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "A fingerprint"
+      },
+      {
+        "id": "b",
+        "text": "A hardware security key"
+      },
+      {
+        "id": "c",
+        "text": "A password"
+      },
+      {
+        "id": "d",
+        "text": "A security question answer"
+      },
+      {
+        "id": "e",
+        "text": "A PIN"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "A fingerprint is something you are and a hardware key is something you have.",
+    "why_wrong": {
+      "c": "A password is something you know.",
+      "e": "A PIN is something you know.",
+      "d": "A security answer is something you know."
+    },
+    "learn_more": "https://learn.microsoft.com/entra/identity/authentication/concept-mfa-howitworks",
+    "reviewed": false
+  },
+  {
+    "id": "M08-Q11",
+    "module": "M08",
+    "objective_id": "M08-O5",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO statements about Azure RBAC scope are true? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Roles can be assigned at management group, subscription, resource group or resource scope"
+      },
+      {
+        "id": "b",
+        "text": "Role assignments are never inherited"
+      },
+      {
+        "id": "c",
+        "text": "Permissions are inherited by child scopes"
+      },
+      {
+        "id": "d",
+        "text": "Roles can only be assigned at subscription scope"
+      },
+      {
+        "id": "e",
+        "text": "Roles can only be assigned to groups, never to users"
+      }
+    ],
+    "correct": [
+      "a",
+      "c"
+    ],
+    "explanation": "Assignments can be made at several scopes and flow down to the scopes beneath.",
+    "why_wrong": {
+      "b": "Assignments are inherited by lower scopes.",
+      "d": "Several scopes are available.",
+      "e": "Roles can be assigned to users, groups and other principals."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/role-based-access-control/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M08-Q12",
+    "module": "M08",
+    "objective_id": "M08-O1",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "Microsoft Entra ID was formerly known as Azure Active Directory."
+      },
+      {
+        "id": "s2",
+        "text": "Authentication determines what a user is allowed to do."
+      },
+      {
+        "id": "s3",
+        "text": "Conditional Access can allow or block sign-ins based on signals such as location and device."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s3"
+    ],
+    "explanation": "Entra ID is the renamed Azure Active Directory and Conditional Access uses signals; authorization, not authentication, decides permissions.",
+    "why_wrong": {
+      "s1": "Yes. It was renamed.",
+      "s2": "No. That is authorization; authentication proves identity.",
+      "s3": "Yes. That is what the policies do."
+    },
+    "learn_more": "https://learn.microsoft.com/entra/fundamentals/whatis",
+    "reviewed": false
+  }
+]

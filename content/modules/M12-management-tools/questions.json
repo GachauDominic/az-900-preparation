@@ -1,0 +1,453 @@
+[
+  {
+    "id": "M12-Q01",
+    "module": "M12",
+    "objective_id": "M12-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is the Azure portal?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A command-line tool"
+      },
+      {
+        "id": "b",
+        "text": "A web-based graphical interface for managing Azure resources"
+      },
+      {
+        "id": "c",
+        "text": "A billing system"
+      },
+      {
+        "id": "d",
+        "text": "A template language for deployments"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "The portal is the browser-based GUI for Azure.",
+    "why_wrong": {
+      "a": "Command-line tools include Azure CLI and Azure PowerShell.",
+      "d": "Templates are ARM templates and Bicep files.",
+      "c": "Billing is handled by Cost Management and Billing."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-portal/azure-portal-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M12-Q02",
+    "module": "M12",
+    "objective_id": "M12-O2",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is Azure Cloud Shell?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A browser-based shell with Azure CLI and Azure PowerShell already installed and signed in"
+      },
+      {
+        "id": "b",
+        "text": "A physical device shipped to your office"
+      },
+      {
+        "id": "c",
+        "text": "A virtual machine you must build yourself"
+      },
+      {
+        "id": "d",
+        "text": "A type of policy"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Cloud Shell gives you a ready-to-use command line in the browser.",
+    "why_wrong": {
+      "b": "Cloud Shell is a service, not hardware.",
+      "c": "You do not build anything to use it.",
+      "d": "Policies are a governance feature."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cloud-shell/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M12-Q03",
+    "module": "M12",
+    "objective_id": "M12-O2",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which statement about Azure CLI is true?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It runs only inside the Azure portal"
+      },
+      {
+        "id": "b",
+        "text": "It is cross-platform and runs on Windows, macOS and Linux"
+      },
+      {
+        "id": "c",
+        "text": "It is only a graphical tool"
+      },
+      {
+        "id": "d",
+        "text": "It runs only on Windows"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Azure CLI is a cross-platform command-line tool.",
+    "why_wrong": {
+      "a": "It also runs on your own computer and in Cloud Shell.",
+      "d": "It runs on several operating systems.",
+      "c": "It is command-line based."
+    },
+    "learn_more": "https://learn.microsoft.com/cli/azure/what-is-azure-cli",
+    "reviewed": false
+  },
+  {
+    "id": "M12-Q04",
+    "module": "M12",
+    "objective_id": "M12-O2",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which command creates a resource group using Azure CLI?",
+    "options": [
+      {
+        "id": "a",
+        "text": "docker run"
+      },
+      {
+        "id": "b",
+        "text": "New-AzResourceGroup"
+      },
+      {
+        "id": "c",
+        "text": "az group create"
+      },
+      {
+        "id": "d",
+        "text": "kubectl create"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Azure CLI commands start with az.",
+    "why_wrong": {
+      "b": "That is the Azure PowerShell cmdlet.",
+      "d": "kubectl manages Kubernetes.",
+      "a": "docker run starts containers."
+    },
+    "learn_more": "https://learn.microsoft.com/cli/azure/what-is-azure-cli",
+    "reviewed": false
+  },
+  {
+    "id": "M12-Q05",
+    "module": "M12",
+    "objective_id": "M12-O3",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is the purpose of Azure Arc?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To extend Azure management to resources outside Azure, such as on-premises servers and other clouds"
+      },
+      {
+        "id": "b",
+        "text": "To estimate costs"
+      },
+      {
+        "id": "c",
+        "text": "To encrypt data in transit"
+      },
+      {
+        "id": "d",
+        "text": "To host DNS zones"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Arc projects outside resources into Azure so they can be managed with Azure tools.",
+    "why_wrong": {
+      "c": "Encryption is a separate feature.",
+      "b": "Costs are estimated with the pricing calculator.",
+      "d": "DNS hosting is Azure DNS."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-arc/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M12-Q06",
+    "module": "M12",
+    "objective_id": "M12-O3",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A company has servers on-premises and in another cloud and wants to apply Azure Policy and tags to them. What should it use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure DNS"
+      },
+      {
+        "id": "b",
+        "text": "Virtual network peering"
+      },
+      {
+        "id": "c",
+        "text": "Azure Arc"
+      },
+      {
+        "id": "d",
+        "text": "Availability sets"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Arc brings those servers under Azure management.",
+    "why_wrong": {
+      "b": "Peering connects virtual networks.",
+      "d": "Availability sets group Azure VMs.",
+      "a": "DNS resolves names."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-arc/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M12-Q07",
+    "module": "M12",
+    "objective_id": "M12-O4",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is infrastructure as code (IaC)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Buying hardware in bulk"
+      },
+      {
+        "id": "b",
+        "text": "Managing and provisioning infrastructure with definition files instead of manual steps"
+      },
+      {
+        "id": "c",
+        "text": "Clicking through the portal for each deployment"
+      },
+      {
+        "id": "d",
+        "text": "Writing documentation about servers"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "IaC defines infrastructure in files that can be versioned and reused.",
+    "why_wrong": {
+      "a": "Hardware purchasing is not IaC.",
+      "d": "Documentation does not provision anything.",
+      "c": "Manual clicking is what IaC replaces."
+    },
+    "learn_more": "https://learn.microsoft.com/devops/deliver/what-is-infrastructure-as-code",
+    "reviewed": false
+  },
+  {
+    "id": "M12-Q08",
+    "module": "M12",
+    "objective_id": "M12-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which is a benefit of infrastructure as code?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It removes the need for Azure"
+      },
+      {
+        "id": "b",
+        "text": "It requires manual steps for every deployment"
+      },
+      {
+        "id": "c",
+        "text": "Environments can be repeated consistently"
+      },
+      {
+        "id": "d",
+        "text": "It guarantees the lowest price"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Definition files make deployments repeatable and consistent.",
+    "why_wrong": {
+      "d": "IaC does not guarantee a price.",
+      "a": "IaC is used to deploy to Azure.",
+      "b": "IaC reduces manual steps."
+    },
+    "learn_more": "https://learn.microsoft.com/devops/deliver/what-is-infrastructure-as-code",
+    "reviewed": false
+  },
+  {
+    "id": "M12-Q09",
+    "module": "M12",
+    "objective_id": "M12-O5",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Requests from the Azure portal, Azure CLI, Azure PowerShell and REST APIs are all processed by which service?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure Monitor"
+      },
+      {
+        "id": "b",
+        "text": "Azure Policy"
+      },
+      {
+        "id": "c",
+        "text": "Azure Advisor"
+      },
+      {
+        "id": "d",
+        "text": "Azure Resource Manager"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "ARM is the management layer that every tool talks to.",
+    "why_wrong": {
+      "a": "Azure Monitor collects telemetry.",
+      "c": "Azure Advisor gives recommendations.",
+      "b": "Azure Policy evaluates compliance rules."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-resource-manager/management/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M12-Q10",
+    "module": "M12",
+    "objective_id": "M12-O5",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO statements about ARM templates are true? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "They can be reused to deploy the same environment repeatedly"
+      },
+      {
+        "id": "b",
+        "text": "They can only deploy virtual machines"
+      },
+      {
+        "id": "c",
+        "text": "They must be created by clicking in the portal each time"
+      },
+      {
+        "id": "d",
+        "text": "They replace Azure Resource Manager"
+      },
+      {
+        "id": "e",
+        "text": "They describe the desired end state (declarative)"
+      }
+    ],
+    "correct": [
+      "a",
+      "e"
+    ],
+    "explanation": "ARM templates are declarative and reusable.",
+    "why_wrong": {
+      "b": "They can deploy many resource types.",
+      "c": "They are files you can write and reuse.",
+      "d": "ARM deploys the templates; they do not replace it."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-resource-manager/templates/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M12-Q11",
+    "module": "M12",
+    "objective_id": "M12-O2",
+    "type": "multi",
+    "difficulty": "easy",
+    "prompt": "Which TWO are command-line tools for managing Azure? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure PowerShell"
+      },
+      {
+        "id": "b",
+        "text": "Azure CLI"
+      },
+      {
+        "id": "c",
+        "text": "Azure portal"
+      },
+      {
+        "id": "d",
+        "text": "Azure Service Health"
+      },
+      {
+        "id": "e",
+        "text": "Azure pricing calculator"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Azure CLI and Azure PowerShell are command-line tools.",
+    "why_wrong": {
+      "c": "The portal is graphical.",
+      "e": "The pricing calculator estimates costs.",
+      "d": "Service Health reports on service issues."
+    },
+    "learn_more": "https://learn.microsoft.com/cli/azure/what-is-azure-cli",
+    "reviewed": false
+  },
+  {
+    "id": "M12-Q12",
+    "module": "M12",
+    "objective_id": "M12-O5",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "Azure Cloud Shell can run Azure CLI or Azure PowerShell in a browser."
+      },
+      {
+        "id": "s2",
+        "text": "Bicep files compile to ARM templates."
+      },
+      {
+        "id": "s3",
+        "text": "Azure Arc can only manage resources inside Azure."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s2"
+    ],
+    "explanation": "Cloud Shell runs both tools and Bicep compiles to ARM; Arc exists to manage resources outside Azure.",
+    "why_wrong": {
+      "s1": "Yes. Both are preinstalled.",
+      "s2": "Yes. Bicep is a shorter language that compiles to ARM templates.",
+      "s3": "No. Arc extends management to resources outside Azure."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-resource-manager/bicep/overview",
+    "reviewed": false
+  }
+]

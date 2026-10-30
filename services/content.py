@@ -49,6 +49,18 @@ class ContentStore:
         return [{**d, "modules": [m for m in self.modules if m["domain"] == d["id"]]}
                 for d in self.syllabus["domains"]]
 
+    def neighbor(self, module_id: str, step: int):
+        """Next (step=1) or previous (step=-1) ready module in syllabus order, or None."""
+        ids = [m["id"] for m in self.modules]
+        if module_id not in ids:
+            return None
+        i = ids.index(module_id) + step
+        while 0 <= i < len(ids):
+            if self._modules[ids[i]]["ready"]:
+                return self._modules[ids[i]]
+            i += step
+        return None
+
     def quiz_modules(self) -> list[dict]:
         return [m for m in self.modules if m["has_quiz"]]
 

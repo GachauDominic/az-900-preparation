@@ -1,0 +1,605 @@
+[
+  {
+    "id": "M09-Q01",
+    "module": "M09",
+    "objective_id": "M09-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Which statement best describes Zero Trust?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Never trust, always verify every request"
+      },
+      {
+        "id": "b",
+        "text": "Trust any user who connects through a VPN"
+      },
+      {
+        "id": "c",
+        "text": "Trust devices that have the latest operating system"
+      },
+      {
+        "id": "d",
+        "text": "Trust everything inside the corporate network"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Zero Trust verifies each request explicitly instead of trusting by network location.",
+    "why_wrong": {
+      "d": "Zero Trust rejects trust based on network location.",
+      "b": "A VPN connection alone is not enough to be trusted.",
+      "c": "Device health is one signal, not a reason to trust automatically."
+    },
+    "learn_more": "https://learn.microsoft.com/security/zero-trust/zero-trust-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M09-Q02",
+    "module": "M09",
+    "objective_id": "M09-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Which is a principle of Zero Trust?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Give administrator rights to everyone for convenience"
+      },
+      {
+        "id": "b",
+        "text": "Reuse one password across systems"
+      },
+      {
+        "id": "c",
+        "text": "Assume the network perimeter is enough protection"
+      },
+      {
+        "id": "d",
+        "text": "Use least-privilege access"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Least privilege means giving only the access that is needed.",
+    "why_wrong": {
+      "a": "That breaks least privilege.",
+      "c": "Zero Trust does not rely on the perimeter alone.",
+      "b": "Password reuse weakens security."
+    },
+    "learn_more": "https://learn.microsoft.com/security/zero-trust/zero-trust-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M09-Q03",
+    "module": "M09",
+    "objective_id": "M09-O1",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "What does the Zero Trust principle 'assume breach' mean?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Design as if an attacker may already be inside, and limit the damage"
+      },
+      {
+        "id": "b",
+        "text": "Assume nobody will ever attack"
+      },
+      {
+        "id": "c",
+        "text": "Assume users never make mistakes"
+      },
+      {
+        "id": "d",
+        "text": "Assume the cloud provider handles every threat"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Assume breach leads to segmentation, encryption and monitoring that limit the blast radius.",
+    "why_wrong": {
+      "b": "That is the opposite of the principle.",
+      "c": "Mistakes are expected, which is why controls are layered.",
+      "d": "Security responsibility is shared with the customer."
+    },
+    "learn_more": "https://learn.microsoft.com/security/zero-trust/zero-trust-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M09-Q04",
+    "module": "M09",
+    "objective_id": "M09-O2",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is defense in depth?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A layered approach so that the failure of one layer does not expose everything"
+      },
+      {
+        "id": "b",
+        "text": "Relying on a single, very strong firewall"
+      },
+      {
+        "id": "c",
+        "text": "Trusting the network perimeter"
+      },
+      {
+        "id": "d",
+        "text": "Using encryption only"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Defense in depth puts multiple protective layers between an attacker and your data.",
+    "why_wrong": {
+      "b": "One layer is a single point of failure.",
+      "d": "Encryption is only one layer.",
+      "c": "The perimeter is only one layer."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/security/fundamentals/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M09-Q05",
+    "module": "M09",
+    "objective_id": "M09-O2",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which layer of defense in depth includes encrypting stored information?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Perimeter"
+      },
+      {
+        "id": "b",
+        "text": "Identity and access"
+      },
+      {
+        "id": "c",
+        "text": "Physical security"
+      },
+      {
+        "id": "d",
+        "text": "Data"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Protecting stored and transmitted information, such as with encryption, is the data layer.",
+    "why_wrong": {
+      "c": "Physical security covers controlled access to buildings.",
+      "a": "The perimeter covers protection like DDoS defence and firewalls.",
+      "b": "Identity and access covers sign-in checks and permissions."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/security/fundamentals/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M09-Q06",
+    "module": "M09",
+    "objective_id": "M09-O2",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which layer of defense in depth includes DDoS protection and firewalls at the network edge?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Application"
+      },
+      {
+        "id": "b",
+        "text": "Data"
+      },
+      {
+        "id": "c",
+        "text": "Perimeter"
+      },
+      {
+        "id": "d",
+        "text": "Physical security"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "The perimeter layer protects the edge of the network.",
+    "why_wrong": {
+      "b": "The data layer covers protecting information itself.",
+      "a": "The application layer covers secure code and configuration.",
+      "d": "Physical security covers buildings and hardware."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/security/fundamentals/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M09-Q07",
+    "module": "M09",
+    "objective_id": "M09-O3",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What does Microsoft Defender for Cloud provide?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Domain name hosting"
+      },
+      {
+        "id": "b",
+        "text": "Virtual machine hosting"
+      },
+      {
+        "id": "c",
+        "text": "Billing and invoice management"
+      },
+      {
+        "id": "d",
+        "text": "Security posture assessment, recommendations and threat detection"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Defender for Cloud assesses and improves security posture and detects threats.",
+    "why_wrong": {
+      "c": "Billing is handled in Cost Management and Billing.",
+      "b": "VM hosting is a compute service.",
+      "a": "Domain hosting is Azure DNS."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/defender-for-cloud/defender-for-cloud-introduction",
+    "reviewed": false
+  },
+  {
+    "id": "M09-Q08",
+    "module": "M09",
+    "objective_id": "M09-O3",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A team wants a score showing how well its resources follow security best practices, plus a list of recommended fixes. Which service provides this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure Service Health"
+      },
+      {
+        "id": "b",
+        "text": "Microsoft Cost Management"
+      },
+      {
+        "id": "c",
+        "text": "Microsoft Defender for Cloud"
+      },
+      {
+        "id": "d",
+        "text": "Azure DNS"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "The secure score and recommendations come from Defender for Cloud.",
+    "why_wrong": {
+      "a": "Service Health reports on Azure service issues.",
+      "b": "Cost Management analyses spending.",
+      "d": "Azure DNS hosts domains."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/defender-for-cloud/defender-for-cloud-introduction",
+    "reviewed": false
+  },
+  {
+    "id": "M09-Q09",
+    "module": "M09",
+    "objective_id": "M09-O3",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which environments can Microsoft Defender for Cloud help protect?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only on-premises servers"
+      },
+      {
+        "id": "b",
+        "text": "Azure resources, on-premises servers and other clouds"
+      },
+      {
+        "id": "c",
+        "text": "Only software-as-a-service apps"
+      },
+      {
+        "id": "d",
+        "text": "Only Azure virtual machines"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Defender for Cloud supports hybrid and multicloud environments.",
+    "why_wrong": {
+      "d": "It covers more than Azure virtual machines.",
+      "c": "It is not limited to SaaS apps.",
+      "a": "It is not limited to on-premises servers."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/defender-for-cloud/defender-for-cloud-introduction",
+    "reviewed": false
+  },
+  {
+    "id": "M09-Q10",
+    "module": "M09",
+    "objective_id": "M09-O1",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO are NOT Zero Trust principles? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Verify explicitly"
+      },
+      {
+        "id": "b",
+        "text": "Give all users permanent administrator access"
+      },
+      {
+        "id": "c",
+        "text": "Assume breach"
+      },
+      {
+        "id": "d",
+        "text": "Use least-privilege access"
+      },
+      {
+        "id": "e",
+        "text": "Trust any request that comes from inside the corporate network"
+      }
+    ],
+    "correct": [
+      "b",
+      "e"
+    ],
+    "explanation": "Zero Trust rejects trust by location and permanent broad access.",
+    "why_wrong": {
+      "a": "Verify explicitly is a Zero Trust principle.",
+      "d": "Least privilege is a Zero Trust principle.",
+      "c": "Assume breach is a Zero Trust principle."
+    },
+    "learn_more": "https://learn.microsoft.com/security/zero-trust/zero-trust-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M09-Q11",
+    "module": "M09",
+    "objective_id": "M09-O2",
+    "type": "multi",
+    "difficulty": "easy",
+    "prompt": "Which TWO are layers in the defense-in-depth model? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Physical security"
+      },
+      {
+        "id": "b",
+        "text": "Billing"
+      },
+      {
+        "id": "c",
+        "text": "Identity and access"
+      },
+      {
+        "id": "d",
+        "text": "Support plans"
+      },
+      {
+        "id": "e",
+        "text": "Pricing"
+      }
+    ],
+    "correct": [
+      "a",
+      "c"
+    ],
+    "explanation": "Physical security and identity and access are layers of defense in depth.",
+    "why_wrong": {
+      "e": "Pricing is a cost topic.",
+      "b": "Billing is an administrative topic.",
+      "d": "Support plans are a service topic."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/security/fundamentals/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M09-Q12",
+    "module": "M09",
+    "objective_id": "M09-O3",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "Defense in depth relies on a single strong layer of protection."
+      },
+      {
+        "id": "s2",
+        "text": "Zero Trust assumes everything inside the corporate network is safe."
+      },
+      {
+        "id": "s3",
+        "text": "Defender for Cloud can provide recommendations to improve security posture."
+      }
+    ],
+    "correct": [
+      "s3"
+    ],
+    "explanation": "Defense in depth is layered, Zero Trust trusts nothing by location, and Defender for Cloud recommends improvements.",
+    "why_wrong": {
+      "s1": "No. It uses several layers.",
+      "s2": "No. Zero Trust does not trust by network location.",
+      "s3": "Yes. Recommendations and a secure score are core features."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/defender-for-cloud/defender-for-cloud-introduction",
+    "reviewed": false
+  },
+  {
+    "id": "M09-Q13",
+    "module": "M09",
+    "objective_id": "M09-O4",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Which protects data while it is stored in disks, databases and storage accounts?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A resource lock"
+      },
+      {
+        "id": "b",
+        "text": "Encryption at rest"
+      },
+      {
+        "id": "c",
+        "text": "Encryption in transit"
+      },
+      {
+        "id": "d",
+        "text": "Conditional Access"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Encryption at rest protects stored data.",
+    "why_wrong": {
+      "c": "Encryption in transit protects data as it moves.",
+      "d": "Conditional Access controls sign-ins.",
+      "a": "A lock prevents deletion or change but does not encrypt data."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/security/fundamentals/encryption-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M09-Q14",
+    "module": "M09",
+    "objective_id": "M09-O4",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Which protects data while it moves between services, applications and users?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Tags"
+      },
+      {
+        "id": "b",
+        "text": "Encryption in transit"
+      },
+      {
+        "id": "c",
+        "text": "Azure RBAC"
+      },
+      {
+        "id": "d",
+        "text": "Encryption at rest"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Encryption in transit protects data on the move.",
+    "why_wrong": {
+      "d": "Encryption at rest protects stored data.",
+      "a": "Tags are labels.",
+      "c": "RBAC controls permissions."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/security/fundamentals/encryption-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M09-Q15",
+    "module": "M09",
+    "objective_id": "M09-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Developers want to stop keeping database passwords and connection strings in application code. Which service should they use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure Advisor"
+      },
+      {
+        "id": "b",
+        "text": "Azure Key Vault"
+      },
+      {
+        "id": "c",
+        "text": "Azure DNS"
+      },
+      {
+        "id": "d",
+        "text": "A resource lock"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Key Vault stores secrets securely so applications can retrieve them at run time.",
+    "why_wrong": {
+      "c": "Azure DNS hosts domains.",
+      "d": "A lock prevents deletion or change.",
+      "a": "Advisor gives recommendations."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/key-vault/general/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M09-Q16",
+    "module": "M09",
+    "objective_id": "M09-O4",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO can Azure Key Vault securely store and control access to? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure invoices"
+      },
+      {
+        "id": "b",
+        "text": "Encryption keys"
+      },
+      {
+        "id": "c",
+        "text": "Virtual machine images"
+      },
+      {
+        "id": "d",
+        "text": "DNS zones"
+      },
+      {
+        "id": "e",
+        "text": "Secrets such as connection strings"
+      }
+    ],
+    "correct": [
+      "b",
+      "e"
+    ],
+    "explanation": "Key Vault holds secrets, keys and certificates.",
+    "why_wrong": {
+      "c": "VM images are stored in other services.",
+      "a": "Invoices are in Cost Management and Billing.",
+      "d": "DNS zones are hosted in Azure DNS."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/key-vault/general/overview",
+    "reviewed": false
+  }
+]

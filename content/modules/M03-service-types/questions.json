@@ -1,0 +1,449 @@
+[
+  {
+    "id": "M03-Q01",
+    "module": "M03",
+    "objective_id": "M03-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What does infrastructure as a service (IaaS) provide?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A managed platform where the provider handles the operating system and runtime"
+      },
+      {
+        "id": "b",
+        "text": "A fixed, shared desktop for all users"
+      },
+      {
+        "id": "c",
+        "text": "A finished application used through a browser"
+      },
+      {
+        "id": "d",
+        "text": "Virtual machines, storage and networking that you configure and manage above the hardware"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "IaaS provides basic building blocks; you manage the operating system and everything above it.",
+    "why_wrong": {
+      "c": "That describes SaaS.",
+      "a": "That describes PaaS.",
+      "b": "That is not a cloud service type."
+    },
+    "learn_more": "https://learn.microsoft.com/training/azure/",
+    "reviewed": false
+  },
+  {
+    "id": "M03-Q02",
+    "module": "M03",
+    "objective_id": "M03-O2",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What does platform as a service (PaaS) provide?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ready-to-use software such as email"
+      },
+      {
+        "id": "b",
+        "text": "An environment to build and run applications without managing servers or the operating system"
+      },
+      {
+        "id": "c",
+        "text": "Physical servers delivered to your office"
+      },
+      {
+        "id": "d",
+        "text": "Raw virtual machines you must patch yourself"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "PaaS lets you focus on your application and data while the provider manages the platform.",
+    "why_wrong": {
+      "d": "That describes IaaS.",
+      "a": "That describes SaaS.",
+      "c": "Cloud providers do not deliver physical servers to you."
+    },
+    "learn_more": "https://learn.microsoft.com/training/azure/",
+    "reviewed": false
+  },
+  {
+    "id": "M03-Q03",
+    "module": "M03",
+    "objective_id": "M03-O3",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is software as a service (SaaS)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A way to buy physical hardware"
+      },
+      {
+        "id": "b",
+        "text": "A virtual machine you install software on"
+      },
+      {
+        "id": "c",
+        "text": "Finished software used over the internet and managed by the provider"
+      },
+      {
+        "id": "d",
+        "text": "A platform for writing code"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "SaaS is complete software delivered as a service, such as Microsoft 365.",
+    "why_wrong": {
+      "b": "That is IaaS.",
+      "d": "That is PaaS.",
+      "a": "SaaS is software, not hardware."
+    },
+    "learn_more": "https://learn.microsoft.com/training/azure/",
+    "reviewed": false
+  },
+  {
+    "id": "M03-Q04",
+    "module": "M03",
+    "objective_id": "M03-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A company wants to move an existing application to Azure without changing it, and it needs a specific operating system configuration. Which service type fits best?",
+    "options": [
+      {
+        "id": "a",
+        "text": "SaaS"
+      },
+      {
+        "id": "b",
+        "text": "IaaS"
+      },
+      {
+        "id": "c",
+        "text": "Serverless only"
+      },
+      {
+        "id": "d",
+        "text": "PaaS"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "IaaS gives full control of the operating system, which suits lift-and-shift migration.",
+    "why_wrong": {
+      "d": "PaaS manages the operating system for you, so you cannot set it up your own way.",
+      "a": "SaaS is finished software, not a place to run your own application.",
+      "c": "Serverless hides the servers, so you cannot control the operating system."
+    },
+    "learn_more": "https://learn.microsoft.com/training/azure/",
+    "reviewed": false
+  },
+  {
+    "id": "M03-Q05",
+    "module": "M03",
+    "objective_id": "M03-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A development team wants to publish a web app without managing servers or the operating system. Which service type fits best?",
+    "options": [
+      {
+        "id": "a",
+        "text": "PaaS"
+      },
+      {
+        "id": "b",
+        "text": "IaaS"
+      },
+      {
+        "id": "c",
+        "text": "SaaS"
+      },
+      {
+        "id": "d",
+        "text": "On-premises hosting"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "PaaS provides a managed platform so developers focus on code.",
+    "why_wrong": {
+      "b": "IaaS would make the team manage the operating system.",
+      "c": "SaaS is finished software, not a platform for your own app.",
+      "d": "On-premises hosting is not a cloud service type."
+    },
+    "learn_more": "https://learn.microsoft.com/training/azure/",
+    "reviewed": false
+  },
+  {
+    "id": "M03-Q06",
+    "module": "M03",
+    "objective_id": "M03-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Staff need email and collaboration tools without installing or maintaining anything. Which service type fits best?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Private datacenter"
+      },
+      {
+        "id": "b",
+        "text": "IaaS"
+      },
+      {
+        "id": "c",
+        "text": "PaaS"
+      },
+      {
+        "id": "d",
+        "text": "SaaS"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "SaaS delivers ready-to-use software maintained by the provider.",
+    "why_wrong": {
+      "b": "IaaS would require building and managing everything yourself.",
+      "c": "PaaS is for building your own applications.",
+      "a": "A private datacenter would require buying and running hardware."
+    },
+    "learn_more": "https://learn.microsoft.com/training/azure/",
+    "reviewed": false
+  },
+  {
+    "id": "M03-Q07",
+    "module": "M03",
+    "objective_id": "M03-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Which service type gives the customer the MOST management responsibility?",
+    "options": [
+      {
+        "id": "a",
+        "text": "SaaS"
+      },
+      {
+        "id": "b",
+        "text": "They are all the same"
+      },
+      {
+        "id": "c",
+        "text": "IaaS"
+      },
+      {
+        "id": "d",
+        "text": "PaaS"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "With IaaS you manage the operating system, runtime, applications and data.",
+    "why_wrong": {
+      "d": "PaaS gives you less to manage than IaaS.",
+      "a": "SaaS gives you the least to manage.",
+      "b": "The service types differ in who manages what."
+    },
+    "learn_more": "https://learn.microsoft.com/training/azure/",
+    "reviewed": false
+  },
+  {
+    "id": "M03-Q08",
+    "module": "M03",
+    "objective_id": "M03-O3",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO are examples of SaaS? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure SQL Database"
+      },
+      {
+        "id": "b",
+        "text": "Azure Virtual Machines"
+      },
+      {
+        "id": "c",
+        "text": "Azure Virtual Network"
+      },
+      {
+        "id": "d",
+        "text": "Dynamics 365"
+      },
+      {
+        "id": "e",
+        "text": "Microsoft 365"
+      }
+    ],
+    "correct": [
+      "d",
+      "e"
+    ],
+    "explanation": "Microsoft 365 and Dynamics 365 are finished applications delivered as services.",
+    "why_wrong": {
+      "b": "Azure Virtual Machines are IaaS.",
+      "a": "Azure SQL Database is PaaS.",
+      "c": "Azure Virtual Network is an infrastructure building block."
+    },
+    "learn_more": "https://learn.microsoft.com/training/azure/",
+    "reviewed": false
+  },
+  {
+    "id": "M03-Q09",
+    "module": "M03",
+    "objective_id": "M03-O2",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO are examples of PaaS? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure Virtual Machines"
+      },
+      {
+        "id": "b",
+        "text": "Azure SQL Database"
+      },
+      {
+        "id": "c",
+        "text": "A physical server in your own office"
+      },
+      {
+        "id": "d",
+        "text": "Azure App Service"
+      },
+      {
+        "id": "e",
+        "text": "Microsoft 365"
+      }
+    ],
+    "correct": [
+      "b",
+      "d"
+    ],
+    "explanation": "App Service and Azure SQL Database give you a managed platform for apps and data.",
+    "why_wrong": {
+      "a": "Azure Virtual Machines are IaaS.",
+      "e": "Microsoft 365 is SaaS.",
+      "c": "A physical server in your office is on-premises, not a cloud service."
+    },
+    "learn_more": "https://learn.microsoft.com/training/azure/",
+    "reviewed": false
+  },
+  {
+    "id": "M03-Q10",
+    "module": "M03",
+    "objective_id": "M03-O1",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "In IaaS, the customer manages the operating system."
+      },
+      {
+        "id": "s2",
+        "text": "In PaaS, the customer manages the underlying physical servers."
+      },
+      {
+        "id": "s3",
+        "text": "In SaaS, the customer typically manages the hardware."
+      }
+    ],
+    "correct": [
+      "s1"
+    ],
+    "explanation": "The customer manages the operating system in IaaS only; physical servers and hardware are the provider's in all three.",
+    "why_wrong": {
+      "s1": "Yes. The operating system is yours in IaaS.",
+      "s2": "No. The provider always manages physical servers.",
+      "s3": "No. The provider manages the hardware in SaaS."
+    },
+    "learn_more": "https://learn.microsoft.com/training/azure/",
+    "reviewed": false
+  },
+  {
+    "id": "M03-Q11",
+    "module": "M03",
+    "objective_id": "M03-O4",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "PaaS lets developers concentrate on their code."
+      },
+      {
+        "id": "s2",
+        "text": "IaaS gives the most control over the operating system configuration."
+      },
+      {
+        "id": "s3",
+        "text": "With SaaS you must install and patch the software yourself."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s2"
+    ],
+    "explanation": "PaaS removes platform management and IaaS gives the most control, while SaaS is maintained by the provider.",
+    "why_wrong": {
+      "s1": "Yes. The platform is managed for you.",
+      "s2": "Yes. You manage the operating system in IaaS.",
+      "s3": "No. The provider maintains SaaS software."
+    },
+    "learn_more": "https://learn.microsoft.com/training/azure/",
+    "reviewed": false
+  },
+  {
+    "id": "M03-Q12",
+    "module": "M03",
+    "objective_id": "M03-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which pairing of Azure service and service type is correct?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Microsoft 365: PaaS"
+      },
+      {
+        "id": "b",
+        "text": "Azure Virtual Machines: IaaS"
+      },
+      {
+        "id": "c",
+        "text": "Azure SQL Database: SaaS"
+      },
+      {
+        "id": "d",
+        "text": "Azure App Service: IaaS"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Virtual machines are IaaS, App Service and Azure SQL Database are PaaS, and Microsoft 365 is SaaS.",
+    "why_wrong": {
+      "a": "Microsoft 365 is SaaS.",
+      "d": "Azure App Service is PaaS.",
+      "c": "Azure SQL Database is PaaS."
+    },
+    "learn_more": "https://learn.microsoft.com/training/azure/",
+    "reviewed": false
+  }
+]

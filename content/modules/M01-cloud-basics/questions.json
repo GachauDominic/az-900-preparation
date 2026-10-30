@@ -1,0 +1,555 @@
+[
+  {
+    "id": "M01-Q01",
+    "module": "M01",
+    "objective_id": "M01-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is cloud computing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Installing software on a single local computer"
+      },
+      {
+        "id": "b",
+        "text": "Buying servers and housing them in your own datacenter"
+      },
+      {
+        "id": "c",
+        "text": "A private network that links branch offices"
+      },
+      {
+        "id": "d",
+        "text": "Delivery of computing services such as servers, storage, databases and software over the internet, usually pay-as-you-go"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Cloud computing means using a provider's services over the internet instead of owning the hardware yourself.",
+    "why_wrong": {
+      "b": "That describes an on-premises datacenter.",
+      "a": "Local installation is not cloud computing.",
+      "c": "That describes a wide-area network, not cloud computing."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cloud-adoption-framework/",
+    "reviewed": false
+  },
+  {
+    "id": "M01-Q02",
+    "module": "M01",
+    "objective_id": "M01-O2",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Under the shared responsibility model, which item is ALWAYS the cloud provider's responsibility?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The devices people use to connect"
+      },
+      {
+        "id": "b",
+        "text": "The physical datacenter"
+      },
+      {
+        "id": "c",
+        "text": "User accounts and identities"
+      },
+      {
+        "id": "d",
+        "text": "The data you store"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "The physical datacenter, physical network and physical hosts always belong to the provider.",
+    "why_wrong": {
+      "d": "Your data is always your responsibility.",
+      "c": "Accounts and identities are always your responsibility.",
+      "a": "Devices are always your responsibility."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/security/fundamentals/shared-responsibility",
+    "reviewed": false
+  },
+  {
+    "id": "M01-Q03",
+    "module": "M01",
+    "objective_id": "M01-O2",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A company runs its own Windows virtual machines in Azure (infrastructure as a service). Who is responsible for applying updates to the guest operating system?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Microsoft and the company equally"
+      },
+      {
+        "id": "b",
+        "text": "The company's internet provider"
+      },
+      {
+        "id": "c",
+        "text": "The company"
+      },
+      {
+        "id": "d",
+        "text": "Microsoft"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "With virtual machines you manage the guest operating system, including patching it.",
+    "why_wrong": {
+      "d": "Microsoft maintains the hosts and hardware, not the operating system you install in your VM.",
+      "a": "The split follows the service type, not an equal share.",
+      "b": "An internet provider has no role in patching your virtual machine."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/security/fundamentals/shared-responsibility",
+    "reviewed": false
+  },
+  {
+    "id": "M01-Q04",
+    "module": "M01",
+    "objective_id": "M01-O3",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A bank must keep customer records on hardware it controls for regulatory reasons, but wants to run its public website in the cloud. Which model fits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Public cloud only"
+      },
+      {
+        "id": "b",
+        "text": "Hybrid cloud"
+      },
+      {
+        "id": "c",
+        "text": "Serverless cloud"
+      },
+      {
+        "id": "d",
+        "text": "Private cloud only"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Hybrid cloud combines on-premises or private resources with public cloud services.",
+    "why_wrong": {
+      "a": "Public only would move the records off hardware the bank controls.",
+      "d": "Private only would give up the cloud for the website.",
+      "c": "Serverless is a way of running code, not a cloud model."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cloud-adoption-framework/",
+    "reviewed": false
+  },
+  {
+    "id": "M01-Q05",
+    "module": "M01",
+    "objective_id": "M01-O3",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Which statement describes a public cloud?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Infrastructure owned by a provider, shared by many customers and reached over the internet"
+      },
+      {
+        "id": "b",
+        "text": "A datacenter located only on a company's premises"
+      },
+      {
+        "id": "c",
+        "text": "A mix of on-premises and cloud resources"
+      },
+      {
+        "id": "d",
+        "text": "Infrastructure used by a single organisation"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Public cloud is provider-owned infrastructure shared by many customers.",
+    "why_wrong": {
+      "d": "That describes a private cloud.",
+      "c": "That describes a hybrid cloud.",
+      "b": "An on-premises datacenter is not a public cloud."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cloud-adoption-framework/",
+    "reviewed": false
+  },
+  {
+    "id": "M01-Q06",
+    "module": "M01",
+    "objective_id": "M01-O4",
+    "type": "multi",
+    "difficulty": "easy",
+    "prompt": "Which TWO statements describe the consumption-based model? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Your costs can never change"
+      },
+      {
+        "id": "b",
+        "text": "You pay for the resources you use"
+      },
+      {
+        "id": "c",
+        "text": "You pay a fixed fee whatever you use"
+      },
+      {
+        "id": "d",
+        "text": "You must buy servers before you can start"
+      },
+      {
+        "id": "e",
+        "text": "You avoid large upfront hardware purchases"
+      }
+    ],
+    "correct": [
+      "b",
+      "e"
+    ],
+    "explanation": "Consumption-based pricing charges for use and removes the upfront hardware cost.",
+    "why_wrong": {
+      "c": "A fixed fee regardless of use is not consumption-based.",
+      "d": "Buying servers first is the traditional on-premises approach.",
+      "a": "Costs change with usage in this model."
+    },
+    "learn_more": "https://learn.microsoft.com/training/azure/",
+    "reviewed": false
+  },
+  {
+    "id": "M01-Q07",
+    "module": "M01",
+    "objective_id": "M01-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "What usually happens to spending when an organisation moves from its own datacenter to Azure?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Spending shifts from CapEx towards OpEx"
+      },
+      {
+        "id": "b",
+        "text": "Both CapEx and OpEx rise to the same level"
+      },
+      {
+        "id": "c",
+        "text": "Spending stops completely"
+      },
+      {
+        "id": "d",
+        "text": "Spending shifts from OpEx towards CapEx"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Cloud replaces large upfront equipment purchases (CapEx) with ongoing usage costs (OpEx).",
+    "why_wrong": {
+      "d": "That is the opposite direction.",
+      "b": "There is no reason for both to rise equally.",
+      "c": "Cloud services are still paid for."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cloud-adoption-framework/",
+    "reviewed": false
+  },
+  {
+    "id": "M01-Q08",
+    "module": "M01",
+    "objective_id": "M01-O5",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which statement describes serverless computing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Developers do not manage servers; the provider runs the code on demand and bills per execution"
+      },
+      {
+        "id": "b",
+        "text": "You must provision virtual machines before running code"
+      },
+      {
+        "id": "c",
+        "text": "No servers exist anywhere"
+      },
+      {
+        "id": "d",
+        "text": "You pay a fixed fee even when nothing runs"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Serverless hides server management and scales automatically, charging for what runs.",
+    "why_wrong": {
+      "c": "Servers exist; you just do not manage them.",
+      "b": "You do not provision machines in serverless.",
+      "d": "Serverless typically bills for execution, not idle time."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-functions/functions-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M01-Q09",
+    "module": "M01",
+    "objective_id": "M01-O3",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO are benefits of a hybrid cloud? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "All on-premises hardware must be removed on day one"
+      },
+      {
+        "id": "b",
+        "text": "Sensitive data can stay on-premises while other workloads use the cloud"
+      },
+      {
+        "id": "c",
+        "text": "Workloads can move to the cloud gradually"
+      },
+      {
+        "id": "d",
+        "text": "The two environments never need a network connection"
+      },
+      {
+        "id": "e",
+        "text": "Security policies are no longer needed"
+      }
+    ],
+    "correct": [
+      "b",
+      "c"
+    ],
+    "explanation": "Hybrid cloud lets you keep what must stay in-house and migrate step by step.",
+    "why_wrong": {
+      "a": "Hybrid keeps some on-premises resources, so nothing forces removal on day one.",
+      "d": "Hybrid environments are connected so they can work together.",
+      "e": "Security policies are always needed."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cloud-adoption-framework/",
+    "reviewed": false
+  },
+  {
+    "id": "M01-Q10",
+    "module": "M01",
+    "objective_id": "M01-O2",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement about shared responsibility is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "The cloud provider is always responsible for a customer's data."
+      },
+      {
+        "id": "s2",
+        "text": "Physical security of the datacenter is the provider's responsibility."
+      },
+      {
+        "id": "s3",
+        "text": "Who is responsible for the operating system depends on the service type."
+      }
+    ],
+    "correct": [
+      "s2",
+      "s3"
+    ],
+    "explanation": "Data is always the customer's, the datacenter is always the provider's, and the middle layers depend on the service type.",
+    "why_wrong": {
+      "s1": "No. Data is always the customer's responsibility.",
+      "s2": "Yes. Physical security belongs to the provider.",
+      "s3": "Yes. IaaS, PaaS and SaaS divide the layers differently."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/security/fundamentals/shared-responsibility",
+    "reviewed": false
+  },
+  {
+    "id": "M01-Q11",
+    "module": "M01",
+    "objective_id": "M01-O3",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement about cloud models is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "A private cloud can be hosted in an organisation's own datacenter."
+      },
+      {
+        "id": "s2",
+        "text": "In a public cloud, the hardware is dedicated to a single organisation."
+      },
+      {
+        "id": "s3",
+        "text": "A hybrid cloud combines public cloud with private or on-premises resources."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s3"
+    ],
+    "explanation": "Private clouds can be on-premises, public clouds are shared, and hybrid mixes the two.",
+    "why_wrong": {
+      "s1": "Yes. A private cloud can sit in your own datacenter.",
+      "s2": "No. Public cloud hardware is shared by many customers.",
+      "s3": "Yes. That is the definition of hybrid."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cloud-adoption-framework/",
+    "reviewed": false
+  },
+  {
+    "id": "M01-Q12",
+    "module": "M01",
+    "objective_id": "M01-O4",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement about cloud pricing is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "Pay-as-you-go pricing requires a long-term commitment."
+      },
+      {
+        "id": "s2",
+        "text": "Committing to a reservation or savings plan can lower the price in exchange for the commitment."
+      },
+      {
+        "id": "s3",
+        "text": "Serverless services can scale automatically with demand."
+      }
+    ],
+    "correct": [
+      "s2",
+      "s3"
+    ],
+    "explanation": "Pay-as-you-go has no commitment, commitments give discounts, and serverless scales automatically.",
+    "why_wrong": {
+      "s1": "No. Pay-as-you-go needs no long-term commitment.",
+      "s2": "Yes. A one- or three-year commitment lowers the price.",
+      "s3": "Yes. Serverless scales with demand without you managing servers."
+    },
+    "learn_more": "https://learn.microsoft.com/training/azure/",
+    "reviewed": false
+  },
+  {
+    "id": "M01-Q13",
+    "module": "M01",
+    "objective_id": "M01-O6",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is a multicloud environment?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A private cloud in a single datacenter"
+      },
+      {
+        "id": "b",
+        "text": "An environment that uses two or more public cloud providers"
+      },
+      {
+        "id": "c",
+        "text": "A mix of one public cloud and an on-premises datacenter"
+      },
+      {
+        "id": "d",
+        "text": "One provider's services spread across several regions"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Multicloud means using more than one public cloud provider, and managing resources and security in each.",
+    "why_wrong": {
+      "c": "That describes a hybrid cloud.",
+      "a": "That describes a private cloud.",
+      "d": "Several regions of one provider is still a single provider."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-arc/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M01-Q14",
+    "module": "M01",
+    "objective_id": "M01-O6",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A company runs VMware workloads in a private environment and wants to run them in Azure with little change. Which service fits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure Functions"
+      },
+      {
+        "id": "b",
+        "text": "Azure Arc"
+      },
+      {
+        "id": "c",
+        "text": "Azure DNS"
+      },
+      {
+        "id": "d",
+        "text": "Azure VMware Solution"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Azure VMware Solution runs VMware workloads in Azure.",
+    "why_wrong": {
+      "a": "Azure Functions runs event-driven code.",
+      "b": "Azure Arc manages resources where they are; it does not run VMware workloads in Azure.",
+      "c": "Azure DNS hosts domains."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-arc/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M01-Q15",
+    "module": "M01",
+    "objective_id": "M01-O6",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "In a multicloud environment you manage resources and security in each provider's environment."
+      },
+      {
+        "id": "s2",
+        "text": "Azure Arc can help manage environments that include resources outside Azure."
+      },
+      {
+        "id": "s3",
+        "text": "Multicloud means combining one public cloud with an on-premises datacenter."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s2"
+    ],
+    "explanation": "Multicloud involves several public providers, and Arc extends management across hybrid and multicloud estates.",
+    "why_wrong": {
+      "s1": "Yes. Each provider has its own environment to manage.",
+      "s2": "Yes. That is the purpose of Azure Arc.",
+      "s3": "No. That describes a hybrid cloud."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-arc/overview",
+    "reviewed": false
+  }
+]

@@ -13,7 +13,8 @@
       <p class="verdict revisit">Not yet: the practice pass mark is {{ pass_percent }}%. Revisit the topics below and try again.</p>
     {% endif %}
   {% endif %}
-  <p><a class="button" href="{{ retry }}">Try again with a new order</a></p>
+  <p class="actions"><a class="button" href="{{ retry }}">Try again with a new order</a>
+  {% if kind == 'module' %}{% set nxt = store.neighbor(key, 1) %}{% if nxt %}<a class="button secondary" href="{{ url_for('module_page', module_id=nxt.id) }}">Next module: {{ nxt.title }}</a>{% endif %}{% endif %}</p>
 </section>
 
 {% if graded.weak_modules and kind == 'exam' %}

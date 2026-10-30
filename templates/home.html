@@ -10,6 +10,7 @@
 {% for d in domains %}
 <section class="domain" data-domain="{{ d.id }}" aria-labelledby="dom-{{ d.id }}">
   <h2 id="dom-{{ d.id }}">{{ d.title }}</h2>
+  {% if d.learn_path %}<p class="small">Covers the Microsoft Learn path <a href="{{ d.learn_path.url }}" rel="noopener noreferrer">{{ d.learn_path.title }}</a></p>{% endif %}
   <ul class="modules">
     {% for m in d.modules %}
     <li class="module-row" data-module-card="{{ m.id }}" data-ready="{{ 'yes' if m.ready else 'no' }}">

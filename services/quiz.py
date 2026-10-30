@@ -96,25 +96,32 @@ def grade_attempt(questions: list[dict], answers: dict) -> dict:
     }
 
 
+def _apportion(total: int, weights: dict) -> dict:
+    """Split `total` whole items in proportion to `weights` (largest-remainder method)."""
+    s = sum(weights.values())
+    raw = {k: total * v / s for k, v in weights.items()}
+    counts = {k: int(v) for k, v in raw.items()}
+    for k in sorted(raw, key=lambda k: raw[k] - counts[k], reverse=True)[: total - sum(counts.values())]:
+        counts[k] += 1
+    return counts
+
+
 def exam_plan(store, n: int) -> dict[str, int]:
     """How many questions to draw from each module that has a quiz.
-    Uses domain weights from syllabus.json when every needed domain has one;
-    otherwise every module counts equally."""
+    Questions are shared out between domains by the weights in syllabus.json (or by
+    module count if a weight is missing), then equally between modules in a domain."""
     mods = store.quiz_modules()
     if not mods or n <= 0:
         return {}
-    dom_w = {d["id"]: d.get("weight") for d in store.syllabus["domains"]}
-    use_weights = all(isinstance(dom_w.get(m["domain"]), (int, float)) and dom_w[m["domain"]] > 0 for m in mods)
-    weights = {}
+    by_domain: dict[str, list] = {}
     for m in mods:
-        in_domain = sum(1 for x in mods if x["domain"] == m["domain"])
-        weights[m["id"]] = (dom_w[m["domain"]] if use_weights else 1) / in_domain
-    total = sum(weights.values())
-    raw = {k: n * v / total for k, v in weights.items()}
-    counts = {k: int(v) for k, v in raw.items()}
-    leftover = n - sum(counts.values())
-    for k in sorted(raw, key=lambda k: raw[k] - counts[k], reverse=True)[:leftover]:
-        counts[k] += 1
+        by_domain.setdefault(m["domain"], []).append(m)
+    dom_w = {d["id"]: d.get("weight") for d in store.syllabus["domains"]}
+    use_weights = all(isinstance(dom_w.get(d), (int, float)) and dom_w[d] > 0 for d in by_domain)
+    per_domain = _apportion(n, {d: (dom_w[d] if use_weights else len(ms)) for d, ms in by_domain.items()})
+    counts: dict[str, int] = {}
+    for d, ms in by_domain.items():
+        counts.update(_apportion(per_domain[d], {m["id"]: 1 for m in ms}))
     for m in mods:
         counts[m["id"]] = min(counts[m["id"]], len(m["questions"]))
     return counts

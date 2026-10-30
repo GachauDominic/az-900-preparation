@@ -9,29 +9,29 @@
     "options": [
       {
         "id": "a",
-        "text": "A set of datacenters in one area, connected by a dedicated low-latency network"
-      },
-      {
-        "id": "b",
         "text": "A single physical building that holds servers"
       },
       {
+        "id": "b",
+        "text": "A set of datacenters in one area, connected by a dedicated low-latency network"
+      },
+      {
         "id": "c",
-        "text": "A logical container that holds related resources"
+        "text": "A boundary used to bill a team for its usage"
       },
       {
         "id": "d",
-        "text": "A boundary used to bill a team for its usage"
+        "text": "A logical container that holds related resources"
       }
     ],
     "correct": [
-      "a"
+      "b"
     ],
     "explanation": "A region groups nearby datacenters on a fast private network. You pick a region when you create most resources.",
     "why_wrong": {
-      "b": "That describes a datacenter, which is one building inside a region.",
-      "c": "That describes a resource group.",
-      "d": "That describes a subscription."
+      "a": "That describes a datacenter, which is one building inside a region.",
+      "d": "That describes a resource group.",
+      "c": "That describes a subscription."
     },
     "learn_more": "https://learn.microsoft.com/azure/reliability/regions-paired",
     "reviewed": false
@@ -46,29 +46,29 @@
     "options": [
       {
         "id": "a",
-        "text": "A sovereign region"
-      },
-      {
-        "id": "b",
         "text": "A region pair"
       },
       {
+        "id": "b",
+        "text": "A sovereign region"
+      },
+      {
         "id": "c",
-        "text": "An availability zone"
+        "text": "A management group"
       },
       {
         "id": "d",
-        "text": "A management group"
+        "text": "An availability zone"
       }
     ],
     "correct": [
-      "a"
+      "b"
     ],
     "explanation": "Sovereign regions, such as Azure Government, are isolated instances built for legal and compliance needs.",
     "why_wrong": {
-      "b": "Region pairs are about recovery across two regions in the same public cloud, not isolation.",
-      "c": "Availability zones protect against datacenter failures inside one region.",
-      "d": "Management groups organise subscriptions; they do not isolate the platform."
+      "a": "Region pairs are about recovery across two regions in the same public cloud, not isolation.",
+      "d": "Availability zones protect against datacenter failures inside one region.",
+      "c": "Management groups organise subscriptions; they do not isolate the platform."
     },
     "learn_more": "https://learn.microsoft.com/azure/azure-government/documentation-government-welcome",
     "reviewed": false
@@ -87,11 +87,11 @@
       },
       {
         "id": "b",
-        "text": "Every Azure service is guaranteed to be available in both regions of a pair"
+        "text": "Two paired regions are billed as one region"
       },
       {
         "id": "c",
-        "text": "Two paired regions are billed as one region"
+        "text": "Every Azure service is guaranteed to be available in both regions of a pair"
       },
       {
         "id": "d",
@@ -103,8 +103,8 @@
     ],
     "explanation": "Pairing helps recovery: if a wide outage happens, one region from each pair is restored first.",
     "why_wrong": {
-      "b": "Not every service is offered in every region, paired or not.",
-      "c": "Pairing has nothing to do with billing.",
+      "c": "Not every service is offered in every region, paired or not.",
+      "b": "Pairing has nothing to do with billing.",
       "d": "Replication to the pair is a feature of individual services, such as geo-redundant storage; it is not automatic for everything."
     },
     "learn_more": "https://learn.microsoft.com/azure/reliability/regions-paired",
@@ -120,29 +120,29 @@
     "options": [
       {
         "id": "a",
-        "text": "A physically separate location inside a region, with its own power, cooling and networking"
+        "text": "A segment of a virtual network"
       },
       {
         "id": "b",
-        "text": "Two regions in the same geography that recover together"
+        "text": "A physically separate location inside a region, with its own power, cooling and networking"
       },
       {
         "id": "c",
-        "text": "A group of subscriptions with shared policy"
+        "text": "Two regions in the same geography that recover together"
       },
       {
         "id": "d",
-        "text": "A segment of a virtual network"
+        "text": "A group of subscriptions with shared policy"
       }
     ],
     "correct": [
-      "a"
+      "b"
     ],
     "explanation": "Availability zones are separate locations within a region, each made of one or more datacenters with independent power, cooling and networking.",
     "why_wrong": {
-      "b": "That describes a region pair.",
-      "c": "That describes a management group.",
-      "d": "That describes a subnet, which is a networking concept."
+      "c": "That describes a region pair.",
+      "d": "That describes a management group.",
+      "a": "That describes a subnet, which is a networking concept."
     },
     "learn_more": "https://learn.microsoft.com/azure/reliability/availability-zones-overview",
     "reviewed": false
@@ -157,11 +157,11 @@
     "options": [
       {
         "id": "a",
-        "text": "Spread the virtual machines across availability zones in the region"
+        "text": "Create a management group for the virtual machines"
       },
       {
         "id": "b",
-        "text": "Place all the virtual machines in one resource group"
+        "text": "Spread the virtual machines across availability zones in the region"
       },
       {
         "id": "c",
@@ -169,17 +169,17 @@
       },
       {
         "id": "d",
-        "text": "Create a management group for the virtual machines"
+        "text": "Place all the virtual machines in one resource group"
       }
     ],
     "correct": [
-      "a"
+      "b"
     ],
     "explanation": "Zones are physically separate, so a failure in one zone leaves the others running, and you stay in the same region.",
     "why_wrong": {
-      "b": "A resource group is a logical container; it gives no protection from a power failure.",
+      "d": "A resource group is a logical container; it gives no protection from a power failure.",
       "c": "Sovereign regions are for compliance isolation, not for datacenter-level resilience.",
-      "d": "Management groups hold subscriptions, not virtual machines."
+      "a": "Management groups hold subscriptions, not virtual machines."
     },
     "learn_more": "https://learn.microsoft.com/azure/reliability/availability-zones-overview",
     "reviewed": false
@@ -194,15 +194,15 @@
     "options": [
       {
         "id": "a",
-        "text": "Each zone has its own power, cooling and networking"
+        "text": "Availability zones are the same thing as region pairs"
       },
       {
         "id": "b",
-        "text": "Zones in a region are connected by a low-latency network"
+        "text": "Each zone has its own power, cooling and networking"
       },
       {
         "id": "c",
-        "text": "Every Azure region supports availability zones"
+        "text": "Zones in a region are connected by a low-latency network"
       },
       {
         "id": "d",
@@ -210,18 +210,18 @@
       },
       {
         "id": "e",
-        "text": "Availability zones are the same thing as region pairs"
+        "text": "Every Azure region supports availability zones"
       }
     ],
     "correct": [
-      "a",
-      "b"
+      "b",
+      "c"
     ],
     "explanation": "Zones are independent in power, cooling and networking, yet sit close enough to be joined by a fast network.",
     "why_wrong": {
-      "c": "Not every region has availability zones.",
+      "e": "Not every region has availability zones.",
       "d": "Zones are inside one region, so they share a geography.",
-      "e": "Region pairs link two regions; zones sit inside one region."
+      "a": "Region pairs link two regions; zones sit inside one region."
     },
     "learn_more": "https://learn.microsoft.com/azure/reliability/availability-zones-overview",
     "reviewed": false
@@ -236,29 +236,29 @@
     "options": [
       {
         "id": "a",
-        "text": "A logical container that holds related Azure resources"
-      },
-      {
-        "id": "b",
         "text": "A physical rack of servers in a datacenter"
       },
       {
-        "id": "c",
+        "id": "b",
         "text": "A copy of a resource stored in another region"
       },
       {
-        "id": "d",
+        "id": "c",
         "text": "A set of users who share the same role"
+      },
+      {
+        "id": "d",
+        "text": "A logical container that holds related Azure resources"
       }
     ],
     "correct": [
-      "a"
+      "d"
     ],
     "explanation": "Resource groups organise resources that share a lifecycle, so you can deploy, manage and delete them together.",
     "why_wrong": {
-      "b": "Racks are physical hardware inside datacenters.",
-      "c": "Copying a resource to another region is replication, not grouping.",
-      "d": "Groups of users are handled by identity and access features."
+      "a": "Racks are physical hardware inside datacenters.",
+      "b": "Copying a resource to another region is replication, not grouping.",
+      "c": "Groups of users are handled by identity and access features."
     },
     "learn_more": "https://learn.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal",
     "reviewed": false
@@ -311,15 +311,15 @@
       },
       {
         "id": "b",
-        "text": "Resource groups"
-      },
-      {
-        "id": "c",
         "text": "Availability zones"
       },
       {
-        "id": "d",
+        "id": "c",
         "text": "Region pairs"
+      },
+      {
+        "id": "d",
+        "text": "Resource groups"
       }
     ],
     "correct": [
@@ -327,9 +327,9 @@
     ],
     "explanation": "Management groups sit above subscriptions, and what you apply to them is inherited by every subscription beneath.",
     "why_wrong": {
-      "b": "Resource groups sit below subscriptions and hold resources.",
-      "c": "Availability zones are about physical resilience, not governance.",
-      "d": "Region pairs are about recovery across regions."
+      "d": "Resource groups sit below subscriptions and hold resources.",
+      "b": "Availability zones are about physical resilience, not governance.",
+      "c": "Region pairs are about recovery across regions."
     },
     "learn_more": "https://learn.microsoft.com/azure/governance/management-groups/overview",
     "reviewed": false
@@ -378,7 +378,7 @@
     "options": [
       {
         "id": "a",
-        "text": "Subscription"
+        "text": "Resource provider"
       },
       {
         "id": "b",
@@ -386,7 +386,7 @@
       },
       {
         "id": "c",
-        "text": "Region"
+        "text": "Subscription"
       },
       {
         "id": "d",
@@ -394,18 +394,18 @@
       },
       {
         "id": "e",
-        "text": "Resource provider"
+        "text": "Region"
       }
     ],
     "correct": [
-      "a",
-      "b"
+      "b",
+      "c"
     ],
     "explanation": "The order is management group, then subscription, then resource group, then resource.",
     "why_wrong": {
-      "c": "A region is a physical location, not a level of the management hierarchy.",
+      "e": "A region is a physical location, not a level of the management hierarchy.",
       "d": "An availability zone is a physical location inside a region, not a hierarchy level.",
-      "e": "A resource provider supplies a type of resource; it is not a hierarchy level."
+      "a": "A resource provider supplies a type of resource; it is not a hierarchy level."
     },
     "learn_more": "https://learn.microsoft.com/azure/governance/management-groups/overview",
     "reviewed": false
@@ -413,72 +413,183 @@
   {
     "id": "M04-Q12",
     "module": "M04",
-    "objective_id": "M04-O5",
+    "objective_id": "M04-O2",
     "type": "single",
-    "difficulty": "medium",
-    "prompt": "A team deploys the same environment from the Azure portal, from Azure CLI and from a script that calls the REST API, and gets consistent results every time. Which service receives and processes all of these requests?",
+    "difficulty": "easy",
+    "prompt": "Which list shows Azure physical infrastructure from smallest to largest?",
     "options": [
       {
         "id": "a",
-        "text": "Azure Resource Manager"
+        "text": "Region, availability zone, datacenter"
       },
       {
         "id": "b",
-        "text": "Azure Monitor"
+        "text": "Availability zone, datacenter, region"
       },
       {
         "id": "c",
-        "text": "Azure Advisor"
+        "text": "Datacenter, region, availability zone"
       },
       {
         "id": "d",
-        "text": "Azure Policy"
+        "text": "Datacenter, availability zone, region"
       }
     ],
     "correct": [
-      "a"
+      "d"
     ],
-    "explanation": "Azure Resource Manager is the management layer: every tool talks to it, which is why results are consistent.",
+    "explanation": "Datacenters make up availability zones (a zone has one or more), and zones sit inside a region.",
     "why_wrong": {
-      "b": "Azure Monitor collects and analyses telemetry; it does not process deployments.",
-      "c": "Azure Advisor gives recommendations about your existing resources.",
-      "d": "Azure Policy evaluates compliance rules; it is not the entry point for deployments."
+      "a": "That is largest to smallest.",
+      "b": "A zone is made of datacenters, so a datacenter is smaller than a zone.",
+      "c": "Zones are inside a region, so a zone comes before a region."
     },
-    "learn_more": "https://learn.microsoft.com/azure/azure-resource-manager/management/overview",
+    "learn_more": "https://learn.microsoft.com/azure/reliability/availability-zones-overview",
     "reviewed": false
   },
   {
     "id": "M04-Q13",
     "module": "M04",
+    "objective_id": "M04-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A company wants separate billing and separate access control for its development and production environments. What should it create?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Separate availability zones"
+      },
+      {
+        "id": "b",
+        "text": "Separate region pairs"
+      },
+      {
+        "id": "c",
+        "text": "Separate datacenters"
+      },
+      {
+        "id": "d",
+        "text": "Separate subscriptions"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "A subscription is both a billing boundary and an access-control boundary, so separate subscriptions separate both.",
+    "why_wrong": {
+      "a": "Availability zones are about physical resilience, not billing or access.",
+      "b": "Region pairs are about recovery across regions, not billing.",
+      "c": "Datacenters are physical buildings run by Microsoft; you do not create them."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/governance/management-groups/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M04-Q14",
+    "module": "M04",
+    "objective_id": "M04-O5",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What do you need before you can create resources in Azure?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A dedicated datacenter"
+      },
+      {
+        "id": "b",
+        "text": "An Azure subscription, which is created with your Azure account"
+      },
+      {
+        "id": "c",
+        "text": "A management group"
+      },
+      {
+        "id": "d",
+        "text": "An availability zone"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Resources are created inside a subscription.",
+    "why_wrong": {
+      "c": "Management groups are optional organisation tools.",
+      "a": "Microsoft runs the datacenters.",
+      "d": "Availability zones are optional resilience features."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cost-management-billing/manage/create-subscription",
+    "reviewed": false
+  },
+  {
+    "id": "M04-Q15",
+    "module": "M04",
+    "objective_id": "M04-O5",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "What does the Azure free account offer new users?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Unlimited use of every Azure service with no end date"
+      },
+      {
+        "id": "b",
+        "text": "A discount that applies only to reserved virtual machines"
+      },
+      {
+        "id": "c",
+        "text": "A one-hour trial of the portal only"
+      },
+      {
+        "id": "d",
+        "text": "Free access to popular products for 12 months, a first-30-days credit and some always-free services"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "The free account combines a 12-month offer, an initial credit and always-free services.",
+    "why_wrong": {
+      "a": "The free account has limits and an end to the credit.",
+      "c": "It is far broader than a one-hour trial.",
+      "b": "It is not tied to reservations."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cost-management-billing/manage/create-subscription",
+    "reviewed": false
+  },
+  {
+    "id": "M04-Q16",
+    "module": "M04",
     "objective_id": "M04-O5",
     "type": "yesno",
     "difficulty": "medium",
-    "prompt": "Decide whether each statement about Azure Resource Manager is true.",
+    "prompt": "Decide whether each statement is true.",
     "options": [
       {
         "id": "s1",
-        "text": "Requests from the Azure portal, Azure CLI and Azure PowerShell are all processed by Azure Resource Manager."
+        "text": "Creating an Azure account creates a subscription for you."
       },
       {
         "id": "s2",
-        "text": "Azure Resource Manager templates describe the end state you want, rather than the individual steps to reach it."
+        "text": "You can create additional subscriptions, such as development, testing and production."
       },
       {
         "id": "s3",
-        "text": "Azure Resource Manager is used only to deploy virtual machines."
+        "text": "A free account charges your payment card as soon as you sign up."
       }
     ],
     "correct": [
       "s1",
       "s2"
     ],
-    "explanation": "ARM handles management requests from every tool and for every resource type, and its templates are declarative.",
+    "explanation": "An account comes with a subscription and can have more; the card on a free account is for identity verification until you upgrade.",
     "why_wrong": {
-      "s1": "Yes. Every tool sends its requests to ARM.",
-      "s2": "Yes. Templates are declarative: you describe the result and ARM works out the steps.",
-      "s3": "No. ARM manages all kinds of Azure resources, not just virtual machines."
+      "s1": "Yes. A subscription is created for you.",
+      "s2": "Yes. Many organisations use separate subscriptions per environment.",
+      "s3": "No. You are not charged until you upgrade to a paid subscription."
     },
-    "learn_more": "https://learn.microsoft.com/azure/azure-resource-manager/management/overview",
+    "learn_more": "https://learn.microsoft.com/azure/cost-management-billing/manage/create-subscription",
     "reviewed": false
   }
 ]

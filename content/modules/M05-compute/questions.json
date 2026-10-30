@@ -1,0 +1,632 @@
+[
+  {
+    "id": "M05-Q01",
+    "module": "M05",
+    "objective_id": "M05-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Which compute type gives you the most control over the operating system?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure Functions"
+      },
+      {
+        "id": "b",
+        "text": "Virtual machines"
+      },
+      {
+        "id": "c",
+        "text": "Azure App Service"
+      },
+      {
+        "id": "d",
+        "text": "Containers"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "With VMs you choose and manage the operating system.",
+    "why_wrong": {
+      "d": "Containers share the host operating system.",
+      "a": "Functions hide the servers entirely.",
+      "c": "App Service manages the operating system for you."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/virtual-machines/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M05-Q02",
+    "module": "M05",
+    "objective_id": "M05-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Which Azure option runs small pieces of code in response to events and bills per execution?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Availability sets"
+      },
+      {
+        "id": "b",
+        "text": "Azure Functions"
+      },
+      {
+        "id": "c",
+        "text": "Virtual machines"
+      },
+      {
+        "id": "d",
+        "text": "Azure Virtual Desktop"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Azure Functions is serverless and event-driven.",
+    "why_wrong": {
+      "c": "VMs run continuously and you manage them.",
+      "d": "Azure Virtual Desktop hosts desktops, not event-driven code.",
+      "a": "An availability set is a way to group VMs, not a compute service."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-functions/functions-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M05-Q03",
+    "module": "M05",
+    "objective_id": "M05-O1",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A team wants to package an app with its dependencies so it runs the same on a laptop and in Azure, starts quickly and shares the host operating system. What should it use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure Virtual Desktop"
+      },
+      {
+        "id": "b",
+        "text": "Containers"
+      },
+      {
+        "id": "c",
+        "text": "An availability set"
+      },
+      {
+        "id": "d",
+        "text": "Virtual machines"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Containers are lightweight, portable and share the host operating system.",
+    "why_wrong": {
+      "d": "Each VM includes its own full operating system.",
+      "a": "Azure Virtual Desktop delivers desktops to users.",
+      "c": "An availability set does not package applications."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/container-instances/container-instances-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M05-Q04",
+    "module": "M05",
+    "objective_id": "M05-O2",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which Azure feature creates and manages a group of identical, load-balanced virtual machines that can autoscale?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Virtual Machine Scale Sets"
+      },
+      {
+        "id": "b",
+        "text": "Availability sets"
+      },
+      {
+        "id": "c",
+        "text": "Azure Functions"
+      },
+      {
+        "id": "d",
+        "text": "Azure Virtual Desktop"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Scale sets manage identical VMs and can scale out and in automatically.",
+    "why_wrong": {
+      "b": "Availability sets spread VMs across fault and update domains but do not autoscale.",
+      "d": "Azure Virtual Desktop hosts user desktops.",
+      "c": "Azure Functions runs event-driven code, not groups of VMs."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/virtual-machine-scale-sets/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M05-Q05",
+    "module": "M05",
+    "objective_id": "M05-O2",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "What do availability sets protect against?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Hardware failures and planned maintenance within a datacenter"
+      },
+      {
+        "id": "b",
+        "text": "The loss of an entire region"
+      },
+      {
+        "id": "c",
+        "text": "Slow internet connections for users"
+      },
+      {
+        "id": "d",
+        "text": "The loss of an entire datacenter"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Availability sets spread VMs across fault domains and update domains inside one datacenter.",
+    "why_wrong": {
+      "b": "Region failures need resources in other regions.",
+      "d": "An availability set sits within one datacenter; availability zones protect against datacenter loss.",
+      "c": "Network speed for users is unrelated."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/virtual-machines/availability-set-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M05-Q06",
+    "module": "M05",
+    "objective_id": "M05-O2",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A company wants employees to use a Windows desktop and apps hosted in Azure from any device. Which service fits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure Functions"
+      },
+      {
+        "id": "b",
+        "text": "Virtual Machine Scale Sets"
+      },
+      {
+        "id": "c",
+        "text": "Azure Virtual Desktop"
+      },
+      {
+        "id": "d",
+        "text": "Azure Container Instances"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Azure Virtual Desktop delivers cloud-hosted Windows desktops and apps.",
+    "why_wrong": {
+      "b": "Scale sets autoscale identical VMs for workloads, not user desktops.",
+      "a": "Functions runs event-driven code.",
+      "d": "Container Instances runs containers, not user desktops."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/virtual-desktop/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M05-Q07",
+    "module": "M05",
+    "objective_id": "M05-O3",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Which resource connects a virtual machine to a virtual network?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A network interface"
+      },
+      {
+        "id": "b",
+        "text": "A resource lock"
+      },
+      {
+        "id": "c",
+        "text": "A management group"
+      },
+      {
+        "id": "d",
+        "text": "A tag"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "A network interface attaches the VM to a subnet in a virtual network.",
+    "why_wrong": {
+      "c": "Management groups organise subscriptions.",
+      "b": "Locks prevent accidental deletion or change.",
+      "d": "Tags are labels used for organising and cost tracking."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/virtual-machines/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M05-Q08",
+    "module": "M05",
+    "objective_id": "M05-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A company wants to host a web application without managing servers or the operating system. Which option fits best?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Virtual machines"
+      },
+      {
+        "id": "b",
+        "text": "Azure App Service"
+      },
+      {
+        "id": "c",
+        "text": "An availability set"
+      },
+      {
+        "id": "d",
+        "text": "Azure Virtual Desktop"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "App Service is a PaaS offering for web apps and APIs.",
+    "why_wrong": {
+      "a": "With VMs you manage the operating system.",
+      "c": "An availability set only groups VMs.",
+      "d": "Azure Virtual Desktop delivers desktops, not web hosting."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/app-service/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M05-Q09",
+    "module": "M05",
+    "objective_id": "M05-O3",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO resources does a virtual machine typically need? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "A management group dedicated to the VM"
+      },
+      {
+        "id": "b",
+        "text": "A disk that holds the operating system"
+      },
+      {
+        "id": "c",
+        "text": "A network interface connected to a virtual network"
+      },
+      {
+        "id": "d",
+        "text": "An Azure Policy assignment"
+      },
+      {
+        "id": "e",
+        "text": "A SaaS licence"
+      }
+    ],
+    "correct": [
+      "b",
+      "c"
+    ],
+    "explanation": "A VM needs storage for its operating system and a network connection, along with a size and image.",
+    "why_wrong": {
+      "a": "Management groups are optional organisation tools.",
+      "d": "Policy assignments are optional governance tools.",
+      "e": "A SaaS licence is not a VM requirement."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/virtual-machines/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M05-Q10",
+    "module": "M05",
+    "objective_id": "M05-O1",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO are benefits of containers compared with virtual machines? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "They run consistently across environments"
+      },
+      {
+        "id": "b",
+        "text": "They give the most control over operating system settings"
+      },
+      {
+        "id": "c",
+        "text": "They remove the need for any host"
+      },
+      {
+        "id": "d",
+        "text": "Each container includes its own full operating system"
+      },
+      {
+        "id": "e",
+        "text": "They are lightweight and start quickly"
+      }
+    ],
+    "correct": [
+      "a",
+      "e"
+    ],
+    "explanation": "Containers share the host operating system, so they are light, fast and portable.",
+    "why_wrong": {
+      "d": "Containers share the host kernel instead of including a full operating system.",
+      "b": "VMs give more control over the operating system.",
+      "c": "Containers still run on a host."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/container-instances/container-instances-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M05-Q11",
+    "module": "M05",
+    "objective_id": "M05-O1",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "Azure Functions is an example of serverless compute."
+      },
+      {
+        "id": "s2",
+        "text": "An availability set can protect VMs from the failure of an entire region."
+      },
+      {
+        "id": "s3",
+        "text": "Azure Virtual Desktop provides cloud-hosted Windows desktops."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s3"
+    ],
+    "explanation": "Functions is serverless and AVD hosts desktops; availability sets work inside one datacenter.",
+    "why_wrong": {
+      "s1": "Yes. You do not manage servers.",
+      "s2": "No. It works within one datacenter.",
+      "s3": "Yes. That is its purpose."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-functions/functions-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M05-Q12",
+    "module": "M05",
+    "objective_id": "M05-O4",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "Virtual machines are an IaaS compute option."
+      },
+      {
+        "id": "s2",
+        "text": "Azure App Service lets you host web apps without managing the underlying servers."
+      },
+      {
+        "id": "s3",
+        "text": "The VMs in a scale set are all configured differently."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s2"
+    ],
+    "explanation": "VMs are IaaS and App Service is PaaS; scale sets contain identical VMs.",
+    "why_wrong": {
+      "s1": "Yes. You manage the operating system.",
+      "s2": "Yes. The platform is managed.",
+      "s3": "No. A scale set is a group of identical VMs."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/app-service/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M05-Q13",
+    "module": "M05",
+    "objective_id": "M05-O5",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A team wants to add speech and vision features to an app through APIs without training its own models. Which category fits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure IoT Hub"
+      },
+      {
+        "id": "b",
+        "text": "Azure Virtual Desktop"
+      },
+      {
+        "id": "c",
+        "text": "Azure AI services"
+      },
+      {
+        "id": "d",
+        "text": "Azure Machine Learning"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Azure AI services provide prebuilt capabilities through APIs.",
+    "why_wrong": {
+      "d": "Machine Learning is for building and training custom models.",
+      "a": "IoT Hub connects devices.",
+      "b": "Azure Virtual Desktop delivers desktops."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/ai-services/what-are-ai-services",
+    "reviewed": false
+  },
+  {
+    "id": "M05-Q14",
+    "module": "M05",
+    "objective_id": "M05-O5",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A data science team needs to build, train and manage its own custom machine learning models. Which service fits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure AI services"
+      },
+      {
+        "id": "b",
+        "text": "Azure DNS"
+      },
+      {
+        "id": "c",
+        "text": "Azure IoT Central"
+      },
+      {
+        "id": "d",
+        "text": "Azure Machine Learning"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Azure Machine Learning supports custom model development and management.",
+    "why_wrong": {
+      "a": "AI services provide prebuilt capabilities.",
+      "c": "IoT Central is for connected-device solutions.",
+      "b": "Azure DNS hosts domains."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/machine-learning/overview-what-is-azure-machine-learning",
+    "reviewed": false
+  },
+  {
+    "id": "M05-Q15",
+    "module": "M05",
+    "objective_id": "M05-O5",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which service provides secure two-way communication between cloud services and IoT devices?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure OpenAI Service"
+      },
+      {
+        "id": "b",
+        "text": "Azure IoT Hub"
+      },
+      {
+        "id": "c",
+        "text": "Azure IoT Edge"
+      },
+      {
+        "id": "d",
+        "text": "Azure Machine Learning"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "IoT Hub connects devices and cloud services in both directions.",
+    "why_wrong": {
+      "c": "IoT Edge runs workloads on devices near the data.",
+      "d": "Machine Learning builds custom models.",
+      "a": "Azure OpenAI Service supports generative AI."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/iot-hub/iot-concepts-and-iot-hub",
+    "reviewed": false
+  },
+  {
+    "id": "M05-Q16",
+    "module": "M05",
+    "objective_id": "M05-O5",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "What does Azure IoT Edge do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Connects two virtual networks"
+      },
+      {
+        "id": "b",
+        "text": "Manages Azure billing"
+      },
+      {
+        "id": "c",
+        "text": "Hosts DNS zones"
+      },
+      {
+        "id": "d",
+        "text": "Extends cloud capabilities to edge devices so some workloads run closer to where data is produced"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "IoT Edge brings workloads close to the devices that generate data.",
+    "why_wrong": {
+      "c": "That is Azure DNS.",
+      "b": "Billing is handled in Cost Management and Billing.",
+      "a": "That is virtual network peering."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/iot-hub/iot-concepts-and-iot-hub",
+    "reviewed": false
+  },
+  {
+    "id": "M05-Q17",
+    "module": "M05",
+    "objective_id": "M05-O5",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "Azure OpenAI Service supports generative AI scenarios such as chat and content generation."
+      },
+      {
+        "id": "s2",
+        "text": "Azure IoT Central is a software-as-a-service IoT platform that simplifies solution management."
+      },
+      {
+        "id": "s3",
+        "text": "Azure Machine Learning provides only prebuilt AI features and cannot be used to train custom models."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s2"
+    ],
+    "explanation": "OpenAI Service covers generative AI and IoT Central simplifies IoT solutions, while Machine Learning is for custom models.",
+    "why_wrong": {
+      "s1": "Yes. Chat and content generation are typical scenarios.",
+      "s2": "Yes. It is a simplified SaaS platform.",
+      "s3": "No. Machine Learning is for building and training custom models."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/ai-services/what-are-ai-services",
+    "reviewed": false
+  }
+]

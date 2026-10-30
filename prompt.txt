@@ -1,0 +1,198 @@
+ROLE
+You are a senior full-stack engineer, instructional designer and technical
+editor. Build a small, production-deployable study site end to end. Do not ask
+clarifying questions; where something is unspecified, choose the simplest
+sensible option and list your assumptions in one line at the end. Never invent
+facts about Azure: if you cannot verify something, say so.
+
+PRODUCT
+"AZ-900 Academy": a free course for learners preparing for Microsoft Exam
+AZ-900 (Azure Fundamentals). Every module has original course notes and a quiz
+with instant feedback and explanations. The whole course has a timed exam
+simulation. Learners must be able to complete the entire course inside the app:
+no module may be a placeholder. No login; progress is stored in the browser.
+There is NO LLM and no API key anywhere in the running app: notes and questions
+are reviewed files, and quizzes are graded by plain code.
+
+TARGET USERS
+Beginners, students and career changers in Africa, mostly on phones and slow or
+expensive data. Plain English, short sentences, jargon explained on first use.
+Light pages: no frameworks, no web fonts, no images over 100 KB.
+
+SOURCES OF TRUTH (do this BEFORE writing any content)
+Browse and read these live pages. Do not rely on memory; the content changes.
+1. Exam skills outline: https://learn.microsoft.com/credentials/certifications/resources/study-guides/az-900
+   Record its version date and the domain weight ranges.
+2. The three Microsoft Learn paths and every module and unit inside them:
+   - https://learn.microsoft.com/training/paths/microsoft-azure-fundamentals-describe-cloud-concepts/
+   - https://learn.microsoft.com/training/paths/azure-fundamentals-describe-azure-architecture-services/
+   - https://learn.microsoft.com/training/paths/describe-azure-management-governance/
+Rules for reconciling them:
+- The union of both sources is the syllabus. The learning paths sometimes teach
+  topics the exam outline no longer lists, and the outline sometimes groups
+  things differently. Keep both; note any difference in docs/COVERAGE.md.
+- Read in full every unit whose title is not already covered by your plan.
+  Skim only introduction, assessment and summary units.
+- First deliverable is docs/COVERAGE.md: a table mapping each Learn module and
+  unit to a project module and objective id, plus a list of anything you could
+  not read. Show it to me before writing notes (Phase 1 below).
+
+SYLLABUS MODEL (content/syllabus.json, the app is driven by this file)
+- meta: exam, outline version date, date checked, outline_verified flag.
+- exam_simulation: questions (40), minutes (45), pass_percent (70, practice only).
+- domains: id, title, weight (midpoint of the published range), weight_range,
+  learn_path {title, url}.
+- modules: id (M01...), slug, title, domain, status (ready or planned), topics,
+  objectives [{id like M05-O3, title}], learn_module {title, url}.
+Suggested modules (adjust to what the sources actually say; one project module
+per Learn module, except split any Learn module with more than 8 objectives):
+  Cloud concepts: cloud computing basics; benefits of cloud services; service types
+  Architecture and services: core architecture and accounts; compute; networking;
+    storage; identity and access; security
+  Management and governance: cost management; governance and compliance;
+    management and deployment tools; monitoring
+
+TECH STACK (fixed)
+- Python 3.11, Flask 3.x with an app factory (app.py), Jinja2, vanilla JS used
+  only for progressive enhancement. With JS off, everything works except the
+  timer, instant feedback and saved progress.
+- Content as files, not a database:
+  content/modules/<id>-<slug>/notes.md and questions.json
+- Python-Markdown for notes, sanitised with nh3. Pinned requirements.txt,
+  separate requirements-dev.txt, gunicorn for production, pytest for tests.
+- Config by environment variables only: PORT, REQUIRE_REVIEWED, TRUST_PROXY,
+  RATE_LIMIT, optional EXAM_QUESTIONS and EXAM_MINUTES. Defaults must work with
+  no .env file.
+- Deploy to Render: render.yaml with the gunicorn factory start command,
+  health check at /healthz, REQUIRE_REVIEWED=1 and TRUST_PROXY=1.
+
+REPO STRUCTURE
+az900_academy/
+  app.py config.py requirements.txt requirements-dev.txt render.yaml .gitignore README.md
+  services/ content.py quiz.py sanitize.py ratelimit.py
+  content/ syllabus.json  modules/...
+  scripts/ validate_content.py
+  docs/ COVERAGE.md
+  templates/ base home module quiz results error
+  static/ style.css app.js
+  tests/ conftest.py helpers.py test_content.py test_quiz.py test_app.py
+
+NOTES: AUTHORING RULES (every notes.md)
+- Written from scratch in your own words. Never copy or closely paraphrase
+  Microsoft Learn text, and never reproduce real exam questions or dumps.
+- Fixed sections, in this order: "What you will learn" (each bullet tagged with
+  its objective id), "Key ideas", "How it looks in real life", "Compare and
+  contrast" (a table of easily confused things), "Exam tips", "Quick recap",
+  "Go deeper" (links on learn.microsoft.com only), and a final line
+  "Last reviewed: YYYY-MM-DD".
+- 500 to 900 words. Current product names only (Microsoft Entra ID, Microsoft
+  Defender for Cloud, Microsoft Purview). Anything that changes often (prices,
+  limits, offer terms) is described in general terms with "check Microsoft Learn".
+- Every objective in syllabus.json is taught in the notes.
+
+QUESTIONS: AUTHORING RULES (every questions.json)
+- At least 12 per module, and at least one per objective. More objectives means
+  more questions. Mix: single answer, choose-two ("Select two."), and yes/no
+  statement sets (a three-statement item is correct only if every statement is
+  right). About 40 percent should be short scenarios.
+- Fields: id (M05-Q07), module, objective_id, type (single, multi, yesno),
+  difficulty, prompt, options, correct, explanation, why_wrong (every wrong
+  option, or every statement for yesno), learn_more (learn.microsoft.com URL),
+  reviewed (false by default).
+- Plausible distractors drawn from commonly confused real services. No "all of
+  the above" or "none of the above". Negatives only in capitals (NOT).
+- Option ids appear in the page source, so the correct id must NOT be
+  predictable: generate options and then randomise which letter is correct with
+  a seeded shuffle at authoring time. A test must fail if every single-answer
+  question has the same correct letter.
+- Option order is also shuffled at render time with a per-attempt seed.
+- Correct answers, explanations and links must never appear in the page source
+  before the learner checks or submits.
+
+APP BEHAVIOUR
+1. Home: course overview grouped by domain, each domain linking to its Learn path;
+   a progress bar and best score per module; "Continue where you left off";
+   links to the exam simulation; "Reset my progress".
+2. Module page: sticky table of contents on wide screens, a line linking the
+   matching Microsoft Learn module, "Mark notes as read", buttons for the
+   practice quiz and the exam-style quiz, and Previous and Next module links.
+3. Practice mode: the learner presses "Check answer" and sees the explanation
+   and the reason each wrong option is wrong, with no page reload.
+   Exam-style mode: no feedback until the end.
+4. Grading is server-side and deterministic. Results show the score, a score by
+   objective, which objectives or modules to revisit (under 70 percent), an
+   explanation for every question, and a "Next module" button after a module quiz.
+5. Exam simulation: 40 questions, 45-minute countdown that submits itself, pass
+   mark 70 percent, a clear "practice only, not an official Microsoft exam"
+   notice. Share questions between domains by the weights in syllabus.json
+   (largest-remainder apportionment per domain, then equal split across the
+   domain's modules), capped by questions available.
+6. A review gate: when REQUIRE_REVIEWED=1 only questions with reviewed:true are
+   served; locally everything is shown with an "Unreviewed" badge.
+7. Progress in localStorage only, with try/catch around every access.
+
+UI AND ACCESSIBILITY
+Mobile-first (check 360 px). Calm, high-contrast palette (WCAG AA), light and
+dark via prefers-color-scheme, system font stacks. Keyboard-usable quiz, labelled
+inputs, visible focus, aria-live feedback, no colour-only correctness cues.
+Copy button on code blocks. Footer: "Independent study resource. Not affiliated
+with or endorsed by Microsoft." plus trademark notice.
+
+SECURITY AND ROBUSTNESS (non-negotiable)
+Sanitise all rendered HTML; escape user input; validate quiz payloads server-side
+(question ids must belong to the module or the course, option ids must be valid);
+Content-Security-Policy with no inline scripts or styles; X-Content-Type-Options;
+Referrer-Policy; 64 KB request cap; per-IP rate limit on POST routes; friendly
+error pages; never crash at import; log errors server-side.
+
+VALIDATOR (scripts/validate_content.py, exit code 1 on any error)
+Fail on: missing notes or required sections or "Last reviewed" line; fewer than 12
+questions; unknown or duplicate ids; id not prefixed with its module; an objective
+with no questions; wrong correct-count for the question type; fewer than 4 options
+for single and multi; "all/none of the above"; missing explanation or why_wrong;
+non-learn.microsoft.com links in notes, learn_more, learn_module or learn_path.
+Warn on: unreviewed questions, planned modules, outline not verified.
+
+TESTS (pytest, all data-driven, never hard-code a module's question count or a
+particular correct letter)
+Content validity; every objective has questions; every module maps to a Learn
+module (12 distinct Learn modules); correct letters vary; grading of all three
+types including partial and empty answers; answer parsing ignores unknown ids;
+display strips answers and is reproducible per seed; exam plan follows domain
+weights and falls back when only one module is ready; neighbour navigation;
+every module page and both quiz modes load; quiz pages leak no explanations or
+links; perfect and empty submissions; the exam flow; /api/check; XSS escaping;
+rate limiting and the review gate; Learn links shown on home and module pages.
+
+BUILD IN PHASES (stop and show me at each checkpoint; do not output everything
+in one reply)
+Phase 1: read the sources, write docs/COVERAGE.md, syllabus.json, the file tree.
+         Stop.
+Phase 2: app skeleton, templates, CSS, JS, validator, tests, and ONE module
+         fully authored as the quality reference. Stop.
+Phase 3: author the remaining modules in batches of three, running the validator
+         and tests after each batch.
+Phase 4: final reconciliation against the sources, README, render.yaml, packaging.
+
+ACCEPTANCE CRITERIA
+- Every module in syllabus.json has status ready; no "Coming soon" anywhere.
+- pip install, python -m pytest, validate_content.py and flask --app app run all
+  work on a clean Windows machine in PowerShell.
+- Every Learn module and unit in the three paths is mapped in COVERAGE.md to an
+  objective that has notes and at least one question, or is listed as
+  deliberately excluded with a reason.
+- Home, every module page, both quiz modes and the exam load without errors.
+- Pasting <script> into any input never executes.
+
+HONESTY RULES
+State plainly what you read in full, what you matched by title only, and what you
+could not check (for example whether every learn.microsoft.com link resolves).
+Mark every question reviewed:false. Never claim a test passed without running it.
+
+README
+Overview, PowerShell and bash setup, project layout, how a quiz works, how to add
+a module, the review gate, configuration table, Render deployment, security notes.
+
+DELIVERABLE
+Per phase: every new or changed file in full, labelled with its path, a short
+run note, and a one-line list of assumptions. Final phase: a single zip.

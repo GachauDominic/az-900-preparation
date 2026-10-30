@@ -6,7 +6,7 @@
 - Describe availability zones and how they relate to datacenters (M04-O2).
 - Explain resources and resource groups (M04-O3).
 - Describe subscriptions, management groups and how they stack (M04-O4).
-- Explain what Azure Resource Manager does (M04-O5).
+- Explain what Azure is and how accounts, subscriptions and the free account work (M04-O5).
 
 ## Key ideas
 
@@ -43,9 +43,13 @@ A **subscription** is the unit where you get billed and where access is controll
 
 The full hierarchy, from broadest to narrowest, is: management group, subscription, resource group, resource.
 
-### Azure Resource Manager
+### What is Azure, and how do you get started?
 
-**Azure Resource Manager (ARM)** is the service that receives every request to create, update or delete resources. The Azure portal, Azure CLI, Azure PowerShell, REST APIs and SDKs all talk to ARM, so you get the same result whichever tool you use. ARM also applies access control, tags and locks, and it can deploy from declarative templates that describe the end state you want.
+**Microsoft Azure** is Microsoft's cloud platform. It offers a wide range of services, such as compute, networking, storage, identity, analytics and AI, which you use and pay for as you need them.
+
+To create resources you need an **Azure subscription**. When you create an **Azure account**, a subscription is created for you, and you can add more later, for example separate subscriptions for development, testing and production. Resources are then created inside a subscription.
+
+New users can try Azure with a **free account**. It includes free access to popular products for 12 months, a credit for the first 30 days and a set of services that stay free. Signing up needs a phone number, a payment card and a Microsoft or GitHub account; the card is used to verify identity, and you are not charged until you upgrade to a paid subscription. Students can use a **free student account**, which offers a credit and free developer tools without needing a payment card. Offers change, so check Microsoft's site for current terms. If you practise by creating resources, watch your usage and delete what you no longer need to avoid surprise costs.
 
 ## How it looks in real life
 
@@ -71,6 +75,7 @@ az group create --name rg-shop-test --location westeurope
 - A resource is in one group only, but that group can hold resources from many regions.
 - Management groups contain subscriptions, never the other way round.
 - Read scenario questions for the clue words: "compliance and isolated" points to sovereign regions; "datacenter failure, same region" points to availability zones; "apply policy to many subscriptions" points to management groups.
+- An Azure account gives you a subscription, and resources live inside subscriptions.
 
 ## Quick recap
 
@@ -78,13 +83,13 @@ az group create --name rg-shop-test --location westeurope
 - Sovereign regions are isolated Azure instances for strict compliance needs.
 - Availability zones are separate locations in a region with their own power, cooling and networking.
 - Resource groups hold related resources; subscriptions bill and control access; management groups organise subscriptions.
-- Azure Resource Manager processes every management request, whatever tool you use.
+- Azure is Microsoft's cloud platform; an account comes with a subscription, and free and student accounts let you practise.
 
 ## Go deeper
 
 - [Azure region pairs](https://learn.microsoft.com/azure/reliability/regions-paired)
 - [Availability zones overview](https://learn.microsoft.com/azure/reliability/availability-zones-overview)
 - [Management groups overview](https://learn.microsoft.com/azure/governance/management-groups/overview)
-- [Azure Resource Manager overview](https://learn.microsoft.com/azure/azure-resource-manager/management/overview)
+- [Create an additional Azure subscription](https://learn.microsoft.com/azure/cost-management-billing/manage/create-subscription)
 
-Last reviewed: 2026-10-22
+Last reviewed: 2026-10-29

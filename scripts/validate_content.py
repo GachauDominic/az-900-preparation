@@ -31,6 +31,9 @@ def validate(content_dir) -> tuple[list[str], list[str]]:
     if not syl.get("meta", {}).get("outline_verified"):
         warnings.append("syllabus.json: outline_verified is false; reconcile with the official AZ-900 outline.")
     domain_ids = {d["id"] for d in syl.get("domains", [])}
+    for d in syl.get("domains", []):
+        if urlparse((d.get("learn_path") or {}).get("url", "")).hostname != "learn.microsoft.com":
+            errors.append(f"{d['id']}: learn_path needs a learn.microsoft.com url")
     seen_modules, seen_questions, unreviewed, planned = set(), set(), 0, 0
 
     for m in syl.get("modules", []):
@@ -48,6 +51,9 @@ def validate(content_dir) -> tuple[list[str], list[str]]:
         objectives = {o["id"] for o in m.get("objectives", [])}
         if not objectives:
             errors.append(f"{mid}: ready module has no objectives")
+        lm = m.get("learn_module") or {}
+        if urlparse(lm.get("url", "")).hostname != "learn.microsoft.com" or not lm.get("title"):
+            errors.append(f"{mid}: learn_module needs a title and a learn.microsoft.com url")
 
         # ---- notes -----------------------------------------------------
         notes_path = folder / "notes.md"
@@ -77,6 +83,9 @@ def validate(content_dir) -> tuple[list[str], list[str]]:
         if len(questions) < MIN_QUESTIONS:
             errors.append(f"{mid}: only {len(questions)} questions (minimum {MIN_QUESTIONS})")
 
+        used = {q.get("objective_id") for q in questions}
+        for oid in sorted(objectives - used):
+            errors.append(f"{mid}: objective {oid} has no questions")
         for q in questions:
             qid = q.get("id", "?")
             where = f"{mid}/{qid}"

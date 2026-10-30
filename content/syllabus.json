@@ -3,50 +3,564 @@
     "exam": "AZ-900",
     "title": "Microsoft Azure Fundamentals",
     "outline_url": "https://learn.microsoft.com/credentials/certifications/resources/study-guides/az-900",
-    "outline_verified": false,
-    "note": "Module map follows the three AZ-900 skill areas but has NOT yet been reconciled line by line with the official outline (version effective 14 January 2026 or later). Check it, fix any differences here, then set outline_verified to true."
+    "outline_verified": true,
+    "note": "Module map reconciled with the official AZ-900 study guide (skills measured as of July 20, 2026). Re-check the study guide whenever Microsoft updates it, and update objectives here if they change. Content is also aligned to the three Microsoft Learn learning paths listed in each domain's learn_path; see docs/COVERAGE.md.",
+    "outline_version": "Skills measured as of July 20, 2026",
+    "outline_checked": "2026-10-29",
+    "learning_paths_checked": "2026-10-29"
   },
-  "exam_simulation": { "questions": 40, "minutes": 45, "pass_percent": 70 },
+  "exam_simulation": {
+    "questions": 40,
+    "minutes": 45,
+    "pass_percent": 70
+  },
   "domains": [
-    { "id": "D1", "title": "Cloud concepts", "weight": null },
-    { "id": "D2", "title": "Azure architecture and services", "weight": null },
-    { "id": "D3", "title": "Azure management and governance", "weight": null }
+    {
+      "id": "D1",
+      "title": "Cloud concepts",
+      "weight": 27.5,
+      "weight_range": "25-30%",
+      "learn_path": {
+        "title": "Introduction to Cloud Infrastructure: Describe cloud concepts",
+        "url": "https://learn.microsoft.com/training/paths/microsoft-azure-fundamentals-describe-cloud-concepts/"
+      }
+    },
+    {
+      "id": "D2",
+      "title": "Azure architecture and services",
+      "weight": 37.5,
+      "weight_range": "35-40%",
+      "learn_path": {
+        "title": "Introduction to Cloud Infrastructure: Describe Azure architecture and services",
+        "url": "https://learn.microsoft.com/training/paths/azure-fundamentals-describe-azure-architecture-services/"
+      }
+    },
+    {
+      "id": "D3",
+      "title": "Azure management and governance",
+      "weight": 32.5,
+      "weight_range": "30-35%",
+      "learn_path": {
+        "title": "Introduction to Cloud Infrastructure: Describe Azure management and governance",
+        "url": "https://learn.microsoft.com/training/paths/describe-azure-management-governance/"
+      }
+    }
   ],
   "modules": [
-    { "id": "M01", "slug": "cloud-basics", "title": "Cloud computing basics", "domain": "D1", "status": "planned",
-      "topics": ["Shared responsibility", "Public, private and hybrid cloud", "Consumption-based model", "CapEx vs OpEx"], "objectives": [] },
-    { "id": "M02", "slug": "cloud-benefits", "title": "Benefits of cloud services", "domain": "D1", "status": "planned",
-      "topics": ["High availability", "Scalability and elasticity", "Reliability and predictability", "Security, governance and manageability"], "objectives": [] },
-    { "id": "M03", "slug": "service-types", "title": "Cloud service types", "domain": "D1", "status": "planned",
-      "topics": ["IaaS", "PaaS", "SaaS", "Serverless", "Matching services to scenarios"], "objectives": [] },
-
-    { "id": "M04", "slug": "core-architecture", "title": "Core architecture of Azure", "domain": "D2", "status": "ready",
-      "topics": ["Regions and region pairs", "Availability zones and datacenters", "Resources and resource groups", "Subscriptions and management groups", "Azure Resource Manager"],
+    {
+      "id": "M01",
+      "slug": "cloud-basics",
+      "title": "Cloud computing basics",
+      "domain": "D1",
+      "status": "ready",
+      "topics": [
+        "Cloud computing",
+        "Shared responsibility model",
+        "Cloud models and use cases",
+        "Consumption-based model and pricing models",
+        "Serverless",
+        "Multicloud, Azure Arc and Azure VMware Solution"
+      ],
       "objectives": [
-        { "id": "M04-O1", "title": "Regions, region pairs and sovereign regions" },
-        { "id": "M04-O2", "title": "Availability zones and datacenters" },
-        { "id": "M04-O3", "title": "Resources and resource groups" },
-        { "id": "M04-O4", "title": "Subscriptions, management groups and the hierarchy" },
-        { "id": "M04-O5", "title": "Azure Resource Manager" }
-      ] },
-    { "id": "M05", "slug": "compute", "title": "Compute services", "domain": "D2", "status": "planned",
-      "topics": ["Virtual machines and scale sets", "Availability sets", "Azure Virtual Desktop", "Containers: ACI, AKS, Container Apps", "App Service", "Azure Functions"], "objectives": [] },
-    { "id": "M06", "slug": "networking", "title": "Networking services", "domain": "D2", "status": "planned",
-      "topics": ["Virtual networks and subnets", "Peering", "VPN Gateway and ExpressRoute", "DNS", "Public and private endpoints"], "objectives": [] },
-    { "id": "M07", "slug": "storage", "title": "Storage services", "domain": "D2", "status": "planned",
-      "topics": ["Storage accounts and redundancy", "Access tiers", "Blob, Files, Queue, Table, Disk", "AzCopy and Storage Explorer", "File Sync, Data Box, Azure Migrate"], "objectives": [] },
-    { "id": "M08", "slug": "identity-access", "title": "Identity and access", "domain": "D2", "status": "planned",
-      "topics": ["Microsoft Entra ID and Domain Services", "Authentication vs authorization", "SSO, MFA, passwordless", "External identities", "Conditional Access", "Azure RBAC"], "objectives": [] },
-    { "id": "M09", "slug": "security", "title": "Security in Azure", "domain": "D2", "status": "planned",
-      "topics": ["Zero Trust", "Defense in depth", "Microsoft Defender for Cloud"], "objectives": [] },
-
-    { "id": "M10", "slug": "cost-management", "title": "Cost management", "domain": "D3", "status": "planned",
-      "topics": ["Factors that affect cost", "Pricing Calculator and TCO Calculator", "Cost Management", "Tags"], "objectives": [] },
-    { "id": "M11", "slug": "governance-compliance", "title": "Governance and compliance", "domain": "D3", "status": "planned",
-      "topics": ["Microsoft Purview", "Azure Policy", "Resource locks", "Service Trust Portal"], "objectives": [] },
-    { "id": "M12", "slug": "management-tools", "title": "Management and deployment tools", "domain": "D3", "status": "planned",
-      "topics": ["Azure portal and Cloud Shell", "Azure CLI and PowerShell", "Azure Arc", "Infrastructure as code", "ARM templates and Bicep"], "objectives": [] },
-    { "id": "M13", "slug": "monitoring", "title": "Monitoring tools", "domain": "D3", "status": "planned",
-      "topics": ["Azure Advisor", "Service Health", "Azure Monitor", "Log Analytics", "Application Insights", "Alerts"], "objectives": [] }
+        {
+          "id": "M01-O1",
+          "title": "Cloud computing"
+        },
+        {
+          "id": "M01-O2",
+          "title": "Shared responsibility model"
+        },
+        {
+          "id": "M01-O3",
+          "title": "Cloud models and use cases"
+        },
+        {
+          "id": "M01-O4",
+          "title": "Consumption-based model and pricing models"
+        },
+        {
+          "id": "M01-O5",
+          "title": "Serverless"
+        },
+        {
+          "id": "M01-O6",
+          "title": "Multicloud, Azure Arc and Azure VMware Solution"
+        }
+      ],
+      "learn_module": {
+        "title": "Describe cloud computing",
+        "url": "https://learn.microsoft.com/training/modules/describe-cloud-compute/"
+      }
+    },
+    {
+      "id": "M02",
+      "slug": "cloud-benefits",
+      "title": "Benefits of cloud services",
+      "domain": "D1",
+      "status": "ready",
+      "topics": [
+        "High availability and scalability",
+        "Reliability and predictability",
+        "Security and governance",
+        "Manageability",
+        "Sustainability in the cloud"
+      ],
+      "objectives": [
+        {
+          "id": "M02-O1",
+          "title": "High availability and scalability"
+        },
+        {
+          "id": "M02-O2",
+          "title": "Reliability and predictability"
+        },
+        {
+          "id": "M02-O3",
+          "title": "Security and governance"
+        },
+        {
+          "id": "M02-O4",
+          "title": "Manageability"
+        },
+        {
+          "id": "M02-O5",
+          "title": "Sustainability in the cloud"
+        }
+      ],
+      "learn_module": {
+        "title": "Describe the benefits of using cloud services",
+        "url": "https://learn.microsoft.com/training/modules/describe-benefits-use-cloud-services/"
+      }
+    },
+    {
+      "id": "M03",
+      "slug": "service-types",
+      "title": "Cloud service types",
+      "domain": "D1",
+      "status": "ready",
+      "topics": [
+        "Infrastructure as a service (IaaS)",
+        "Platform as a service (PaaS)",
+        "Software as a service (SaaS)",
+        "Choosing a service type"
+      ],
+      "objectives": [
+        {
+          "id": "M03-O1",
+          "title": "Infrastructure as a service (IaaS)"
+        },
+        {
+          "id": "M03-O2",
+          "title": "Platform as a service (PaaS)"
+        },
+        {
+          "id": "M03-O3",
+          "title": "Software as a service (SaaS)"
+        },
+        {
+          "id": "M03-O4",
+          "title": "Choosing a service type"
+        }
+      ],
+      "learn_module": {
+        "title": "Describe cloud service types",
+        "url": "https://learn.microsoft.com/training/modules/describe-cloud-service-types/"
+      }
+    },
+    {
+      "id": "M04",
+      "slug": "core-architecture",
+      "title": "Core architecture of Azure",
+      "domain": "D2",
+      "status": "ready",
+      "topics": [
+        "Regions, region pairs and sovereign regions",
+        "Availability zones and datacenters",
+        "Resources and resource groups",
+        "Subscriptions, management groups and the hierarchy",
+        "What Azure is and Azure accounts"
+      ],
+      "objectives": [
+        {
+          "id": "M04-O1",
+          "title": "Regions, region pairs and sovereign regions"
+        },
+        {
+          "id": "M04-O2",
+          "title": "Availability zones and datacenters"
+        },
+        {
+          "id": "M04-O3",
+          "title": "Resources and resource groups"
+        },
+        {
+          "id": "M04-O4",
+          "title": "Subscriptions, management groups and the hierarchy"
+        },
+        {
+          "id": "M04-O5",
+          "title": "What Azure is and Azure accounts"
+        }
+      ],
+      "learn_module": {
+        "title": "Describe the core architectural components of Azure",
+        "url": "https://learn.microsoft.com/training/modules/describe-core-architectural-components-of-azure/"
+      }
+    },
+    {
+      "id": "M05",
+      "slug": "compute",
+      "title": "Compute services",
+      "domain": "D2",
+      "status": "ready",
+      "topics": [
+        "Compute types: virtual machines, containers, functions",
+        "VM options: scale sets, availability sets, Azure Virtual Desktop",
+        "Resources required for virtual machines",
+        "Application hosting options",
+        "AI, machine learning and IoT/Edge service categories"
+      ],
+      "objectives": [
+        {
+          "id": "M05-O1",
+          "title": "Compute types: virtual machines, containers, functions"
+        },
+        {
+          "id": "M05-O2",
+          "title": "VM options: scale sets, availability sets, Azure Virtual Desktop"
+        },
+        {
+          "id": "M05-O3",
+          "title": "Resources required for virtual machines"
+        },
+        {
+          "id": "M05-O4",
+          "title": "Application hosting options"
+        },
+        {
+          "id": "M05-O5",
+          "title": "AI, machine learning and IoT/Edge service categories"
+        }
+      ],
+      "learn_module": {
+        "title": "Describe Azure compute services",
+        "url": "https://learn.microsoft.com/training/modules/describe-azure-compute-networking-services/"
+      }
+    },
+    {
+      "id": "M06",
+      "slug": "networking",
+      "title": "Networking services",
+      "domain": "D2",
+      "status": "ready",
+      "topics": [
+        "Virtual networks and subnets",
+        "Virtual network peering",
+        "VPN Gateway (point-to-site, site-to-site) and ExpressRoute",
+        "Azure DNS",
+        "Public, private and service endpoints",
+        "Routing and filtering network traffic"
+      ],
+      "objectives": [
+        {
+          "id": "M06-O1",
+          "title": "Virtual networks and subnets"
+        },
+        {
+          "id": "M06-O2",
+          "title": "Virtual network peering"
+        },
+        {
+          "id": "M06-O3",
+          "title": "VPN Gateway (point-to-site, site-to-site) and ExpressRoute"
+        },
+        {
+          "id": "M06-O4",
+          "title": "Azure DNS"
+        },
+        {
+          "id": "M06-O5",
+          "title": "Public, private and service endpoints"
+        },
+        {
+          "id": "M06-O6",
+          "title": "Routing and filtering network traffic"
+        }
+      ],
+      "learn_module": {
+        "title": "Describe Azure networking services",
+        "url": "https://learn.microsoft.com/training/modules/describe-azure-networking-services/"
+      }
+    },
+    {
+      "id": "M07",
+      "slug": "storage",
+      "title": "Storage services",
+      "domain": "D2",
+      "status": "ready",
+      "topics": [
+        "Azure Storage services",
+        "Storage account options and types",
+        "Access tiers",
+        "Redundancy options",
+        "Moving files: AzCopy, Storage Explorer, File Sync",
+        "Migration: Azure Migrate and Data Box"
+      ],
+      "objectives": [
+        {
+          "id": "M07-O1",
+          "title": "Azure Storage services"
+        },
+        {
+          "id": "M07-O2",
+          "title": "Storage account options and types"
+        },
+        {
+          "id": "M07-O3",
+          "title": "Access tiers"
+        },
+        {
+          "id": "M07-O4",
+          "title": "Redundancy options"
+        },
+        {
+          "id": "M07-O5",
+          "title": "Moving files: AzCopy, Storage Explorer, File Sync"
+        },
+        {
+          "id": "M07-O6",
+          "title": "Migration: Azure Migrate and Data Box"
+        }
+      ],
+      "learn_module": {
+        "title": "Describe Azure storage services",
+        "url": "https://learn.microsoft.com/training/modules/describe-azure-storage-services/"
+      }
+    },
+    {
+      "id": "M08",
+      "slug": "identity-access",
+      "title": "Identity and access",
+      "domain": "D2",
+      "status": "ready",
+      "topics": [
+        "Directory services: Entra ID and Entra Domain Services",
+        "Authentication methods: SSO, MFA, passwordless",
+        "External identities",
+        "Microsoft Entra Conditional Access",
+        "Azure role-based access control (RBAC)"
+      ],
+      "objectives": [
+        {
+          "id": "M08-O1",
+          "title": "Directory services: Entra ID and Entra Domain Services"
+        },
+        {
+          "id": "M08-O2",
+          "title": "Authentication methods: SSO, MFA, passwordless"
+        },
+        {
+          "id": "M08-O3",
+          "title": "External identities"
+        },
+        {
+          "id": "M08-O4",
+          "title": "Microsoft Entra Conditional Access"
+        },
+        {
+          "id": "M08-O5",
+          "title": "Azure role-based access control (RBAC)"
+        }
+      ],
+      "learn_module": {
+        "title": "Describe Azure identity, access, and security",
+        "url": "https://learn.microsoft.com/training/modules/describe-azure-identity-access-security/"
+      }
+    },
+    {
+      "id": "M09",
+      "slug": "security",
+      "title": "Security in Azure",
+      "domain": "D2",
+      "status": "ready",
+      "topics": [
+        "Zero Trust",
+        "Defense in depth",
+        "Microsoft Defender for Cloud",
+        "Encryption and key management"
+      ],
+      "objectives": [
+        {
+          "id": "M09-O1",
+          "title": "Zero Trust"
+        },
+        {
+          "id": "M09-O2",
+          "title": "Defense in depth"
+        },
+        {
+          "id": "M09-O3",
+          "title": "Microsoft Defender for Cloud"
+        },
+        {
+          "id": "M09-O4",
+          "title": "Encryption and key management"
+        }
+      ],
+      "learn_module": {
+        "title": "Describe Azure identity, access, and security",
+        "url": "https://learn.microsoft.com/training/modules/describe-azure-identity-access-security/"
+      }
+    },
+    {
+      "id": "M10",
+      "slug": "cost-management",
+      "title": "Cost management",
+      "domain": "D3",
+      "status": "ready",
+      "topics": [
+        "Factors that affect costs",
+        "Pricing calculator",
+        "Cost management capabilities",
+        "Tags",
+        "Cost optimisation: reservations, savings plans and Spot"
+      ],
+      "objectives": [
+        {
+          "id": "M10-O1",
+          "title": "Factors that affect costs"
+        },
+        {
+          "id": "M10-O2",
+          "title": "Pricing calculator"
+        },
+        {
+          "id": "M10-O3",
+          "title": "Cost management capabilities"
+        },
+        {
+          "id": "M10-O4",
+          "title": "Tags"
+        },
+        {
+          "id": "M10-O5",
+          "title": "Cost optimisation: reservations, savings plans and Spot"
+        }
+      ],
+      "learn_module": {
+        "title": "Describe cost management in Azure",
+        "url": "https://learn.microsoft.com/training/modules/describe-cost-management-azure/"
+      }
+    },
+    {
+      "id": "M11",
+      "slug": "governance-compliance",
+      "title": "Governance and compliance",
+      "domain": "D3",
+      "status": "ready",
+      "topics": [
+        "Microsoft Purview",
+        "Azure Policy",
+        "Resource locks",
+        "Service Trust Portal"
+      ],
+      "objectives": [
+        {
+          "id": "M11-O1",
+          "title": "Microsoft Purview"
+        },
+        {
+          "id": "M11-O2",
+          "title": "Azure Policy"
+        },
+        {
+          "id": "M11-O3",
+          "title": "Resource locks"
+        },
+        {
+          "id": "M11-O4",
+          "title": "Service Trust Portal"
+        }
+      ],
+      "learn_module": {
+        "title": "Describe features and tools in Azure for governance and compliance",
+        "url": "https://learn.microsoft.com/training/modules/describe-features-tools-azure-for-governance-compliance/"
+      }
+    },
+    {
+      "id": "M12",
+      "slug": "management-tools",
+      "title": "Management and deployment tools",
+      "domain": "D3",
+      "status": "ready",
+      "topics": [
+        "Azure portal",
+        "Cloud Shell, Azure CLI and Azure PowerShell",
+        "Azure Arc",
+        "Infrastructure as code",
+        "Azure Resource Manager and ARM templates"
+      ],
+      "objectives": [
+        {
+          "id": "M12-O1",
+          "title": "Azure portal"
+        },
+        {
+          "id": "M12-O2",
+          "title": "Cloud Shell, Azure CLI and Azure PowerShell"
+        },
+        {
+          "id": "M12-O3",
+          "title": "Azure Arc"
+        },
+        {
+          "id": "M12-O4",
+          "title": "Infrastructure as code"
+        },
+        {
+          "id": "M12-O5",
+          "title": "Azure Resource Manager and ARM templates"
+        }
+      ],
+      "learn_module": {
+        "title": "Describe features and tools for managing and deploying Azure resources",
+        "url": "https://learn.microsoft.com/training/modules/describe-features-tools-manage-deploy-azure-resources/"
+      }
+    },
+    {
+      "id": "M13",
+      "slug": "monitoring",
+      "title": "Monitoring tools",
+      "domain": "D3",
+      "status": "ready",
+      "topics": [
+        "Azure Advisor",
+        "Azure Service Health",
+        "Azure Monitor",
+        "Log Analytics, alerts and Application Insights"
+      ],
+      "objectives": [
+        {
+          "id": "M13-O1",
+          "title": "Azure Advisor"
+        },
+        {
+          "id": "M13-O2",
+          "title": "Azure Service Health"
+        },
+        {
+          "id": "M13-O3",
+          "title": "Azure Monitor"
+        },
+        {
+          "id": "M13-O4",
+          "title": "Log Analytics, alerts and Application Insights"
+        }
+      ],
+      "learn_module": {
+        "title": "Describe monitoring tools in Azure",
+        "url": "https://learn.microsoft.com/training/modules/describe-monitoring-tools-azure/"
+      }
+    }
   ]
 }

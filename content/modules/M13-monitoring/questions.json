@@ -1,0 +1,453 @@
+[
+  {
+    "id": "M13-Q01",
+    "module": "M13",
+    "objective_id": "M13-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What does Azure Advisor provide?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Storage for files"
+      },
+      {
+        "id": "b",
+        "text": "Invoices and payments"
+      },
+      {
+        "id": "c",
+        "text": "Personalised recommendations to improve reliability, security, performance, cost and operational excellence"
+      },
+      {
+        "id": "d",
+        "text": "User sign-in services"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Advisor analyses your resources and recommends improvements.",
+    "why_wrong": {
+      "d": "Sign-in is handled by Microsoft Entra ID.",
+      "b": "Billing is handled in Cost Management and Billing.",
+      "a": "Storage is provided by Azure Storage."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/advisor/advisor-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M13-Q02",
+    "module": "M13",
+    "objective_id": "M13-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Which is a category of Azure Advisor recommendations?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Marketing"
+      },
+      {
+        "id": "b",
+        "text": "Cost"
+      },
+      {
+        "id": "c",
+        "text": "Licensing"
+      },
+      {
+        "id": "d",
+        "text": "Support tickets"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Advisor categories are reliability, security, performance, cost and operational excellence.",
+    "why_wrong": {
+      "a": "Marketing is not an Advisor category.",
+      "c": "Licensing is not an Advisor category.",
+      "d": "Support tickets are not an Advisor category."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/advisor/advisor-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M13-Q03",
+    "module": "M13",
+    "objective_id": "M13-O1",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A team wants advice on resizing or shutting down underused virtual machines to save money. Which service provides it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure Advisor"
+      },
+      {
+        "id": "b",
+        "text": "Application Insights"
+      },
+      {
+        "id": "c",
+        "text": "Azure Service Health"
+      },
+      {
+        "id": "d",
+        "text": "Log Analytics"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Advisor recommends cost savings such as resizing underused resources.",
+    "why_wrong": {
+      "c": "Service Health reports on Azure service issues.",
+      "b": "Application Insights monitors application performance.",
+      "d": "Log Analytics queries log data."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/advisor/advisor-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M13-Q04",
+    "module": "M13",
+    "objective_id": "M13-O2",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A team wants to know whether a regional Azure outage or planned maintenance affects its resources. What should it check?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure Advisor"
+      },
+      {
+        "id": "b",
+        "text": "Azure Service Health"
+      },
+      {
+        "id": "c",
+        "text": "Azure Policy"
+      },
+      {
+        "id": "d",
+        "text": "The pricing calculator"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Service Health gives a personalised view of issues and maintenance affecting you.",
+    "why_wrong": {
+      "a": "Advisor recommends improvements.",
+      "d": "The calculator estimates costs.",
+      "c": "Policy checks resource compliance."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/service-health/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M13-Q05",
+    "module": "M13",
+    "objective_id": "M13-O2",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "What does Resource Health show?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The health of an individual resource, such as a specific virtual machine"
+      },
+      {
+        "id": "b",
+        "text": "The cost of a resource"
+      },
+      {
+        "id": "c",
+        "text": "The global status of every Azure region"
+      },
+      {
+        "id": "d",
+        "text": "A forecast of next month's bill"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Resource Health reports on a single resource.",
+    "why_wrong": {
+      "b": "Costs are shown in Cost Management.",
+      "c": "That is the Azure status page.",
+      "d": "Forecasts are in Cost Management."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/service-health/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M13-Q06",
+    "module": "M13",
+    "objective_id": "M13-O3",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is the purpose of Azure Monitor?",
+    "options": [
+      {
+        "id": "a",
+        "text": "To manage software licences"
+      },
+      {
+        "id": "b",
+        "text": "To deploy resources from templates"
+      },
+      {
+        "id": "c",
+        "text": "To collect, analyse and act on telemetry from your cloud and on-premises environments"
+      },
+      {
+        "id": "d",
+        "text": "To give recommendations on cost savings"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Azure Monitor gathers metrics and logs and lets you act on them.",
+    "why_wrong": {
+      "d": "That is Azure Advisor.",
+      "b": "That is done with ARM templates or Bicep.",
+      "a": "Licences are not managed by Azure Monitor."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-monitor/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M13-Q07",
+    "module": "M13",
+    "objective_id": "M13-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "What is Log Analytics?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A service that encrypts data"
+      },
+      {
+        "id": "b",
+        "text": "A tool in the Azure portal for writing queries and analysing log data collected by Azure Monitor"
+      },
+      {
+        "id": "c",
+        "text": "A tool that sets spending budgets"
+      },
+      {
+        "id": "d",
+        "text": "A service that hosts DNS zones"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Log Analytics is where you explore log data with queries.",
+    "why_wrong": {
+      "d": "DNS hosting is Azure DNS.",
+      "c": "Budgets are in Cost Management.",
+      "a": "Encryption is a separate feature."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-monitor/logs/log-analytics-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M13-Q08",
+    "module": "M13",
+    "objective_id": "M13-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A team wants on-call engineers emailed when CPU use stays above 90%. What should it configure?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A tag"
+      },
+      {
+        "id": "b",
+        "text": "Azure Advisor"
+      },
+      {
+        "id": "c",
+        "text": "An Azure Monitor alert"
+      },
+      {
+        "id": "d",
+        "text": "A resource lock"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Azure Monitor alerts notify people or trigger actions when conditions are met.",
+    "why_wrong": {
+      "b": "Advisor gives recommendations, not condition-based notifications.",
+      "d": "Locks prevent deletion or change.",
+      "a": "Tags are labels."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-monitor/alerts/alerts-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M13-Q09",
+    "module": "M13",
+    "objective_id": "M13-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "What does Application Insights do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Manages Azure costs"
+      },
+      {
+        "id": "b",
+        "text": "Hosts DNS zones"
+      },
+      {
+        "id": "c",
+        "text": "Monitors live web applications to detect performance issues and failures"
+      },
+      {
+        "id": "d",
+        "text": "Encrypts application data"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Application Insights tracks requests, response times and failures in live apps.",
+    "why_wrong": {
+      "d": "Encryption is a separate feature.",
+      "a": "Costs are managed in Cost Management.",
+      "b": "DNS hosting is Azure DNS."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-monitor/app/app-insights-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M13-Q10",
+    "module": "M13",
+    "objective_id": "M13-O3",
+    "type": "multi",
+    "difficulty": "easy",
+    "prompt": "Which TWO types of data does Azure Monitor collect? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Logs"
+      },
+      {
+        "id": "b",
+        "text": "Software licences"
+      },
+      {
+        "id": "c",
+        "text": "Email attachments"
+      },
+      {
+        "id": "d",
+        "text": "Invoices"
+      },
+      {
+        "id": "e",
+        "text": "Metrics"
+      }
+    ],
+    "correct": [
+      "a",
+      "e"
+    ],
+    "explanation": "Azure Monitor collects metrics and logs.",
+    "why_wrong": {
+      "d": "Invoices are billing documents.",
+      "b": "Licences are not telemetry.",
+      "c": "Email attachments are not telemetry."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-monitor/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M13-Q11",
+    "module": "M13",
+    "objective_id": "M13-O2",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO describe Azure Service Health? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "It sets spending budgets"
+      },
+      {
+        "id": "b",
+        "text": "It includes Resource Health for individual resources"
+      },
+      {
+        "id": "c",
+        "text": "It queries log data with a query language"
+      },
+      {
+        "id": "d",
+        "text": "It gives recommendations to reduce costs"
+      },
+      {
+        "id": "e",
+        "text": "It shows personalised information about service issues and planned maintenance affecting you"
+      }
+    ],
+    "correct": [
+      "b",
+      "e"
+    ],
+    "explanation": "Service Health covers issues and maintenance affecting you and includes Resource Health.",
+    "why_wrong": {
+      "d": "That is Azure Advisor.",
+      "c": "That is Log Analytics.",
+      "a": "That is Cost Management."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/service-health/overview",
+    "reviewed": false
+  },
+  {
+    "id": "M13-Q12",
+    "module": "M13",
+    "objective_id": "M13-O1",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "Azure Advisor recommendations include ways to save cost."
+      },
+      {
+        "id": "s2",
+        "text": "Application Insights is designed to monitor live web applications."
+      },
+      {
+        "id": "s3",
+        "text": "Log Analytics sets spending budgets."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s2"
+    ],
+    "explanation": "Advisor includes cost recommendations and Application Insights monitors live apps; budgets are set in Cost Management.",
+    "why_wrong": {
+      "s1": "Yes. Cost is one of the five categories.",
+      "s2": "Yes. It tracks performance and failures.",
+      "s3": "No. Log Analytics queries log data."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/advisor/advisor-overview",
+    "reviewed": false
+  }
+]

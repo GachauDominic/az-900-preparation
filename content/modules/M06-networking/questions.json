@@ -1,0 +1,669 @@
+[
+  {
+    "id": "M06-Q01",
+    "module": "M06",
+    "objective_id": "M06-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is the purpose of an Azure virtual network?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A billing boundary for subscriptions"
+      },
+      {
+        "id": "b",
+        "text": "A physical cable between datacenters"
+      },
+      {
+        "id": "c",
+        "text": "A type of storage account"
+      },
+      {
+        "id": "d",
+        "text": "A private network in Azure where resources communicate securely with each other, the internet and on-premises networks"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "A virtual network is your isolated, private network in Azure.",
+    "why_wrong": {
+      "c": "Storage accounts hold data, not networks.",
+      "b": "A VNet is virtual, not a physical cable.",
+      "a": "Subscriptions are the billing boundary."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/virtual-network/virtual-networks-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M06-Q02",
+    "module": "M06",
+    "objective_id": "M06-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is a subnet?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A range of IP addresses inside a virtual network used to segment it"
+      },
+      {
+        "id": "b",
+        "text": "A connection between two virtual networks"
+      },
+      {
+        "id": "c",
+        "text": "A gateway to the on-premises network"
+      },
+      {
+        "id": "d",
+        "text": "A DNS record"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Subnets divide a virtual network's address space.",
+    "why_wrong": {
+      "b": "That describes peering.",
+      "d": "A DNS record maps a name to an address.",
+      "c": "That describes a gateway."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/virtual-network/virtual-networks-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M06-Q03",
+    "module": "M06",
+    "objective_id": "M06-O2",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Two virtual networks in different regions must communicate privately over the Microsoft backbone network. What should you use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A resource group"
+      },
+      {
+        "id": "b",
+        "text": "A public endpoint"
+      },
+      {
+        "id": "c",
+        "text": "Virtual network peering"
+      },
+      {
+        "id": "d",
+        "text": "Azure DNS"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Peering connects VNets, including across regions, over Microsoft's backbone.",
+    "why_wrong": {
+      "d": "DNS resolves names; it does not connect networks.",
+      "b": "A public endpoint exposes a service to the internet.",
+      "a": "A resource group is only a container."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/virtual-network/virtual-network-peering-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M06-Q04",
+    "module": "M06",
+    "objective_id": "M06-O3",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which service provides an encrypted connection between an on-premises network and Azure over the public internet?",
+    "options": [
+      {
+        "id": "a",
+        "text": "VPN Gateway"
+      },
+      {
+        "id": "b",
+        "text": "Virtual network peering"
+      },
+      {
+        "id": "c",
+        "text": "ExpressRoute"
+      },
+      {
+        "id": "d",
+        "text": "Azure DNS"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "VPN Gateway sends encrypted traffic over the internet.",
+    "why_wrong": {
+      "c": "ExpressRoute uses a private connection, not the public internet.",
+      "b": "Peering connects virtual networks to each other.",
+      "d": "DNS resolves names."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways",
+    "reviewed": false
+  },
+  {
+    "id": "M06-Q05",
+    "module": "M06",
+    "objective_id": "M06-O3",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A company needs a private, dedicated connection to Azure that does not cross the public internet and has consistent latency. Which should it choose?",
+    "options": [
+      {
+        "id": "a",
+        "text": "ExpressRoute"
+      },
+      {
+        "id": "b",
+        "text": "Azure DNS"
+      },
+      {
+        "id": "c",
+        "text": "VPN Gateway"
+      },
+      {
+        "id": "d",
+        "text": "Virtual network peering"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "ExpressRoute is a private connection through a connectivity provider.",
+    "why_wrong": {
+      "c": "VPN Gateway travels over the public internet.",
+      "d": "Peering links virtual networks, not on-premises networks.",
+      "b": "DNS resolves names."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/expressroute/expressroute-introduction",
+    "reviewed": false
+  },
+  {
+    "id": "M06-Q06",
+    "module": "M06",
+    "objective_id": "M06-O4",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What does Azure DNS do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Stores blobs and files"
+      },
+      {
+        "id": "b",
+        "text": "Hosts DNS domains and resolves names to IP addresses using Azure infrastructure"
+      },
+      {
+        "id": "c",
+        "text": "Creates encrypted tunnels to on-premises networks"
+      },
+      {
+        "id": "d",
+        "text": "Connects two virtual networks"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Azure DNS hosts domain records and name resolution.",
+    "why_wrong": {
+      "c": "That describes VPN Gateway.",
+      "d": "That describes peering.",
+      "a": "That describes Azure Storage."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/dns/dns-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M06-Q07",
+    "module": "M06",
+    "objective_id": "M06-O5",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "What is a private endpoint?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An encrypted tunnel over the internet"
+      },
+      {
+        "id": "b",
+        "text": "A type of DNS record"
+      },
+      {
+        "id": "c",
+        "text": "A network interface with a private IP address from your virtual network that connects you privately to an Azure service"
+      },
+      {
+        "id": "d",
+        "text": "A public IP address that exposes a service to everyone"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "A private endpoint brings a service into your virtual network through a private IP address.",
+    "why_wrong": {
+      "d": "That describes a public endpoint.",
+      "b": "A DNS record maps names, it is not a connection.",
+      "a": "That describes a VPN."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/private-link/private-endpoint-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M06-Q08",
+    "module": "M06",
+    "objective_id": "M06-O5",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A company wants its storage account reachable only from inside its virtual network and not exposed on the public internet. What should it use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A public endpoint"
+      },
+      {
+        "id": "b",
+        "text": "A larger virtual machine"
+      },
+      {
+        "id": "c",
+        "text": "A private endpoint"
+      },
+      {
+        "id": "d",
+        "text": "A public DNS zone"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "A private endpoint gives the service a private IP address in your VNet.",
+    "why_wrong": {
+      "a": "A public endpoint is reachable over the internet.",
+      "b": "VM size does not affect network exposure.",
+      "d": "A public DNS zone only resolves names."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/private-link/private-endpoint-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M06-Q09",
+    "module": "M06",
+    "objective_id": "M06-O2",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO statements about virtual network peering are true? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Traffic goes over the public internet"
+      },
+      {
+        "id": "b",
+        "text": "Peering requires ExpressRoute"
+      },
+      {
+        "id": "c",
+        "text": "Virtual networks in different regions can be peered"
+      },
+      {
+        "id": "d",
+        "text": "Peered networks must use identical address ranges"
+      },
+      {
+        "id": "e",
+        "text": "Traffic uses Microsoft's private backbone network"
+      }
+    ],
+    "correct": [
+      "c",
+      "e"
+    ],
+    "explanation": "Peering uses the backbone and can span regions; address ranges must not overlap.",
+    "why_wrong": {
+      "a": "Peering traffic stays on Microsoft's backbone.",
+      "d": "Address ranges must not overlap.",
+      "b": "Peering does not need ExpressRoute."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/virtual-network/virtual-network-peering-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M06-Q10",
+    "module": "M06",
+    "objective_id": "M06-O3",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO describe ExpressRoute? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "It is used only to host DNS zones"
+      },
+      {
+        "id": "b",
+        "text": "It is always cheaper than a VPN Gateway"
+      },
+      {
+        "id": "c",
+        "text": "It connects two virtual networks inside Azure only"
+      },
+      {
+        "id": "d",
+        "text": "Its traffic does not travel over the public internet"
+      },
+      {
+        "id": "e",
+        "text": "It is a private connection through a connectivity provider"
+      }
+    ],
+    "correct": [
+      "d",
+      "e"
+    ],
+    "explanation": "ExpressRoute is a private, provider-based connection that avoids the public internet.",
+    "why_wrong": {
+      "b": "ExpressRoute usually costs more than a VPN.",
+      "a": "DNS hosting is Azure DNS.",
+      "c": "ExpressRoute connects on-premises networks to Azure."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/expressroute/expressroute-introduction",
+    "reviewed": false
+  },
+  {
+    "id": "M06-Q11",
+    "module": "M06",
+    "objective_id": "M06-O1",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "Resources in the same virtual network can communicate by default."
+      },
+      {
+        "id": "s2",
+        "text": "Subnets divide a virtual network's address space into smaller ranges."
+      },
+      {
+        "id": "s3",
+        "text": "A virtual network is a public network shared by all customers."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s2"
+    ],
+    "explanation": "VNets are private and isolated, and subnets split the address space.",
+    "why_wrong": {
+      "s1": "Yes. Communication inside a VNet is allowed by default.",
+      "s2": "Yes. That is what subnets do.",
+      "s3": "No. A VNet is private and isolated."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/virtual-network/virtual-networks-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M06-Q12",
+    "module": "M06",
+    "objective_id": "M06-O5",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "A private endpoint uses a private IP address from your virtual network."
+      },
+      {
+        "id": "s2",
+        "text": "A public endpoint is reachable over the internet through a public IP address."
+      },
+      {
+        "id": "s3",
+        "text": "VPN Gateway uses a dedicated private circuit that never touches the internet."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s2"
+    ],
+    "explanation": "Private endpoints use private addresses, public endpoints use public addresses, and VPN Gateway runs over the internet.",
+    "why_wrong": {
+      "s1": "Yes. It sits inside your VNet.",
+      "s2": "Yes. That is how it is reached.",
+      "s3": "No. That describes ExpressRoute; VPN Gateway uses the internet."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/private-link/private-endpoint-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M06-Q13",
+    "module": "M06",
+    "objective_id": "M06-O6",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which Azure resource holds inbound and outbound rules that allow or block traffic by source, destination, port and protocol?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Virtual network peering"
+      },
+      {
+        "id": "b",
+        "text": "A network security group"
+      },
+      {
+        "id": "c",
+        "text": "Azure DNS"
+      },
+      {
+        "id": "d",
+        "text": "A resource lock"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "NSGs filter network traffic with security rules.",
+    "why_wrong": {
+      "c": "Azure DNS resolves names.",
+      "a": "Peering connects virtual networks.",
+      "d": "Locks prevent deletion or change."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/virtual-network/network-security-groups-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M06-Q14",
+    "module": "M06",
+    "objective_id": "M06-O6",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A company wants to control how packets are routed between subnets, overriding Azure's default routes. What should it use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure DNS"
+      },
+      {
+        "id": "b",
+        "text": "A network security group"
+      },
+      {
+        "id": "c",
+        "text": "Route tables with user-defined routes"
+      },
+      {
+        "id": "d",
+        "text": "A private endpoint"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Route tables and UDRs let you define where traffic is sent.",
+    "why_wrong": {
+      "a": "Azure DNS resolves names.",
+      "b": "An NSG filters traffic rather than choosing its route.",
+      "d": "A private endpoint gives a service a private IP address."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/virtual-network/virtual-networks-udr-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M06-Q15",
+    "module": "M06",
+    "objective_id": "M06-O3",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A remote worker's laptop starts an encrypted VPN connection to an Azure virtual network. Which connection type is this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "ExpressRoute"
+      },
+      {
+        "id": "b",
+        "text": "Virtual network peering"
+      },
+      {
+        "id": "c",
+        "text": "Site-to-site"
+      },
+      {
+        "id": "d",
+        "text": "Point-to-site"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "In a point-to-site VPN a single client computer connects in.",
+    "why_wrong": {
+      "c": "Site-to-site links an on-premises VPN device to an Azure gateway.",
+      "a": "ExpressRoute is a private connection, not a VPN over the internet.",
+      "b": "Peering connects virtual networks."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways",
+    "reviewed": false
+  },
+  {
+    "id": "M06-Q16",
+    "module": "M06",
+    "objective_id": "M06-O3",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A VPN links an on-premises VPN device to an Azure VPN gateway so Azure resources appear to be on the local network. Which type is this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Point-to-site"
+      },
+      {
+        "id": "b",
+        "text": "ExpressRoute"
+      },
+      {
+        "id": "c",
+        "text": "Virtual network peering"
+      },
+      {
+        "id": "d",
+        "text": "Site-to-site"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Site-to-site VPNs connect whole networks over an encrypted internet connection.",
+    "why_wrong": {
+      "a": "Point-to-site connects a single client computer.",
+      "b": "ExpressRoute does not use the public internet.",
+      "c": "Peering connects virtual networks."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways",
+    "reviewed": false
+  },
+  {
+    "id": "M06-Q17",
+    "module": "M06",
+    "objective_id": "M06-O5",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "What can service endpoints do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Connect a virtual network to Azure services such as storage accounts and Azure SQL Database over Azure's network"
+      },
+      {
+        "id": "b",
+        "text": "Resolve domain names"
+      },
+      {
+        "id": "c",
+        "text": "Block traffic by port number"
+      },
+      {
+        "id": "d",
+        "text": "Create a private circuit from an office to Azure"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Service endpoints improve security and routing between a virtual network and certain Azure services.",
+    "why_wrong": {
+      "d": "That describes ExpressRoute.",
+      "b": "That describes Azure DNS.",
+      "c": "That describes a network security group."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M06-Q18",
+    "module": "M06",
+    "objective_id": "M06-O6",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "By default, Azure routes traffic between subnets of connected virtual networks."
+      },
+      {
+        "id": "s2",
+        "text": "A network virtual appliance is a specialised virtual machine that can act as a firewall."
+      },
+      {
+        "id": "s3",
+        "text": "Network security groups can only be applied to physical devices."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s2"
+    ],
+    "explanation": "Azure routes between subnets by default, and network virtual appliances perform network functions; NSGs apply to Azure resources.",
+    "why_wrong": {
+      "s1": "Yes. Default routes allow traffic between connected subnets.",
+      "s2": "Yes. Firewalls are a common example.",
+      "s3": "No. NSGs are Azure resources applied to subnets or network interfaces."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/virtual-network/network-security-groups-overview",
+    "reviewed": false
+  }
+]

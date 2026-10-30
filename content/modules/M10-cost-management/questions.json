@@ -1,0 +1,598 @@
+[
+  {
+    "id": "M10-Q01",
+    "module": "M10",
+    "objective_id": "M10-O2",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Which tool estimates the cost of Azure services before you deploy them?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Cost analysis in Microsoft Cost Management"
+      },
+      {
+        "id": "b",
+        "text": "The Azure pricing calculator"
+      },
+      {
+        "id": "c",
+        "text": "Azure Service Health"
+      },
+      {
+        "id": "d",
+        "text": "Azure Monitor"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "The pricing calculator builds estimates from planned products, sizes and regions.",
+    "why_wrong": {
+      "a": "Cost analysis shows costs already incurred.",
+      "d": "Azure Monitor collects telemetry.",
+      "c": "Service Health reports on service issues."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cost-management-billing/understand/plan-manage-costs",
+    "reviewed": false
+  },
+  {
+    "id": "M10-Q02",
+    "module": "M10",
+    "objective_id": "M10-O1",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which data transfer is generally charged in Azure?",
+    "options": [
+      {
+        "id": "a",
+        "text": "All data transfer is always free"
+      },
+      {
+        "id": "b",
+        "text": "Data leaving Azure datacenters to the internet"
+      },
+      {
+        "id": "c",
+        "text": "Data inside a single virtual machine"
+      },
+      {
+        "id": "d",
+        "text": "Data coming into Azure from the internet"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Outbound data transfer is generally charged, while inbound is generally free.",
+    "why_wrong": {
+      "d": "Inbound transfer is generally free.",
+      "a": "Outbound transfer is generally charged.",
+      "c": "Data within a VM is not network transfer."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cost-management-billing/understand/plan-manage-costs",
+    "reviewed": false
+  },
+  {
+    "id": "M10-Q03",
+    "module": "M10",
+    "objective_id": "M10-O1",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Why might the same virtual machine cost a different amount in two regions?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Region affects only network speed"
+      },
+      {
+        "id": "b",
+        "text": "Costs are identical everywhere"
+      },
+      {
+        "id": "c",
+        "text": "Prices vary by region"
+      },
+      {
+        "id": "d",
+        "text": "Only the number of subscriptions affects price"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Azure prices differ between regions.",
+    "why_wrong": {
+      "b": "Prices are not identical across regions.",
+      "a": "Region affects price as well as latency.",
+      "d": "Many factors, not only subscriptions, affect price."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cost-management-billing/understand/plan-manage-costs",
+    "reviewed": false
+  },
+  {
+    "id": "M10-Q04",
+    "module": "M10",
+    "objective_id": "M10-O3",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Finance wants an alert when spending reaches 80% of a monthly limit. What should be created?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A resource lock"
+      },
+      {
+        "id": "b",
+        "text": "A budget with alerts in Microsoft Cost Management"
+      },
+      {
+        "id": "c",
+        "text": "A management group"
+      },
+      {
+        "id": "d",
+        "text": "An availability zone"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Budgets can notify you when spending crosses a threshold.",
+    "why_wrong": {
+      "a": "Locks prevent deletion or changes.",
+      "c": "Management groups organise subscriptions.",
+      "d": "Availability zones provide physical resilience."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cost-management-billing/costs/tutorial-acm-create-budgets",
+    "reviewed": false
+  },
+  {
+    "id": "M10-Q05",
+    "module": "M10",
+    "objective_id": "M10-O3",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What does cost analysis help you do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Enforce naming rules on resources"
+      },
+      {
+        "id": "b",
+        "text": "Create virtual machines"
+      },
+      {
+        "id": "c",
+        "text": "Estimate costs of resources you have not created"
+      },
+      {
+        "id": "d",
+        "text": "See and break down where your costs come from over time"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Cost analysis breaks down actual spending by resource, group, tag or period.",
+    "why_wrong": {
+      "c": "That is the pricing calculator.",
+      "a": "Naming rules are enforced with governance tools.",
+      "b": "Cost analysis does not create resources."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cost-management-billing/costs/overview-cost-management",
+    "reviewed": false
+  },
+  {
+    "id": "M10-Q06",
+    "module": "M10",
+    "objective_id": "M10-O4",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What is a tag in Azure?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An encryption key"
+      },
+      {
+        "id": "b",
+        "text": "A pricing tier"
+      },
+      {
+        "id": "c",
+        "text": "A permission assignment"
+      },
+      {
+        "id": "d",
+        "text": "A name and value pair attached to a resource to help organise it"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Tags are labels such as Department = Finance.",
+    "why_wrong": {
+      "a": "Encryption keys protect data.",
+      "c": "Permissions are granted through role assignments.",
+      "b": "Pricing tiers are service options."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-resource-manager/management/tag-resources",
+    "reviewed": false
+  },
+  {
+    "id": "M10-Q07",
+    "module": "M10",
+    "objective_id": "M10-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A company wants to report Azure costs by department. What should it use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Resource locks"
+      },
+      {
+        "id": "b",
+        "text": "Availability sets"
+      },
+      {
+        "id": "c",
+        "text": "Azure DNS"
+      },
+      {
+        "id": "d",
+        "text": "Tags such as a Department tag, then group costs by tag"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Tags let you group and filter costs by department, project or environment.",
+    "why_wrong": {
+      "a": "Locks protect resources from changes.",
+      "b": "Availability sets group VMs for resilience.",
+      "c": "DNS resolves names."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-resource-manager/management/tag-resources",
+    "reviewed": false
+  },
+  {
+    "id": "M10-Q08",
+    "module": "M10",
+    "objective_id": "M10-O4",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "By default, do resources automatically inherit the tags applied to their resource group?",
+    "options": [
+      {
+        "id": "a",
+        "text": "No, unless you set it up, for example with Azure Policy"
+      },
+      {
+        "id": "b",
+        "text": "Only storage accounts inherit tags"
+      },
+      {
+        "id": "c",
+        "text": "Yes, always"
+      },
+      {
+        "id": "d",
+        "text": "Only virtual machines inherit tags"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Tags are not inherited by default.",
+    "why_wrong": {
+      "c": "Inheritance is not automatic.",
+      "d": "No resource type inherits by default.",
+      "b": "No resource type inherits by default."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/azure-resource-manager/management/tag-resources",
+    "reviewed": false
+  },
+  {
+    "id": "M10-Q09",
+    "module": "M10",
+    "objective_id": "M10-O1",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which option lets an organisation reuse eligible existing Windows Server licences on Azure to reduce cost?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Azure DNS"
+      },
+      {
+        "id": "b",
+        "text": "Azure Hybrid Benefit"
+      },
+      {
+        "id": "c",
+        "text": "Resource locks"
+      },
+      {
+        "id": "d",
+        "text": "Availability zones"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Azure Hybrid Benefit lets you apply eligible existing licences to Azure.",
+    "why_wrong": {
+      "c": "Locks protect resources.",
+      "d": "Availability zones provide resilience.",
+      "a": "DNS resolves names."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cost-management-billing/understand/plan-manage-costs",
+    "reviewed": false
+  },
+  {
+    "id": "M10-Q10",
+    "module": "M10",
+    "objective_id": "M10-O1",
+    "type": "multi",
+    "difficulty": "easy",
+    "prompt": "Which TWO factors can affect Azure costs? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "The portal's colour theme"
+      },
+      {
+        "id": "b",
+        "text": "Region"
+      },
+      {
+        "id": "c",
+        "text": "Resource type and size"
+      },
+      {
+        "id": "d",
+        "text": "Your keyboard layout"
+      },
+      {
+        "id": "e",
+        "text": "The browser you use for the portal"
+      }
+    ],
+    "correct": [
+      "b",
+      "c"
+    ],
+    "explanation": "Resource type, size and region are cost factors.",
+    "why_wrong": {
+      "e": "The browser does not change cost.",
+      "a": "The theme does not change cost.",
+      "d": "The keyboard does not change cost."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cost-management-billing/understand/plan-manage-costs",
+    "reviewed": false
+  },
+  {
+    "id": "M10-Q11",
+    "module": "M10",
+    "objective_id": "M10-O2",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO describe the Azure pricing calculator? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "It shows your actual invoice"
+      },
+      {
+        "id": "b",
+        "text": "It applies tags to resources"
+      },
+      {
+        "id": "c",
+        "text": "It lets you compare options by changing size, region and settings"
+      },
+      {
+        "id": "d",
+        "text": "It estimates the cost of planned Azure resources"
+      },
+      {
+        "id": "e",
+        "text": "It stops resources automatically when a budget is reached"
+      }
+    ],
+    "correct": [
+      "c",
+      "d"
+    ],
+    "explanation": "The calculator is a planning tool that produces estimates for different configurations.",
+    "why_wrong": {
+      "a": "Invoices come from billing, not the calculator.",
+      "e": "Budgets alert; they do not stop resources.",
+      "b": "Tags are applied to resources, not by the calculator."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cost-management-billing/understand/plan-manage-costs",
+    "reviewed": false
+  },
+  {
+    "id": "M10-Q12",
+    "module": "M10",
+    "objective_id": "M10-O3",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "Budgets in Cost Management can send alerts when spending reaches a threshold."
+      },
+      {
+        "id": "s2",
+        "text": "A budget automatically shuts down resources by itself."
+      },
+      {
+        "id": "s3",
+        "text": "Tags can help group costs by project or department."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s3"
+    ],
+    "explanation": "Budgets alert and tags help group costs, but budgets do not stop resources on their own.",
+    "why_wrong": {
+      "s1": "Yes. Alerts are a main feature.",
+      "s2": "No. A budget does not stop resources by itself.",
+      "s3": "Yes. Cost analysis can group by tag."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cost-management-billing/costs/tutorial-acm-create-budgets",
+    "reviewed": false
+  },
+  {
+    "id": "M10-Q13",
+    "module": "M10",
+    "objective_id": "M10-O5",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which option gives a discount for committing to specific capacity for one or three years and suits steady, predictable workloads?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Tags"
+      },
+      {
+        "id": "b",
+        "text": "Reservations"
+      },
+      {
+        "id": "c",
+        "text": "Pay-as-you-go"
+      },
+      {
+        "id": "d",
+        "text": "Spot virtual machines"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Reservations trade a one- or three-year commitment for discounted pricing.",
+    "why_wrong": {
+      "d": "Spot uses unused capacity and can be interrupted.",
+      "c": "Pay-as-you-go has no commitment and no discount.",
+      "a": "Tags are labels, not a pricing option."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cost-management-billing/reservations/save-compute-costs-reservations",
+    "reviewed": false
+  },
+  {
+    "id": "M10-Q14",
+    "module": "M10",
+    "objective_id": "M10-O5",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "What do you commit to with an Azure savings plan for compute?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A monthly amount of outbound data"
+      },
+      {
+        "id": "b",
+        "text": "A specific VM family and size"
+      },
+      {
+        "id": "c",
+        "text": "A fixed number of tags"
+      },
+      {
+        "id": "d",
+        "text": "An hourly spend amount for one or three years"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "A savings plan commits you to spend, not to a particular VM type.",
+    "why_wrong": {
+      "b": "That describes a reservation.",
+      "c": "Tags are unrelated to commitments.",
+      "a": "Data transfer is not what a savings plan covers."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cost-management-billing/savings-plan/savings-plan-compute-overview",
+    "reviewed": false
+  },
+  {
+    "id": "M10-Q15",
+    "module": "M10",
+    "objective_id": "M10-O5",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Batch rendering jobs can restart if interrupted, and the team wants the lowest possible price. What fits best?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Spot virtual machines"
+      },
+      {
+        "id": "b",
+        "text": "Azure Hybrid Benefit only"
+      },
+      {
+        "id": "c",
+        "text": "A savings plan for compute"
+      },
+      {
+        "id": "d",
+        "text": "Reservations"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Spot suits interruptible, fault-tolerant work at the lowest price.",
+    "why_wrong": {
+      "d": "Reservations suit steady, long-running workloads.",
+      "c": "A savings plan suits steady usage that needs flexibility.",
+      "b": "Hybrid Benefit applies existing licences; it is not a way to use spare capacity."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/virtual-machines/spot-vms",
+    "reviewed": false
+  },
+  {
+    "id": "M10-Q16",
+    "module": "M10",
+    "objective_id": "M10-O5",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "Spot virtual machines can be interrupted when Azure needs the capacity back."
+      },
+      {
+        "id": "s2",
+        "text": "Reservations are best for unpredictable, short-lived workloads."
+      },
+      {
+        "id": "s3",
+        "text": "A savings plan for compute lets you commit to spending rather than to a specific VM type."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s3"
+    ],
+    "explanation": "Spot can be interrupted, reservations suit stable workloads, and a savings plan commits to spend.",
+    "why_wrong": {
+      "s1": "Yes. That is the trade-off for the lower price.",
+      "s2": "No. Reservations suit steady, predictable workloads.",
+      "s3": "Yes. That is the main difference from a reservation."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/cost-management-billing/savings-plan/savings-plan-compute-overview",
+    "reviewed": false
+  }
+]

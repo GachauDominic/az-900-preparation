@@ -9,16 +9,18 @@ A small, fast study site for **Microsoft Exam AZ-900 (Azure Fundamentals)**: cou
 | Piece | State |
 |---|---|
 | App, quiz engine, exam simulation, validator, tests | Done |
-| Module **M04 Core architecture of Azure** (notes + 13 questions) | Written, **needs your review** |
-| Modules M01-M03, M05-M13 | Listed as "Coming soon" in `content/syllabus.json` |
-| Syllabus map vs. the official outline | **Not yet reconciled** (`outline_verified` is `false`) |
+| All 13 modules (notes + 12 to 18 questions each, 188 questions in total) | Written, **need your review** |
+| Exam skills outline | Reconciled with the official study guide, "Skills measured as of July 20, 2026" |
+| Microsoft Learn learning paths | Covers the three "Introduction to Cloud Infrastructure" paths (Describe cloud concepts; Describe Azure architecture and services; Describe Azure management and governance). See `docs/COVERAGE.md` |
+
+Modules follow the three skill areas: cloud concepts (M01-M03), Azure architecture and services (M04-M09) and Azure management and governance (M10-M13). Each notes page links to the Microsoft Learn module it matches. Finish a module's quiz and the results page offers the next module; notes pages also have Previous and Next links.
 
 ## Run it locally
 
 ```bash
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements-dev.txt
-python -m pytest                                        # 17 tests
+python -m pytest                                        # 25 tests
 python scripts/validate_content.py                      # checks notes and questions
 flask --app app run --debug                             # http://127.0.0.1:5000
 ```
@@ -41,6 +43,7 @@ content/
     notes.md            Course notes
     questions.json      Quiz questions
 scripts/validate_content.py
+docs/COVERAGE.md       Learn unit to project module map
 templates/  static/  tests/
 render.yaml             Render deployment
 ```
@@ -56,17 +59,17 @@ render.yaml             Render deployment
 ## Add or edit a module
 
 1. In `content/syllabus.json`, set the module's `status` to `"ready"` and turn its `topics` into `objectives` with ids like `M05-O1`.
-2. Create `content/modules/<id>-<slug>/notes.md` using the same sections as M04 (the validator lists them) and a `Last reviewed: YYYY-MM-DD` line.
-3. Create `questions.json` with at least 12 questions. Fields: `id`, `module`, `objective_id`, `type`, `difficulty`, `prompt`, `options`, `correct`, `explanation`, `why_wrong`, `learn_more` (a learn.microsoft.com URL) and `reviewed`.
+2. Add a `learn_module` (title and learn.microsoft.com URL) to the module in `syllabus.json`. Create `content/modules/<id>-<slug>/notes.md` using the same sections as M04 (the validator lists them) and a `Last reviewed: YYYY-MM-DD` line.
+3. Create `questions.json` with at least 12 questions. Do not always make the first option the correct one: option ids are visible in the page source, so vary which id is correct. Fields: `id`, `module`, `objective_id`, `type`, `difficulty`, `prompt`, `options`, `correct`, `explanation`, `why_wrong`, `learn_more` (a learn.microsoft.com URL) and `reviewed`.
 4. Run `python scripts/validate_content.py` and `python -m pytest`.
 
 Authoring rules: write in your own words, never copy Microsoft Learn text or real exam questions, use current product names (Microsoft Entra ID, Microsoft Defender for Cloud, Microsoft Purview), and describe anything that changes often (prices, limits) conceptually.
 
 ## Content review gate
 
-Every question ships with `"reviewed": false`. Locally all questions are shown, with an "Unreviewed" badge. In production (`REQUIRE_REVIEWED=1`, set in `render.yaml`) **only questions with `"reviewed": true` are served**. Check each question and note against Microsoft Learn, then flip the flag. Links in the files have not been checked for reachability.
+Every question ships with `"reviewed": false`. Locally all questions are shown, with an "Unreviewed" badge. In production (`REQUIRE_REVIEWED=1`, set in `render.yaml`) **only questions with `"reviewed": true` are served**. Check each question and note against Microsoft Learn, then flip the flag (or flip them all once you have reviewed a module). The Microsoft Learn links in the notes and questions have not been checked for reachability, so click through them during review.
 
-Before launch, also open `content/syllabus.json`, compare the module map and objectives with the current official skills outline (<https://learn.microsoft.com/credentials/certifications/resources/study-guides/az-900>), fix differences, fill in each domain's `weight` from the outline, and set `outline_verified` to `true`. With weights filled in, the exam simulation samples in proportion to them; without weights, every module counts equally.
+The module map matches the official skills outline as of July 20, 2026, and each domain's `weight` is the midpoint of Microsoft's published range (25-30%, 35-40%, 30-35%). The exam simulation shares its questions between domains in that proportion. Microsoft updates the outline from time to time, so re-check <https://learn.microsoft.com/credentials/certifications/resources/study-guides/az-900> and edit `content/syllabus.json` (and the notes) if it changes.
 
 ## Configuration
 

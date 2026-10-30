@@ -4,6 +4,7 @@
 <p class="crumbs"><a href="{{ url_for('home') }}">Course</a> / {{ module.title }}</p>
 
 {% if module.ready %}
+{% if module.learn_module %}<p class="small">Matches the Microsoft Learn module <a href="{{ module.learn_module.url }}" rel="noopener noreferrer">{{ module.learn_module.title }}</a></p>{% endif %}
 <div class="module-layout">
   <aside class="toc" aria-label="On this page">
     <p class="toc-title">On this page</p>
@@ -22,6 +23,11 @@
         <p class="small">The quiz for this module is not available yet.</p>
       {% endif %}
     </div>
+    <nav class="pager" aria-label="Module navigation">
+      {% set prev = store.neighbor(module.id, -1) %}{% set nxt = store.neighbor(module.id, 1) %}
+      {% if prev %}<a href="{{ url_for('module_page', module_id=prev.id) }}">Previous: {{ prev.title }}</a>{% else %}<span></span>{% endif %}
+      {% if nxt %}<a href="{{ url_for('module_page', module_id=nxt.id) }}">Next: {{ nxt.title }}</a>{% endif %}
+    </nav>
   </article>
 </div>
 {% else %}

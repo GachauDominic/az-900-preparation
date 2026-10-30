@@ -6,4 +6,3 @@ venv/
 .pytest_cache/
 .DS_Store
 content/drafts/
-prompt.txt

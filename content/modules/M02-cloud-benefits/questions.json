@@ -1,0 +1,558 @@
+[
+  {
+    "id": "M02-Q01",
+    "module": "M02",
+    "objective_id": "M02-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "What does high availability mean in the cloud?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A service can only be used by one customer"
+      },
+      {
+        "id": "b",
+        "text": "A service never changes"
+      },
+      {
+        "id": "c",
+        "text": "A service costs nothing to run"
+      },
+      {
+        "id": "d",
+        "text": "A service is designed to stay running with minimal downtime"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "High availability is about keeping a service running with very little downtime.",
+    "why_wrong": {
+      "c": "Availability is about uptime, not price.",
+      "a": "Availability has nothing to do with exclusive use.",
+      "b": "Services can change and still be highly available."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/well-architected/",
+    "reviewed": false
+  },
+  {
+    "id": "M02-Q02",
+    "module": "M02",
+    "objective_id": "M02-O1",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Which SLA allows the LEAST downtime?",
+    "options": [
+      {
+        "id": "a",
+        "text": "99%"
+      },
+      {
+        "id": "b",
+        "text": "99.5%"
+      },
+      {
+        "id": "c",
+        "text": "99.9%"
+      },
+      {
+        "id": "d",
+        "text": "99.99%"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "The higher the percentage, the less downtime is allowed.",
+    "why_wrong": {
+      "a": "99% allows far more downtime than 99.99%.",
+      "c": "99.9% allows more downtime than 99.99%.",
+      "b": "99.5% allows more downtime than 99.99%."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/well-architected/",
+    "reviewed": false
+  },
+  {
+    "id": "M02-Q03",
+    "module": "M02",
+    "objective_id": "M02-O1",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A retailer expects a sales spike and wants extra virtual machines added automatically, then removed afterwards. Which benefit describes this?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Elasticity"
+      },
+      {
+        "id": "b",
+        "text": "Reliability"
+      },
+      {
+        "id": "c",
+        "text": "Governance"
+      },
+      {
+        "id": "d",
+        "text": "Capital expenditure"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Elasticity means resources scale automatically as demand rises and falls.",
+    "why_wrong": {
+      "c": "Governance is about enforcing standards.",
+      "b": "Reliability is about recovering from failures.",
+      "d": "Capital expenditure is a type of spending, not a scaling feature."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/well-architected/",
+    "reviewed": false
+  },
+  {
+    "id": "M02-Q04",
+    "module": "M02",
+    "objective_id": "M02-O1",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Adding more virtual machine instances to share the load is known as what?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Scaling in"
+      },
+      {
+        "id": "b",
+        "text": "Scaling up (vertical scaling)"
+      },
+      {
+        "id": "c",
+        "text": "Failover"
+      },
+      {
+        "id": "d",
+        "text": "Scaling out (horizontal scaling)"
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Scaling out adds more instances to spread demand.",
+    "why_wrong": {
+      "b": "Scaling up makes one machine bigger.",
+      "a": "Scaling in removes instances.",
+      "c": "Failover switches to a backup after a failure."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/well-architected/",
+    "reviewed": false
+  },
+  {
+    "id": "M02-Q05",
+    "module": "M02",
+    "objective_id": "M02-O2",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A system keeps working when one component fails and recovers automatically. Which benefit does this describe?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Elasticity"
+      },
+      {
+        "id": "b",
+        "text": "Reliability"
+      },
+      {
+        "id": "c",
+        "text": "Governance"
+      },
+      {
+        "id": "d",
+        "text": "Capital expenditure"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Reliability is the ability to recover from failures and keep functioning.",
+    "why_wrong": {
+      "a": "Elasticity is automatic scaling.",
+      "d": "Capital expenditure is a spending type.",
+      "c": "Governance is about rules and standards."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/well-architected/",
+    "reviewed": false
+  },
+  {
+    "id": "M02-Q06",
+    "module": "M02",
+    "objective_id": "M02-O2",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO are examples of predictability? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Performance stays steady as demand changes, through autoscaling and load balancing"
+      },
+      {
+        "id": "b",
+        "text": "Tools help you forecast and track spending"
+      },
+      {
+        "id": "c",
+        "text": "You buy enough hardware for peak demand in advance"
+      },
+      {
+        "id": "d",
+        "text": "You add servers by hand whenever users complain"
+      },
+      {
+        "id": "e",
+        "text": "Every cost is fixed under a contract"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Predictability covers consistent performance and forecastable cost.",
+    "why_wrong": {
+      "c": "Buying for peak in advance is the traditional approach, not cloud predictability.",
+      "d": "Reacting by hand is not predictable.",
+      "e": "Fixed contracts are not what predictability means."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/well-architected/",
+    "reviewed": false
+  },
+  {
+    "id": "M02-Q07",
+    "module": "M02",
+    "objective_id": "M02-O3",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which is a governance benefit of the cloud?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Hardware is fixed and cannot be audited"
+      },
+      {
+        "id": "b",
+        "text": "Tools can enforce standards and audit resources across an environment"
+      },
+      {
+        "id": "c",
+        "text": "Compliance requirements no longer apply"
+      },
+      {
+        "id": "d",
+        "text": "The provider is responsible for all of your data security"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Governance means setting rules and applying and auditing them consistently.",
+    "why_wrong": {
+      "d": "Customers always keep responsibility for their data.",
+      "c": "Compliance requirements still apply in the cloud.",
+      "a": "Cloud resources can be audited."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/well-architected/",
+    "reviewed": false
+  },
+  {
+    "id": "M02-Q08",
+    "module": "M02",
+    "objective_id": "M02-O4",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Using the Azure portal, command-line tools or APIs to create and manage resources is an example of what?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Capital expenditure"
+      },
+      {
+        "id": "b",
+        "text": "Elasticity"
+      },
+      {
+        "id": "c",
+        "text": "Management in the cloud (manageability)"
+      },
+      {
+        "id": "d",
+        "text": "High availability"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Tools for creating and managing resources are the 'management in the cloud' side of manageability.",
+    "why_wrong": {
+      "b": "Elasticity is automatic scaling.",
+      "d": "High availability is about uptime.",
+      "a": "Capital expenditure is a spending type."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/well-architected/",
+    "reviewed": false
+  },
+  {
+    "id": "M02-Q09",
+    "module": "M02",
+    "objective_id": "M02-O3",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "Which statement about security in the cloud is correct?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Providers offer security tools and certifications, but customers still have security responsibilities"
+      },
+      {
+        "id": "b",
+        "text": "Moving to the cloud removes all security responsibility from the customer"
+      },
+      {
+        "id": "c",
+        "text": "The cloud is always less secure than on-premises"
+      },
+      {
+        "id": "d",
+        "text": "Security tools cannot be used with cloud resources"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Security in the cloud is shared: the provider secures the platform and you configure and use it correctly.",
+    "why_wrong": {
+      "b": "Customers always keep some responsibility, such as data and identities.",
+      "c": "Cloud security can be strong; it depends on how it is used.",
+      "d": "Cloud platforms provide many security tools."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/security/fundamentals/shared-responsibility",
+    "reviewed": false
+  },
+  {
+    "id": "M02-Q10",
+    "module": "M02",
+    "objective_id": "M02-O1",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement about availability and scalability is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "An SLA with a higher percentage allows less downtime."
+      },
+      {
+        "id": "s2",
+        "text": "Scaling out means adding more instances."
+      },
+      {
+        "id": "s3",
+        "text": "Elasticity means you must buy capacity in advance."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s2"
+    ],
+    "explanation": "Higher SLAs mean less downtime, scaling out adds instances, and elasticity avoids paying for idle capacity in advance.",
+    "why_wrong": {
+      "s1": "Yes. 99.99% allows less downtime than 99.9%.",
+      "s2": "Yes. Scaling out adds instances.",
+      "s3": "No. Elasticity adds and removes capacity automatically."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/well-architected/",
+    "reviewed": false
+  },
+  {
+    "id": "M02-Q11",
+    "module": "M02",
+    "objective_id": "M02-O2",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement about reliability and predictability is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "Deploying across availability zones can improve reliability."
+      },
+      {
+        "id": "s2",
+        "text": "Predictability applies only to cost, not performance."
+      },
+      {
+        "id": "s3",
+        "text": "A reliable system can recover from failures and keep working."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s3"
+    ],
+    "explanation": "Zones add redundancy, predictability covers both cost and performance, and reliability is about recovery.",
+    "why_wrong": {
+      "s1": "Yes. Spreading across zones adds redundancy.",
+      "s2": "No. It covers both performance and cost.",
+      "s3": "Yes. That is the meaning of reliability."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/well-architected/",
+    "reviewed": false
+  },
+  {
+    "id": "M02-Q12",
+    "module": "M02",
+    "objective_id": "M02-O4",
+    "type": "yesno",
+    "difficulty": "medium",
+    "prompt": "Decide whether each statement about manageability is true.",
+    "options": [
+      {
+        "id": "s1",
+        "text": "Automatic scaling is an example of the cloud managing resources for you."
+      },
+      {
+        "id": "s2",
+        "text": "Deploying from templates helps create consistent environments."
+      },
+      {
+        "id": "s3",
+        "text": "Manageability means you cannot use command-line tools."
+      }
+    ],
+    "correct": [
+      "s1",
+      "s2"
+    ],
+    "explanation": "Autoscaling and templates are manageability features, and command-line tools are part of managing the cloud.",
+    "why_wrong": {
+      "s1": "Yes. Resources adjust without manual effort.",
+      "s2": "Yes. Templates repeat the same deployment reliably.",
+      "s3": "No. Command-line tools are a normal way to manage resources."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/well-architected/",
+    "reviewed": false
+  },
+  {
+    "id": "M02-Q13",
+    "module": "M02",
+    "objective_id": "M02-O5",
+    "type": "single",
+    "difficulty": "easy",
+    "prompt": "Which practice supports sustainability in the cloud?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Buying enough hardware for the busiest day of the year"
+      },
+      {
+        "id": "b",
+        "text": "Scaling resources down or turning them off when demand falls"
+      },
+      {
+        "id": "c",
+        "text": "Overprovisioning in case demand rises"
+      },
+      {
+        "id": "d",
+        "text": "Leaving unused virtual machines running overnight"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Matching resources to actual demand avoids waste.",
+    "why_wrong": {
+      "c": "Overprovisioning wastes resources.",
+      "d": "Idle machines still consume resources.",
+      "a": "Sizing for the busiest day leaves capacity idle most of the time."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/well-architected/",
+    "reviewed": false
+  },
+  {
+    "id": "M02-Q14",
+    "module": "M02",
+    "objective_id": "M02-O5",
+    "type": "single",
+    "difficulty": "medium",
+    "prompt": "A development environment is only used during business hours. What would reduce waste?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Automatically shutting it down overnight and at weekends"
+      },
+      {
+        "id": "b",
+        "text": "Keeping it running all the time"
+      },
+      {
+        "id": "c",
+        "text": "Disabling monitoring on it"
+      },
+      {
+        "id": "d",
+        "text": "Moving it to larger virtual machines"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Switching off idle resources reduces unnecessary consumption.",
+    "why_wrong": {
+      "b": "Leaving it running wastes resources.",
+      "d": "Larger machines would use more resources.",
+      "c": "Monitoring helps you find waste."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/well-architected/",
+    "reviewed": false
+  },
+  {
+    "id": "M02-Q15",
+    "module": "M02",
+    "objective_id": "M02-O5",
+    "type": "multi",
+    "difficulty": "medium",
+    "prompt": "Which TWO are sustainability-aligned practices? (Select two.)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Turn off monitoring to save effort"
+      },
+      {
+        "id": "b",
+        "text": "Monitor usage to find and remove unused resources"
+      },
+      {
+        "id": "c",
+        "text": "Leave test systems running all the time"
+      },
+      {
+        "id": "d",
+        "text": "Overprovision to avoid ever running out"
+      },
+      {
+        "id": "e",
+        "text": "Right-size resources to match demand"
+      }
+    ],
+    "correct": [
+      "b",
+      "e"
+    ],
+    "explanation": "Right-sizing and monitoring help you use only what you need.",
+    "why_wrong": {
+      "d": "Overprovisioning wastes resources.",
+      "c": "Idle test systems waste resources.",
+      "a": "Monitoring is how you find waste."
+    },
+    "learn_more": "https://learn.microsoft.com/azure/well-architected/",
+    "reviewed": false
+  }
+]
